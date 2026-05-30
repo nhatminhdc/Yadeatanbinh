@@ -1,0 +1,1202 @@
+{
+  "site": {
+    "name": "Yadea Tân Bình",
+    "tagline": "Xe điện Yadea chính hãng – Tân Bình, TP.HCM",
+    "logo": "/uploads/1780142628347-0a414f66.png",
+    "favicon": "https://yadeavietthanh.vn/wp-content/uploads/2025/10/logo-viet-thanh-2025-512x512-1-300x300.png",
+    "hotline": "0933 969396",
+    "phone": "0933 969396",
+    "zalo": "0933 969396",
+    "facebook": "https://www.facebook.com/",
+    "address": "658 Âu Cơ, P Bảy Hiền, TP.HCM",
+    "email": "yadeatanbinh@gmail.com",
+    "workingHours": "9:00 - 21:00 (T2 - CN)",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.126!2d106.629!3d10.801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzAzLjYiTiAxMDbCsDM3JzQ0LjQiRQ!5e0!3m2!1svi!2s!4v1"
+  },
+  "banners": [
+    {
+      "id": "1",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/08/thu-cu-xe-xang-len-doi-xe-dien-desk.jpg",
+      "imageMobile": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/yadea-viet-thanh-chinh-hang-mobile.jpg",
+      "alt": "Thu cũ đổi mới xe điện Yadea",
+      "link": "#san-pham"
+    },
+    {
+      "id": "2",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/07/lai-thu-xe-ring-qua-that-cung-yadea-viet-thanh-yadeavietthanh.jpg",
+      "imageMobile": "https://yadeavietthanh.vn/wp-content/uploads/2024/07/lai-thu-xe-ring-qua-that-cung-yadea-viet-thanh-yadeavietthanh.jpg",
+      "alt": "Lái thử xe Yadea miễn phí",
+      "link": "#lien-he"
+    },
+    {
+      "id": "3",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/yadea-viet-thanh-chinh-hang.jpg",
+      "imageMobile": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/yadea-viet-thanh-chinh-hang-mobile.jpg",
+      "alt": "Yadea chính hãng",
+      "link": "#san-pham"
+    }
+  ],
+  "features": [
+    {
+      "id": "1",
+      "icon": "shield",
+      "title": "CAM KẾT CHẤT LƯỢNG",
+      "subtitle": "CHÍNH HÃNG"
+    },
+    {
+      "id": "2",
+      "icon": "truck",
+      "title": "GIAO HÀNG MIỄN PHÍ",
+      "subtitle": "NHANH - CHÍNH HÃNG"
+    },
+    {
+      "id": "3",
+      "icon": "credit-card",
+      "title": "MUA HÀNG TRẢ GÓP",
+      "subtitle": "THỦ TỤC NHANH GỌN"
+    },
+    {
+      "id": "4",
+      "icon": "wrench",
+      "title": "SỬA CHỮA TẬN NƠI",
+      "subtitle": "CỨU HỘ KHẨN CẤP"
+    }
+  ],
+  "categories": [
+    {
+      "id": "xe-may-dien",
+      "name": "Xe Máy Điện",
+      "slug": "xe-may-dien"
+    },
+    {
+      "id": "xe-dap-dien",
+      "name": "Xe Đạp Điện",
+      "slug": "xe-dap-dien"
+    },
+    {
+      "id": "xe-hoc-sinh",
+      "name": "Xe Cho Học Sinh",
+      "slug": "xe-hoc-sinh"
+    },
+    {
+      "id": "xe-di-lam",
+      "name": "Xe Cho Người Đi Làm",
+      "slug": "xe-di-lam"
+    },
+    {
+      "id": "ac-quy",
+      "name": "Ắc Quy",
+      "slug": "ac-quy"
+    }
+  ],
+  "products": [
+    {
+      "id": "13565",
+      "name": "Scooter điện YADEA KS3 Lite – KS2",
+      "slug": "scooter-dien-yadea-ks3-lite-ks2",
+      "price": 8490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/scooter-dien-yadea-ks3-lite-thumbnail.jpg",
+      "category": "xe-dap-dien",
+      "featured": false,
+      "description": "Có nên mua xe scooter điện YADEA KS3 Lite? Hiện nay có nhiều gia đình có thói quen sử dụng xe scooter điện. Vì đây là phương tiện nhỏ gọn, dễ dàng để trong cốp ô tô. Giúp di chuyển nhẹ nhàng, phù hợp quãng đường “đi bộ thì quá mệt, mà đi xe máy lại không tiện cất xe”. Vì thế, có thêm một chiếc xe scooter điện cũng là sự cải tiến rất hay. Sản phẩm YADEA KS3 Lite chính hãng YADEA có thể sẽ là sự lựa chọn bạn nên cân nhắc vì các điểm mạnh sau. Thiết kế gọn nhẹ, chắc chắn của YADEA KS3 Lite So với nhiều mẫu scooter điện khác trên thị trường, YADEA KS3 Lite mang sự trẻ trung. Khung xe được làm từ thép carbon cao cấp. Giúp mang đến sự chắc chắn cho khung xe, nhưng vẫn đảm bảo nhẹ nhàng. Nếu có va chạm, khung xe cứng cáp không dễ bị móp hoặc sứt mẻ. Nhờ vậy, tải trọng của KS3 Lite có thể chở tới 100kg. Một người hoặc chở thêm đồ dùng vẫn di chuyển thuận lợi. Khối lượng toàn xe chỉ nặng khoảng 14kg. Giữa thân xe còn có nút bấm, có thể gấp xe lại chỉ bằng một thao tác. Dễ dàng nhấc xe lên chỉ bằng một tay. Khi gấp lại, khấc nối thiết kế chắc chắn. Vậy nên bạn có thể để xe gọn nhẹ, chắc chắn vào cốp xe hoặc để trong nhà. Vận hành dễ dàng, di chuyển thú vị Động cơ điện của xe có công suất 300W (danh định). Thực tế vận hành có thể đạt 550W. Vì thế xe có thể đi vận tốc 25km/h. Đây là ngưỡng vận tốc an toàn khi di chuyển mà không cần đội mũ bảo hiểm. Xe được trang bị đèn LED phần đầu tay lái. Giúp bạn đi xe dưới trời tối vẫn yên tâm, vẫn tạo sự nhận diện dễ dàng cho người đi đường cùng nhận ra. Xe KS3 Lite còn có phanh tang trống, nên nếu gặp tình huống bất ngờ có thể dừng lại an toàn. YADEA KS3 Lite dùng pin lithium, có thông số 36V – 7,8 Ah. Khi chở 1 người khoảng 60kg, quãng đường tối đa có thể đạt 30km một lần sạc. Như vậy, mình có thể di chuyển gần nhà, đi trong khu đô thị, khu du lịch thoải mái. Xe điện scooter YADEA KS3 Lite chính hãng, bảo hành chu đáo Các bạn yên tâm khi mua xe điện scooter chính hãng từ YADEA. Hiện YADEA đã có nhà máy ở Việt Nam với chế độ bảo hành ắc quy xe điện tốt nhất thị trường. Xe điện scooter KS3 Lite được bảo hành tại&nbsp;các chi nhánh&nbsp;của hệ thống Xe điện Việt Thanh. Thời gian bảo hành pin là 1 năm. Các bộ phận khác trên xe được Xe điện Việt Thanh hỗ trợ bảo hành và sửa chữa chính hãng. Bạn yêu thích xe YADEA KS3 Lite hãy liên hệ với Xe điện Việt Thanh qua hotline 1900.2082 để được tư vấn nhé!",
+      "specs": {
+        "tocDo": "25 km/h",
+        "pin": "36V - 5,2 Ah",
+        "quangDuong": "20km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-hoc-sinh",
+        "xe-di-lam",
+        "xe-dap-dien"
+      ]
+    },
+    {
+      "id": "13877",
+      "name": "Xe Đạp Điện Trợ Lực Yadea Vito",
+      "slug": "xe-dap-dien-tro-luc-yadea-vito",
+      "price": 14990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/11/xe-dap-dien-tro-luc-yadea-vito-2.jpg",
+      "category": "xe-dap-dien",
+      "featured": false,
+      "description": "Yadea Vito sở hữu ngoại hình thể thao, cá tính với khung xe khỏe khoắn và thiết kế hiện đại, phù hợp cho cả học sinh lẫn người đi làm yêu thích phong cách năng động. Trang bị động cơ trợ lực mạnh mẽ giúp xe vận hành êm ái, tăng tốc mượt mà và mang đến trải nghiệm lái nhẹ nhàng trên mọi cung đường. Thiết kế thể thao, cá tính và gọn nhẹ Yadea Vito gây ấn tượng với thiết kế nhỏ gọn, cá tính và đậm chất thể thao, phù hợp cho nhu cầu di chuyển hằng ngày trong đô thị. Xe sử dụng tay lái ngang công thái học, giúp người dùng kiểm soát tốt và hạn chế mỏi vai, cổ tay khi đi đường dài. Khung xe làm từ hợp kim nhôm bền nhẹ, kết cấu khung nén cổ điển tạo nên sự khỏe khoắn nhưng vẫn tối ưu trọng lượng. Diện mạo xe gọn nhẹ, cá tính và cực năng động Màn hình LCD đen trắng hiển thị sắc nét và đèn trước tròn nhỏ gọn với độ sáng trên 40 Lux nên khả năng quan sát tốt khi di chuyển dưới trời tối. Phần yên xe êm ái đảm bảo sự thoải mái trong mọi hành trình.&nbsp; Tổng thể thiết kế xe đem lại sự linh hoạt, dễ điều khiển và phù hợp cho học sinh, sinh viên và người đi làm. Xe cũng được trang bị chân chống bên chắc chắn, hỗ trợ khả năng dựng xe nhanh và tiện lợi trong mọi không gian. Động cơ mạnh mẽ, pin xe bền bỉ &#8211; an toàn Yadea Vito được trang bị động cơ bánh sau 250W mạnh mẽ, cung cấp mô-men xoắn 40 N.m giúp việc di chuyển trở nên nhẹ nhàng và linh hoạt. Động cơ hỗ trợ vận tốc tối đa 25 km/h, đủ nhanh để di chuyển trong thành phố và đảm bảo an toàn cho người điều khiển.&nbsp; Động cơ xe mạnh mẽ, Pin Lithium bền bỉ và an toàn Điểm nổi bật của Yadea Vito là cảm biến nhịp đạp thông minh, nhận biết tốc độ và lực đạp của người lái để tự động điều chỉnh trợ lực phù hợp. Nhờ đó mang đến trải nghiệm lái mượt mà, tự nhiên và ít tốn sức. Xe sử dụng pin Lithium 36V – 10.4Ah/374.4Wh đặt gọn trong khung vừa tăng thẩm mỹ vừa bảo vệ pin hiệu quả, hạn chế nguy cơ bị trộm. Thiết kế pin tích hợp giúp xe giữ trọng tâm thấp, vận hành ổn định và quãng đường di chuyển đạt tới 60km/sạc đầy. Đảm bảo an toàn khi di chuyển Yadea Vito được trang bị hệ thống an toàn chất lượng giúp người điều khiển tự tin di chuyển trong mọi điều kiện. Lốp 27.5 inch x 1.95 inch với thiết kế gai tăng độ bám, chống trơn trượt hiệu quả ngay cả khi di chuyển dưới trời mưa. Hệ thống phanh đĩa cơ giúp giảm tốc nhanh ( Giảm 25km/h xuống 1km/h chỉ trong phạm vi 8m) nên quá trình kiểm soát vận tốc luôn được an toàn. Bên cạnh đó, bộ đề Shimano 7 cấp giúp chuyển số nhẹ nhàng, linh hoạt và cho trải nghiệm thú vị khi di chuyển.&nbsp; Phanh xe chắc chắn cho khả năng kiểm soát tốc độ tốt Yadea Vito phù hợp cho ai? Đây là mẫu xe phù hợp dành cho nhiều đối tượng khác nhau bởi thiết kế gọn nhẹ, vận hành êm ái và đa dạng tiện ích. Cụ thể: &#8211; Học sinh/sinh viên: Khung xe nhẹ, dễ điều khiển, pin bền và quãng đường đạt được dài nên thuận tiện di chuyển đến trường. &#8211; Người đi làm văn phòng: Thiết kế hiện đại, thể thao, yên và tay lái thoải mái, kết hợp động cơ trợ lực mạnh mẽ, giúp di chuyển nhanh chóng, tiết kiệm sức lực. &#8211; Người lớn tuổi: Xe nhẹ, tay lái công thái học, tốc độ vừa phải, dễ kiểm soát trên mọi địa hình. &#8211; Người yêu thích thể thao hoặc cần phương tiện di chuyển xanh: Thiết kế gọn, linh hoạt kết hợp pin Lithium thân thiện môi trường giúp vừa vận động, vừa góp phần bảo vệ môi trường. Yadea Vito là mẫu xe đạp điện trợ lực vừa đẹp &#8211; bền và mang đến cảm giác lái “đã” cho người sử dụng. Nếu bạn muốn sở hữu mẫu xe giá tốt, chính hãng, quyền lợi đảm bảo thì hãy ghé ngay hệ thống Yadea Việt Thanh hoặc liên hệ: 19002082 ngay hôm nay nhé!",
+      "specs": {
+        "tocDo": "25 km/h",
+        "quangDuong": "60 km / 1 lần sạc",
+        "congSuat": "Động cơ bánh sau, công suất đầu ra 250W",
+        "pin": "Pin Lithium lắp trong khung, 36 V – 10.4 Ah / 374.4 Wh"
+      },
+      "categories": [
+        "xe-dap-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13573",
+      "name": "Xe đạp điện YADEA I6",
+      "slug": "xe-dap-dien-yadea-i6",
+      "price": 13500000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-dap-dien-yadea-i6.jpg",
+      "category": "xe-dap-dien",
+      "featured": false,
+      "description": "Xe đạp điện YADEA i6 là mẫu xe chất lượng của thương hiệu YADEA rất phù hợp với người dùng là học sinh, người cao tuổi. Cùng tìm hiểu chi tiết về mẫu xe này để thấy được những sự nổi trội về thiết kế cũng như vận hành của phương tiện. Thiết kế xe đạp điện YADEA i6 YADEA i6 với thiết kế nhỏ gọn, tiện lợi, chiều cao yên thấp chỉ 700mm, những điều này chính là ưu điểm của mẫu xe đạp điện, giúp người sử dụng dễ dàng điều khiển phương tiện. Hình thức nhỏ gọn, trẻ trung và năng động của mẫu xe đạp điện YADEA i6 Sở hữu khung chắc chắn bằng hợp kim cao cấp kết hợp với những mảng ốp vuông vắn nên hình thức của YADEA i5s trông có sự gọn gàng và rất hiện đại. Dòng xe có thiết kế sàn để chân rộng rãi để người dùng thuận tiện hơn khi ngồi lái. Mẫu xe đạp điện YADEA với nhiều màu sắc thú vị, chủ yếu là các gam màu sáng rất bắt mắt phù hợp với cá tính chung của nhiều bạn trẻ hiện nay. Ngoài ra, phiên bản màu đen của dòng xe lại dành riêng cho những ai thích sự đơn giản. Có thể nói hình ảnh trẻ trung, năng động của YADEA i6 đặc biệt phù hợp với phong cách thời trang của Gen Z. Động cơ xe đạp điện YADEA i6 YADEA i6 được trang bị động cơ tiêu chuẩn của các dòng xe đạp điện nhỏ, phù hợp cho người dùng học sinh với công suất đông cơ chỉ 250W, giúp phương tiện di chuyển được với vận tốc khoảng 25-30Km/h. Dòng xe có chức năng vận hành ổn định, mượt mà trên quãng đường ngắn như từ nhà tới trường, tới công sở hoặc di chuyển trong thành phố. YADEA i6 được trang bị Pin Lithium cao cấp với dung tích 48V12Ah chính hãng với độ bền cao và tiết kiệm điện năng, giúp phương tiện có thể đi được tối đa khoảng 50 km/1 lần sạc. Động cơ dòng xe đạp điện YADEA i6 Các tiện ích của xe đạp điện YADEA i6 Trang bị tiện ích dành cho xe đạp điện đầy đủ và hiện đại với những bộ phận được cải tiến mới về tính năng và hình thức, không chỉ tăng thêm vẻ đẹp và sự cá tính dành cho phương tiện mà còn củng cố toàn bộ trải nghiệm thoải mái, an toàn khi sử dụng. Dòng xe được trang bị hai phanh cơ với độ hiệu quả cao, giúp điều khiển xe an toàn mang lại hiệu quả rõ rệt cho người sử dụng. Đèn pha LED: đây là trang bị cực kỳ quan trọng hỗ trợ rất nhiều cho người dùng khi vận hành. Công nghệ hiện đại giúp ánh sáng trở nên sắc nét để giúp bạn dễ quan sát. Đồng hồ hiện đại: mặt đồng hồ tinh thể lỏng cao cấp hiển thị đa sắc màu nhiều thông số chỉ báo, có thể tương tác với thẻ từ NFC để mở khoá xe. Xe đạp điện YADEA i6 chính hãng đang được phân phối tại hệ thống YADEA Việt Thanh. Khách hàng có nhu cầu mua xe vui lòng liên hệ với chúng tôi qua Tổng Đài hỗ trợ 19002082.",
+      "specs": {
+        "tocDo": "30 km/h",
+        "pin": "Pin Lithium 48V - 12Ah",
+        "quangDuong": "50km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-hoc-sinh",
+        "xe-di-lam",
+        "xe-dap-dien"
+      ]
+    },
+    {
+      "id": "13506",
+      "name": "Xe đạp điện YADEA I8",
+      "slug": "xe-dap-dien-yadea-i8",
+      "price": 13990000,
+      "salePrice": 12990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-dap-dien-yadea-i8.jpg",
+      "category": "xe-dap-dien",
+      "featured": true,
+      "description": "Xe đạp điện YADEA i8 sở hữu ngoại hình vô cùng đặc biệt, nhấn mạnh sự tinh tế và hiện đại. Đây là dòng xe thông minh mới ra mắt của YADEA được rất nhiều người chờ đợi. Vậy có điểm nổi bật nào trên YADEA i8 mà bạn có thể khám phá? Thiết kế trẻ trung, năng động và hiện đại của xe đạp điện YADEA i8 Xe đạp điện YADEA I8 nhỏ gọn, sở hữu thiết kế tổng thể vuông vắn, tạo nên vẻ chắc chắn. Điểm nhấn cho thấy sự hiện đại là hai tay lái thanh thoát và đầu xe mới cá tính. Dòng xe có bánh nhỏ, yên ngồi và sàn để chân gần nhau giúp người dùng thuận tiện trong việc ngồi. Ngoài ra, với trọng lượng chỉ 46Kg, YADEA i8 rất dễ dàng để dắt và điều khiển nhẹ nhàng. Thiết kế xe đạp điện Yadea i8 YADEA i8 có chi tiết đèn pha LED tròn vô cùng ấn tượng, chi tiết giúp tạo thêm sự cách điệu cho toàn bộ phần trước của YADEA i8. Chức năng vận hành của xe đạp điện YADEA i8 Là xe đạp điện song công suất vận hành của mẫu xe YADEA i8 khá lớn, lên tới 800W. Động cơ mạnh mẽ giúp phương tiện đạt vận tốc tối đa khoảng 35 Km/h. Khả năng của YADEA i8 cũng hỗ trợ người dùng di chuyển tốt trong những trường hợp như leo dốc, đi đường xấu. Trang bị ắc quy Graphene TTFAR dung tích bình 48V-26Ah cho xe khả năng di chuyển xa tối đa tới 75 km sau một lần sạc đầy. Các tiện ích khác có trên xe đạp điện YADEA i8 Xe đạp điện YADEA i8 sở hữu trang bị phanh tang trống với chất liệu chắc chắc, có độ bền cao giúp phương tiện an toàn khi vận hành và người dùng có thể sử dụng bộ phận vô cùng dễ dàng. Xe đạp điện YADEA i8 mới nhất 2023 Trang bị lốp không săm giúp tăng cường khả năng bám đường, cho bánh xe di chuyển êm và chắc chắn trên mọi bề mặt đường, đồng thời ít bị hao mòn. Đèn pha LED chiếu sáng tốt, bề mặt đèn được xử lý bằng tia UV giúp ánh sáng có độ trong. Tiện ích điều khiển xe đạp điện YADEA i8 mang đến trải nghiệm mới với hai hình thức sử dụng thông qua khoá cơ hoặc khoá điều khiển từ xa NFC. Xe đạp điện YADEA i8 với sự tinh tế và hiện đại trong hình thức đồng thời mang lại trải nghiệm di chuyển tuyệt vời dành cho người sử dụng. Có thể nói, mẫu xe rất thích hợp dành cho cuộc sống đô thị hiện nay khi cho thấy sự tiện ích vô cùng lớn. Xe đạp điện YADEA i8 hiện đang được phân phối chính hãng tại YADEA Việt Thanh. Bạn vui lòng liên hệ qua Tổng đài hỗ trợ 19002082 để được tư vấn chi tiết về sản phẩm.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-22Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-hoc-sinh",
+        "xe-di-lam",
+        "xe-dap-dien"
+      ]
+    },
+    {
+      "id": "13458",
+      "name": "Xe đạp điện YADEA I8 Gấu Dâu Lotso",
+      "slug": "xe-dap-dien-yadea-i8-gau-dau-lotso",
+      "price": 13990000,
+      "salePrice": 12990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-dap-dien-yadea-i8-gau-dau-.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe đạp điện YADEA I8 Gấu Dâu Lotso là phiên bản đặc biệt của dòng xe YADEA i8 với diện mạo mới hoàn toàn đã khiến toàn bộ người dùng không khỏi bất ngờ. Cùng xem những thay đổi mới có trên xe đạp điện YADEA I8 Gấu Dâu. Thiết kế xe đạp điện YADEA i8 Gấu dâu Dòng xe đạp điện i8 Gấu dâu thuộc chuỗi sản phẩm được kết hợp thực hiện bởi nhà sản xuất xe điện hàng đầu thế giới YADEA và Disney. Thiết kế xe đạp điện YADEA i8 Gấu dâu Mẫu xe có điểm đặc biệt là phần vỏ sở hữu màu sắc và hoạ tiết liên quan tới nhân vật hoạt hình Gấu dâu Lotso. Chính vì như vậy nên phong cách sản phẩm mang lại khác hoàn toàn so với YADEA i8. Xe đạp điện YADEA i8 Lotso với sắc hồng rực rỡ toát lên tràn đầy sự dễ thương và ngộ nghĩnh, thể hiện rõ chất nữ tính. Đây là dòng xe được YADEA đặc biệt hướng tới nhóm các bạn nữ, cụ thể là những cô nàng nhí nhảnh, yêu thích sự bay bổng. Dòng xe đạp điện i8 Gấu dâu có thiết kế nhỏ nhắn và hiện đại. Sở hữu đèn pha dạng tròn, bánh xe nhiều chấu đơn kết hợp và yên cá tính cho kiểu dáng thêm năng động. Chức năng vận hành của YADEA i8 Gấu dâu Xe đạp điện YADEA i8 Gấu dâu với công suất thể hiện ấn tượng, 700W cho vận tốc tối đa khi vận hành lên tới 31Km/h. Tuy là xe đạp điện nhưng hiệu suất lớn nên khả năng của dòng xe khá ấn tượng. Việc vận hành của dòng xe YADEA i8 Gấu dâu Dòng xe đạp điện YADEA i8 Gấu dâu có chức năng vận hành hiệu quả, dễ dàng, không gặp cản trở bởi địa hình. Trang bị khác phục vụ phương tiện di chuyển bao gồm phanh kiểu tang trống giúp giảm tốc độ và giữ thăng bằng cho phương tiện tốt. Phuộc thụt dầu bánh trước, lò xo bánh sau cứng cáp hỗ trợ giảm xóc, giúp xe có độ êm ái khi di chuyển Tiện ích của dòng xe đạp điện YADEA i8 Lotso Dòng xe đạp điện mới nên được cải tiến nhiều tiện ích để cho quá trình sử dụng của người điều khiển đạt thuận lợi. Thiết kế 2 yên xe tách biệt dành cho việc chở thêm người thoải mái. Hơn nữa, tải trọng của phương tiện là nên không lo chở nặng thì phương tiện di chuyển bị ì. Trước đầu xe có phần thiết kế giỏ để đựng đồ. Bạn có thể thoải mái cất trữ đồ đạc mỗi khi ra ngoài. Dòng xe có đèn LED với hiệu quả chiếu sáng vượt trội, tầm nhìn xa, bao quát lớn giúp bạn dễ dàng theo dõi mọi thứ xung quanh. Xe đạp điện YADEA i8 Gấu dâu đang được phân phối chính hãng tại hệ thống YADEA Việt Thanh. Quý khách hàng vui lòng liên hệ tới Tổng Đài hỗ trợ 19002082 của chúng tôi để được hỗ trợ.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13731",
+      "name": "Xe đạp điện YADEA IFun",
+      "slug": "xe-dap-dien-yadea-ifun",
+      "price": 11990000,
+      "salePrice": 9990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/01/xe-dien-yadea-ifun-1.jpg",
+      "category": "xe-dap-dien",
+      "featured": false,
+      "description": "Trước mùa nhập học, YADEA tiếp tục tung ra thị trường Việt mẫu xe đạp điện mới – YADEA IFun. Mẫu xe có ngoại hình tương tự các mẫu xe đạp điện i5s, iGo, i6, IFun sở hữu ngoại hình nhỏ nhắn, trẻ trung. Các bạn học sinh từ cấp 1, cấp 2 đã có thể đi được. Kích thước nhỏ gọn, màu sắc bắt mắt Xe đạp điện YADEA IFun được thiết kế kích thước nhỏ gọn, kiểu dáng vuông vắn. Chiều cao yên chỉ 700mm phù hợp cả cho người có vóc dáng nhỏ bé. Các đường nét mềm mại nữ tính tăng thêm sự điệu đà cho chiếc xe. Xe có 2 phiên bản màu: trắng sữa và xanh lơ pastel, rất trẻ trung, nổi bật, phù hợp gu thẩm mỹ giới trẻ hiện nay. IFun đầu xe cá tinh với tay lái thanh thoát kết hợp cùng đầu đèn pha tròn LED và cặp xi nhan tròn trước gắn liền tay lái. Chiếc xe được thiết kế hai yên rộng rãi và sàn để chân tương đối dài. Ngoài ra có các đường xẻ rãnh giúp người dùng ngồi thoải mái và an toàn. Xe được trang bị thêm cả giỏ xe siêu tiện lợi. Các bạn học sinh có thể để áo mưa, mũ, cặp sách nhỏ cũng rất tiện nha. Động cơ xe đạp điện YADEA IFun giúp xe vận hành đột phá hơn Với trang bị loại động cơ Hub cải tiến có công suất danh định 210W, xe đạp điện IFun có khả năng vận hành hiệu quả và bền bỉ trên mọi con đường. Vận tốc tối đa chiếc xe có thể đạt được là 24km/h. Đây là mức vận tốc an toàn cho các bạn học sinh điều khiển, bố mẹ hoàn toàn an tâm. Dòng xe đạp điện này sử dụng Pin Lithium thay cho ắc quy với mức dung lượng 48V-12Ah. Nó có khả năng di chuyển khá xa với quãng đường lên tới 55Km chỉ sau duy nhất một lần sạc. Toàn bộ tiện ích trên xe đạp điện YADEA IFun Xe đạp điện YADEA IFun cực kỳ nhỏ gọn song lại mang trên mình rất nhiều tiện ích giúp người dùng có được trải nghiệm tốt nhất. Trang bị khoá từ NFC dùng để mở xe. Bạn có thể khởi động xe nhanh chóng đơn giản chỉ việc chạm thẻ vào màn hình đồng hồ. Đèn xe sử dụng công nghệ LED cho ánh sáng trong chất lượng, mạnh mẽ, chiếu xa cực tốt. Từ đó giúp người sử dụng quan sát hết sức dễ dàng trong mọi điều kiện di chuyển, nhất là khi trời tối. Đồng hồ điện tử thể hiện thông số sắc nét. Nhờ đó người dùng nắm được dễ dàng tình trạng vận hành của xe đầy đủ và chính xác. Cụm công tắc với các chức năng khác nhau được bố trí đều hai bên tay lái. Giúp thuận tiện cho người dùng bấm. Trang bị phanh cơ cho 2 bánh xe và giảm xóc cao cấp đảm bảo an toàn, êm ái. Xe đạp điện YADEA IFun là sự lựa chọn mới cực kỳ chất lượng dành cho học sinh trong năm 2024 này. Tham khảo và lựa chọn mẫu xe này để có được hiệu quả di chuyển tốt nhất. Liên hệ ngay tới Tổng Đài 19002082 của&nbsp;Xe Điện Việt Thanh&nbsp;để được tư vấn chi tiết và hỗ trợ đặt xe đạp điện YADEA IFun chính hãng.",
+      "specs": {
+        "tocDo": "25km/h",
+        "pin": "Pin Lithium 48V - 12Ah",
+        "quangDuong": "45km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-hoc-sinh",
+        "xe-di-lam",
+        "xe-dap-dien"
+      ]
+    },
+    {
+      "id": "13477",
+      "name": "Xe máy điện YADEA Ocean Gấu Dâu Lotso",
+      "slug": "xe-may-dien-yadea-ocean-gau-dau-lotso",
+      "price": 16990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-ocean-gau-dau.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện YADEA Ocean Gấu dâu là phiên bản độc lạ của dòng Ocean ra mắt trước đó, đã thu hút người dùng bằng một phong cách mới. Hãy cùng xem tổng thể sự mới mẻ mà mẫu xe này mang lại. Về thiết kế của xe máy điện YADEA Ocean Gấu Dâu Lotso Xe máy điện YADEA Ocean Gấu Dâu Lotso mang diện mạo mới với yếu tố màu sắc và hoạ tiết thay đổi tạo nên phong cách khác hoàn toàn so với YADEA Ocean nguyên bản. Mẫu xe Ocean Lotso nhấn mạnh vào sự cá tính, trẻ trung và dễ thương nhờ sự đan xen của hai màu hồng &#8211; vàng tươi sáng. Cộng thêm hình hoạt tiết Gấu dâu Lotso bên hông sườn lại cho chiếc xe vẻ đẹp ngộ nghĩnh hơn. YADEA Ocean Lotso cũng có sự cá tính ở nhiều chi tiết. Mặt yên bọc da nâu cao cấp với hoạ tiết quả trám trông thời trang, cùng với tay lái tinh tế và chắc chắn và được điều chỉnh độ cong hợp lý. Ngoài ra, tấm chắn trước tay lái vẫn là chi tiết giúp cách điệu thêm hình thức mặt trước của xe máy điện. Động cơ xe máy điện YADEA Ocean Gấu dâu Lotso Xe máy điện YADEA Ocean Gấu dâu Lotso với động cơ điện cực kỳ khoẻ khoắn và mạnh mẽ là dòng xe mang lại hiệu quả cao khi di chuyển trong mọi trường hợp. Chứng minh cho khả năng của dòng xe máy điện là công nghệ TTFAR cải tiến giúp tối ưu động cơ. Với công suất tối đa 1600W cho phương tiện có thể đạt vận tốc lên tới 45Km/h, đồng thời di chuyển cực kỳ linh hoạt và nhẹ nhàng trên mọi địa hình. Dòng ắc quy Graphene TTFAR được trang bị cho mẫu xe máy điện càng hỗ trợ thêm việc vận hành ổn định trên quãng đường dài, quan trọng nhất là ắc quy có tuổi thọ cao, kéo dài tới 1000 quá trình sạc &#8211; xả. Những tiện ích khác trên xe máy điện YADEA Ocean Gấu dâu Lotso Dòng xe máy điện mới YADEA Ocean Gấu dâu Lotso được tích hợp thêm nhiều trang bị hiện đại để trở thành sản phẩm cạnh tranh trên thị trường. Trong đó, những bộ phận được mong chờ sẽ mang lại hiệu quả chính là phanh đĩa hợp với mâm xe cực kỳ cá tính giúp phương tiện bảo đảm độ chắc chắn và sự nhẹ nhàng khi thắng phanh. Xe máy điện Yadea Ocean Gấu dâu Lotso với nhiều tính năng mới hiện đại Đèn pha LED hình chữ nhật lồi đặt thấp dưới mui xe, khiến phương tiện trông cá tính và trẻ trung, đồng thời chất lượng ánh sáng cao cấp từ đèn mang lại hỗ trợ tuyệt vời cho việc quan sát xung quanh. Giảm xóc thụt dầu ống lồng và giảm xóc lò xo là các chi tiết phụ tùng hỗ trợ cho phương tiện di chuyển êm ái hơn. Dòng xe có hai chế độ lái Eco/Sport mang tới những trải nghiệm tốc độ mới mẻ và thú vị cho người điều khiển. Cụm công tắc tính năng được bố trí đều hai bên tay lái thuận tiện cho việc bấm nút. Rất nhiều nút được tích hợp để bạn sử dụng: bật đèn tín hiệu, còi xe, xi nhan, đỗ xe, chế độ lái,&#8230; Xe máy điện YADEA Ocean Gấu Dâu Lotso đang được phân phối chính hãng tại hệ thống YADEA Việt Thanh. Khách hàng vui lòng liên tới ngay Tổng đài hỗ trợ 19002082 để được nhân viên tư vấn hỗ trợ.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13558",
+      "name": "Xe máy điện YADEA Odora Pro",
+      "slug": "xe-may-dien-yadea-odora-pro",
+      "price": 21490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-odora-pro.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Các bạn nào chưa ưng xe Odora bản thường của YADEA vì thấy xe “yếu” thì đừng bỏ qua Odora Pro này nha! Đây là phiên bản nâng cấp trong dòng xe Odora đến từ YADEA. Xe có những điểm gì mới, hãy cùng Xe điện Việt Thanh khám phá nhé! Động cơ mạnh 1200W – vận tốc cao Khác với phiên bản trước đây, xe Odora Pro sở hữu động cơ 1200W. Thực tế sử dụng có thể lên tới 2500W. Nhờ vậy xe dễ dàng đạt vận tốc 60km/h. Xe này sẽ rất hợp cho các bạn đi đường xa và vắng. Muốn đi nhanh để di chuyển linh hoạt hơn. Yên tâm là động cơ này giúp Odora có thể chở 2 người lên dốc thoải mái. Tương đương với tải trọng khoảng 130kg vẫn leo dốc bình thường. Điều này chắc chắn sẽ chinh phục được các khách hàng ở chung cư. Hoặc hay phải leo dốc cao, cầu vượt trên các chặng đường. Các màu mới sang chảnh của YADEA Odora Pro Phiên bản xe&nbsp;Odora S1&nbsp;đã đẹp, nhưng Odora Pro còn sang chảnh hơn rất nhiều. Xe được áp dụng các màu hoàn toàn mới như: Nâu tinh vân, xanh lục tinh vân. Đây đều là những màu hiếm trên xe máy. Vì màu sơn này cực kỳ khó pha. Và để đạt được độ bóng, chuẩn và có thể đổi màu khi ra ánh nắng. Thì chỉ có hãng YADEA mới làm được nhờ công nghệ sơn 5 lớp. Chất lượng sơn nhập khẩu Thụy Điển. Nước sơn xe còn có độ bền theo thời gian. Không lo bị xỉn màu, xuống màu sau nhiều năm. Bạn yên tâm có thể mua Odora Pro chính hãng tại hệ thống Xe điện Việt Thanh nhé. Xe điện Việt Thanh là đối tác chiến lược hàng đầu của hãng YADEA tại Việt Nam. Vì vậy, chế độ bảo hành chính hãng của YADEA cũng được áp dụng tại Việt Thanh. Đặc biệt, nhờ hệ thống 25+ cửa hàng trên toàn quốc. Nên bạn có thể ghé bất cứ cửa hàng nào trong hệ thống để được hỗ trợ bảo dưỡng, bảo hành xe nhé.",
+      "specs": {
+        "tocDo": "60 km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "90km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13526",
+      "name": "Xe máy điện YADEA Odora S1",
+      "slug": "xe-may-dien-yadea-odora-s1",
+      "price": 18490000,
+      "salePrice": 16500000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-odora-s1.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Mang tới sự tiện nghi và hình thức chuẩn mực, mẫu xe máy điện YADEA Odora S1 là sự lựa chọn hàng đầu hiện nay dành cho mọi khách hàng. Với những người luôn muốn tận hưởng cảm giác thoải mái tuyệt đối khi sử dụng một mẫu xe máy điện thì Odora S1 không thể bị bỏ qua. Cùng tìm hiểu rõ hơn về dòng xe này ngay sau đây. Điểm ấn tượng về thiết kế của xe máy điện YADEA Odora S1 Xe máy điện YADEA Odora S1 là phiên bản kế cận của YADEA Odora, đã mang những dấu ấn thay đổi. Dòng xe có sự chau chuốt ở đường nét và được lựa chọn những màu sơn đẹp mắt, mới lạ. Từ thiết kế đặc biệt ấn tượng này, mẫu xe xuất hiện với phong cách chứa đầy vẻ nhã nhặn, lịch sự nhưng cũng rất thời trang, sành điệu. Hình thức vô cùng ấn tượng của xe máy điện YADEA Odora S1 Odora S1 được xem là dòng xe đi đầu cho xu hướng thiết kế hiện đại. Với việc tối giản toàn bộ tổng thể hình thức, chỉ tập trung vào những chi tiết quan trọng có thể làm nổi bật. Có thể thấy hoạ tiết và đường nét của Odora S1 tuy khá đơn giản song có chi tiết khác kéo lại sự tinh tế và gây được chú ý. Chính là hệ thống đèn pha, xi nhan, đèn hậu mang kiểu cách đặc sắc. Động cơ và khả năng vận hành của YADEA Odora S1 Khả năng vận hành ấn tượng của xe máy điện YADEA Odora S1 đến từ bộ phận chủ chốt đó là động cơ TTFAR được trang bị cho mẫu xe. Loại động cơ hàng đầu thị trường hiện nay được biết tới với việc cung cấp hiệu suất tốt giúp cho việc di chuyển đạt hiệu quả. Cụ thể, công suất động cơ của YADEA Odora S1 là 600W, tối đa có thể đạt là 1500W. Hai mức này cho phương tiện vận hành cực kỳ uyển chuyển, có sức mạnh và sự bền bỉ. Cùng với đó là trang bị ắc quy Graphene TTFAR cao cấp mang tới khả năng tích trữ nguồn điện lớn, tiết kiệm giúp xe di chuyển xa hơn với quãng đường dài nhất 100Km chỉ sau một lần sạc. Các trang bị hỗ trợ trên xe máy điện YADEA Odora S1 YADEA Odora S1 là dòng xe máy điện hiện đại, sở hữu những tính năng mới cải tiến mang đến trải nghiệm tốt hơn cho người sử dụng. Trang bị đèn LED: toàn bộ đèn trên xe được trang bị công nghệ LED, cung cấp ánh sáng trắng dễ dàng nhận biết; riêng đèn pha chiếu sáng cực kỳ tốt với dải viền LED bao quanh giúp tăng thêm độ sáng. Phanh đĩa hiện đại: dòng xe được trang bị phanh đĩa hiện đại giúp đảm bảo an toàn tối đa khi giảm tốc và bộ phận cũng có độ bền cao hơn. Màn hình điện tử: được thiết kế rộng, tràn viền cung cấp thông số to rõ và sắc nét để người sử dụng dễ dàng đọc hiểu. Thao tác với chìa khoá Smartkey: trang bị tiện ích này giúp người dùng có thể điều khiển xe từ xa một cách dễ dàng. Cốp để đồ rộng: với thiết kế cốp rộng, xe máy dành cho người dùng không gian rộng để đựng các đồ dùng quan trọng. Có thể chứa 2 mũ bảo hiểm 2/4. Xe máy điện YADEA Odora S1 chính hãng đang được phân phối rộng rãi hiện nay, bạn có thể mua xe tại YADEA Việt Thanh &#8211; hệ thống uy tín số 1 Việt Nam kinh doanh các dòng xe điện YADEA. Liên hệ Tổng đài của chúng tôi 19002082.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13849",
+      "name": "Xe Máy Điện Yadea Oris H",
+      "slug": "xe-may-dien-yadea-oris-h",
+      "price": 27490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/11/xe-may-dien-yadea-oris-h-chinh-hang-2.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Yadea Oris H là mẫu xe máy điện mang phong cách hơi hướng cổ điển nhưng vẫn ghi điểm ấn tượng bởi nét hiện đại, trẻ trung và năng động. Ngoài ra, hệ thống động cơ khá mạnh mẽ cùng nhiều công nghệ thông minh đã cho thấy đây là mẫu xe không nên bỏ qua trong năm nay. Yadea Oris H chinh phục bởi vẻ đẹp thời thượng Về tổng thể, Yadea Oris H mang thiết kế năng động với các mảng khối cắt gọt tạo nên vẻ ngoài vừa thanh lịch vừa có phần mạnh mẽ. Phần đầu xe liền mạch với thân, đuôi xe có sự vuốt nhọn gọn gàng cho sự nổi bật ở mọi góc nhìn. Kích thước xe lần lượt là: 1.810 x 670 x 1.130mm cho thấy sự nhỏ gọn nhưng vẫn cân đối và tạo thoải mái cho người lái. Chiều cao yên 760 mm và khối lượng chỉ 88 kg nên người lái có sự dễ dàng khi vận hành cũng như linh hoạt trong việc xử lý tình huống khi gặp sự cố. Diện mạo mẫu xe Oris H cực ấn tượng đến từ hãng Yadea Điểm nhấn nổi bật trên Yadea Oris H chính là hệ thống đèn LED toàn diện. Đèn pha hình lục giác độc đáo không chỉ tạo ấn tượng mạnh về mặt thẩm mỹ mà còn cho độ sáng vượt trội 28.000 cd, giúp người lái quan sát rõ ràng trong phạm vi tầm chiếu sáng tới 70 mét. Bên cạnh đó, đèn LED trang trí 6 màu có thể thay đổi chỉ với một chạm mang lại trải nghiệm cá nhân hóa thú vị, cho phép người dùng thể hiện phong cách riêng trong từng hành trình. Với sự kết hợp hài hòa giữa thẩm mỹ, công nghệ chiếu sáng và tính tiện dụng, Yadea Oris H làphương tiện di chuyển đáng sở hữu hiện nay. Bứt phá mạnh mẽ, chinh phục mọi cung đường Yadea Oris H được trang bị động cơ điện công suất định danh 1200W và công suất tối đa lên tới 2450W nên cho khả năng tăng tốc nhanh, vận hành mạnh mẽ và ổn định trên nhiều địa hình. Xe đạt vận tốc tối đa 50 km/h giúp người lái tự tin di chuyển linh hoạt trong đô thị hoặc khi cần leo dốc, hầm chung cư cao mà không xảy ra tình trạng ì máy. Động cơ xe chất lượng cho khả năng bứt tốc nhanh chóng Bên cạnh đó, pin Lithium dung lượng lớn 72V – 30Ah giúp xe di chuyển quãng đường lên tới 120 km chỉ trong một lần sạc, đáp ứng nhu cầu di chuyển hàng ngày và cả những hành trình dài.Thời gian sạc đầy pin chỉ khoảng 5–6 tiếng, đi kèm chế độ bảo hành pin lên đến 3 năm, đảm bảo độ bền và an tâm khi sử dụng lâu dài. Yadea Oris H còn mang đến hai chế độ lái TTFAR và SPORT, cho phép người dùng dễ dàng lựa chọn giữa chế độ tiết kiệm năng lượng hoặc hiệu suất tối đa, tùy theo điều kiện vận hành và phong cách lái xe. Pin Lithium dung lượng lớn cho quãng đường di chuyển xa Kết nối thông minh, an toàn mọi hành trình Yadea Oris H không chỉ ghi điểm bởi thiết kế và động cơ mà còn bởi sự trang bị ấn tượng từ công nghệ tiên tiến. Nhờ đó mang lại trải nghiệm lái tiện lợi và an toàn. Cụ thể: Mở khóa thông minh – Kết nối nhanh không cần chìa Với hệ thống kết nối Bluetooth hiện đại, người dùng có thể mở khóa xe ở cự ly gần mà không cần phải sử dụng chìa khoá truyền thống. Ngoài ra, YADEA App cho phép mở khóa trực tiếp trên điện thoại mang tới sự thuận tiện cho người dùng. Chia sẻ tài khoản cho gia đình giúp sử dụng linh hoạt Tính năng chia sẻ tài khoản gia đình giúp cả nhà cùng sử dụng chung mà vẫn đảm bảo tính bảo mật. Người dùng có thể chia sẻ quyền truy cập cho tối đa cho 5 thành viên, mở khóa hoặc quản lý xe từ xa qua App vô cùng thuận tiện. Tính năng chia sẻ tài khoản giúp quản lý và mở khoá xe từ xa dễ dàng Định vị GPS – Bảo vệ xe an toàn mọi lúc, mọi nơi Yadea Oris H được tích hợp hệ thống định vị GPS chính xác, cho phép người dùng dễ dàng nắm bắt vị trí của xe ngay trên điện thoại. Hệ thống bảo mật gồm 4 lớp chống trộm thông minh giúp bảo vệ xe toàn diện trong mọi tình huống. Tiện ích đầy đủ, di chuyển thoải mái Yadea Oris H được trang bị nhiều tiện ích thông minh, mang đến trải nghiệm lái thoải mái, tiện lợi và an toàn trong mọi hành trình. Trong đó cần kể đến như: &#8211; Pin tháo rời giúp việc sạc trở nên dễ dàng, thuận tiện mang pin vào nhà hoặc văn phòng mà không cần di chuyển cả xe. &#8211; Cổng sạc USB tích hợp cho phép sạc pin điện thoại hoặc các thiết bị thông minh khác ở bất kỳ đâu. &#8211; Hộc chứa đồ phía trước có nắp kín nên bảo vệ thiết bị và pin an toàn cũng như giữ các vật dụng cá nhân được gọn gàng. &#8211; Đèn xi nhan tích hợp âm thanh: Cảnh báo an toàn cho người đi đường và tăng trải nghiệm lái hiện đại. &#8211; Chống nước chuẩn IPX nên linh kiện điện tử và pin được bảo vệ, đảm bảo vận hành an toàn dưới trời mưa hoặc đường ướt. &#8211; Móc treo tiện lợi chứa đồ cá nhân khi đi chợ, mua sắm, hoặc đi làm được ngăn nắp hơn. Mẫu xe máy điện Yadea Oris H chính là lựa chọn phù hợp nếu bạn đang tìm cho mình phương tiện mang sự ấn tượng về thiết kế; mạnh mẽ của động cơ và tích hợp nhiều tính năng hiện đại. Để sở hữu sản phẩm chính hãng, giá tốt và được hỗ trợ chu đáo, liên hệ ngay: 19002082 hoặc ghé ngay website: yadeavietthanh.vn",
+      "specs": {
+        "congSuat": "2450W",
+        "tocDo": "50 Km/h",
+        "pin": "Pin LFP 72V-30Ah",
+        "quangDuong": "120Km / 1 lần sạc"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13397",
+      "name": "Xe máy điện YADEA Orla",
+      "slug": "xe-may-dien-yadea-orla-2",
+      "price": 19990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-orla-kem-sua.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện YADEA Orla xuất hiện tại Việt Nam trong năm 2023 vừa qua với thiết kế hướng tới sự thời thượng, đi cùng với đó là nhiều tính năng độc đáo được tích hợp mang tới rất nhiều cảm nhận khác biệt. Sau đây hãy cùng đánh giá chi tiết về dòng xe. YADEA Orla đại diện cho sự trang nhã Xe máy điện YADEA Orla với thiết kế đầy tinh tế thông qua những đường cong nhẹ uyển chuyển và các chi tiết trang trí cách điệu. Dàn áo xe được làm từ chất liệu cao cấp, có sự cứng cáp hoà quyện cùng màu sơn sáng khiến phương tiện trông có sự tươi mới. YADEA Orla với kích thước tổng thể vừa vặn; thiết kế công thái học mang đến sự hoàn chỉnh về tư thế cho người lái xe, trong đó yên ngồi bọc bằng da mềm cao cấp, vừa rộng và thoải mái. Sàn để chân bằng phẳng, thoáng rộng. Các chi tiết trang trí trên xe máy điện YADEA Orla là đèn pha với lõi đèn LED mang lại ánh sáng tốt. Tất cả chi tiết đèn xi nhan được thiết kế nằm trong yếm xe với hình thức độc đáo và hiện đại. Xe máy điện YADEA Orla có động cơ hiệu suất cao Xe máy điện YADEA Orla mới có chức năng vận hành ấn tượng với công suất định mức 800W, công suất tối đa 1800W. Khả năng của xe vượt trội hơn so với nhiều đối thủ cùng phân khúc hiện nay. Vận tốc tối đa mà phương tiện có thể đạt là 50km/h. Bộ cấp điện cho xe máy điện YADEA Orla cực kỳ chất lượng, là ắc quy Graphene TTFAR với dung tích 60V26Ah. Dòng ắc quy có hiệu suất đặc biệt cao với thời gian sạc đầy từ 7-8 tiếng, một lần sạc cho quãng đường xe chạy được lên tới 80Km. Các trang bị hiện đại khác Xe máy điện YADEA Orla mang đến chức năng vận hành an toàn nhờ hỗ trợ của trang bị phanh đĩa cho bánh xe trước. Phanh đĩa hiện đại, giúp giảm tốc nhanh chóng và hiệu quả. Bên cạnh đó là bộ phận giảm xóc thụt dầu (trước) và lò xo trụ (phía sau) giúp phương tiện di chuyển nhịp nhàng trên mọi địa hình. Trên YADEA Orla, những tiện ích quen thuộc không thể thiếu song mẫu xe còn có rất nhiều chức năng mới tiện lợi giúp người dùng có được những trải nghiệm đầy thú vị. Dòng xe có hai cách thức mở khoá: trực tiếp bằng khoá thông thường hoặc từ xa (remote) với Smartkey. Thiết kế màn hình theo dõi chức năng với công nghệ LCD hiển thị thông số rõ nét, giúp đọc hiểu dễ dàng. Trên mẫu xe máy điện mới của YADEA, có hai chế độ lái Eco/Power để bạn thoải mái vận hành tuỳ ý. Xe máy điện YADEA Orla chính hãng đang có mặt tại hệ thống YADEA Việt Thanh. Liên hệ ngay Tổng Đài hỗ trợ 19002082 của chúng tôi để được tư vấn.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-22Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13454",
+      "name": "Xe máy điện YADEA Orla Gấu Dâu Lotso",
+      "slug": "xe-may-dien-yadea-orla-gau-dau-lotso",
+      "price": 19990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-orla-gau-dau-lotso.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện YADEA Orla Lotso Gấu dâu là tâm điểm của cả thị trường dịp cuối năm 2023. Dòng xe không chỉ gây bất ngờ về mặt hình ảnh mà mang còn ý nghĩa quan trọng, đánh dấu sự hợp tác quan trọng của hai ông lớn YADEA và Disney. Dấu ấn đặc sắc trên YADEA Orla Gấu Dâu Lotso là gì? Hãy cùng xem. Hình thức YADEA Orla Gấu dâu Xe máy điện YADEA Orla Lotso với dấu ấn là sắc hồng rực rỡ và nhân vật hoạt hình nổi tiếng xuất hiện trên thân xe mang tới phong cách ngộ nghĩnh, dễ thương đặc biệt. Hiện tại, rất hiếm dòng xe mang kiểu phong cách tương tự nên Orla Gấu dâu xuất hiện đã tạo thêm một lựa chọn mới mẻ dành cho những người thích sự nhẹ nhàng, nhất là phái nữ. Hình thức xe máy điện yadea lotso gấu dâu Dòng xe máy điện YADEA Orla Gấu dâu với đường nét chỉn chu, mềm mại trên từng chi tiết. Kích thước nhỏ gọn, chiều cao yên không quá lớn đã tạo nên sự tiện lợi dành cho phái nữ khi sử dụng. Dòng xe có hai phiên bản, một là hồng chủ đạo, một là trắng chủ đạo để khách hàng lựa chọn. Xe máy điện YADEA Orla Lotso có nhiều chức năng Chức năng vận hành của xe máy điện YADEA Orla Gấu dâu Xe máy điện YADEA Orla Lotso Gấu dâu với chức năng vận hành tương tự YADEA Orla mang tới trải nghiệm dễ dàng, linh hoạt cho tất cả những người sử dụng. Sử dụng động cơ công suất 800W, tối đa đạt được hơn 1800W, vận tốc tối đa gần 50Km/h. Dòng xe giúp bạn có được những chuyến di chuyển nhanh chóng, dễ dàng tại bất cứ đâu trong thành phố. Động cơ vận hành của xe máy điện YADEA Orla Lotso Gấu Dâu 2023 Động cơ xe máy điện YADEA Orla Gấu dâu với công nghệ TTFAR giúp tối ưu hiệu suất, phương tiện không chỉ mạnh mẽ trong cách vận hành mà còn giúp tiết kiệm tối đa nhiên liệu. Các tiện ích chính có trên YADEA Orla Lotso Gấu dâu Dòng xe máy điện Orla Lotso Gấu dâu có nhiều trang bị cao cấp, với hệ thống phanh đĩa &#8211; phanh cơ chất lượng tăng hiệu quả giảm tốc. Xe có yên ngồi cao cấp, cá tính với da bọc màu nâu nhạt, đệm mềm mại tạo sự thoải mái cho người sử dụng, trên mặt có hoạ tiết nổi hình quả trám cho thấy sự tinh tế. Đèn pha LED với hình thức logo thương hiệu tạo nét quyến rũ, lõi đèn với cường độ chiếu sáng mạnh mẽ, vượt trội giúp người dùng dễ dàng quan sát xung quanh. Các chi tiết đèn xi nhan kiểu dáng nhỏ, gọn nằm chìm vào yếm xe có chất lượng ánh sáng tốt. Dòng xe có chức năng điều khiển dễ thao tác, tay ga mượt mà, tay lái linh hoạt cho người dùng xoay chỉnh. Dòng xe máy điện YADEA Orla Lotso Gấu dâu chính hãng hiện được phân phối tại hệ thống YADEA Việt Thanh. Liên hệ ngay Tổng Đài hỗ trợ 19002082.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13701",
+      "name": "Xe máy điện YADEA Orla P",
+      "slug": "xe-may-dien-yadea-orla-p",
+      "price": 21690000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/12/xe-may-dien-yadea-orla-p-2.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện YADEA Orla P xuất hiện tại Việt Nam trong năm 2024 vừa qua với thiết kế hướng tới sự thời thượng, đi cùng với đó là nhiều tính năng độc đáo được tích hợp mang tới rất nhiều cảm nhận khác biệt. Sau đây hãy cùng đánh giá chi tiết về dòng xe này. YADEA Orla P đại diện cho sự trang nhã Xe máy điện YADEA Orla P được thiết kế tinh tế với những đường cong nhẹ uyển chuyển và các chi tiết trang trí cách điệu. Dàn áo xe được làm từ chất liệu cao cấp, cứng cáp cùng màu sơn sáng khiến chiếc xe trông có sự tươi mới. YADEA Orla P với kích thước tổng thể vừa vặn; thiết kế công thái học mang đến sự hoàn chỉnh về tư thế cho người lái xe, trong đó yên ngồi bọc bằng da mềm cao cấp, vừa rộng và thoải mái. Sàn để chân bằng phẳng, thoáng rộng. Các chi tiết trang trí trên xe máy điện YADEA Orla P là đèn pha với lõi đèn LED mang lại ánh sáng tốt. Tất cả chi tiết đèn xi nhan được thiết kế nằm trong yếm xe với hình thức độc đáo và hiện đại. Xe máy điện YADEA Orla P có động cơ hiệu suất cao Xe máy điện YADEA Orla P mới có chức năng vận hành ấn tượng với công suất định mức 800W, công suất tối đa 1800W. Khả năng của xe vượt trội hơn so với nhiều đối thủ cùng phân khúc hiện nay. Vận tốc tối đa mà phương tiện có thể đạt là 50km/h. Bộ cấp điện cho xe máy điện YADEA Orla P cực kỳ chất lượng, là ắc quy Graphene TTFAR với dung tích 60V-26Ah. Dòng ắc quy có hiệu suất đặc biệt cao với thời gian sạc đầy từ 7-8 tiếng, một lần sạc cho quãng đường xe chạy được lên tới 80Km. Các trang bị hiện đại khác Xe máy điện YADEA Orla P mang đến chức năng vận hành an toàn nhờ hỗ trợ của trang bị phanh đĩa cho bánh xe trước. Phanh đĩa hiện đại, giúp giảm tốc nhanh chóng và hiệu quả. Bên cạnh đó là bộ phận giảm xóc thụt dầu (trước) và lò xo trụ (phía sau) giúp phương tiện di chuyển nhịp nhàng trên mọi địa hình. Trên YADEA Orla P, những tiện ích quen thuộc không thể thiếu song mẫu xe còn có rất nhiều chức năng mới tiện lợi giúp người dùng có được những trải nghiệm đầy thú vị. Xe đã được tích hợp sử dụng mở/ tắt qua điện thoại thông minh. Tính năng này cực kì hiện đại, thuận tiện cho người dùng. Dòng xe có hai cách thức mở khoá: trực tiếp bằng khoá thông thường hoặc từ xa (remote) với Smartkey. Thiết kế màn hình theo dõi chức năng với công nghệ LCD hiển thị thông số rõ nét, giúp đọc hiểu dễ dàng. Trên mẫu xe máy điện mới của YADEA, có hai chế độ lái Eco/Power để bạn thoải mái vận hành tuỳ ý. Xe máy điện YADEA Orla P chính hãng đang có mặt tại hệ thống YADEA Việt Thanh. Liên hệ ngay Tổng Đài hỗ trợ 19002082 của chúng tôi để được tư vấn.",
+      "specs": {
+        "tocDo": "48km/h",
+        "pin": "60V-26Ah",
+        "quangDuong": "80km/ 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13932",
+      "name": "Xe Máy Điện Yadea Osta P",
+      "slug": "xe-may-dien-yadea-osta-p",
+      "price": 33990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/02/xe-may-dien-yadea-osta-p.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Năm 2026 chứng kiến sự xuất hiện của YADEA Osta P &#8211; mẫu xe máy điện mang phong cách trẻ trung, hiện đại hứa hẹn đem đến hành trình tràn đầy cá tính và năng lượng cho bạn. Tham khảo thông tin chi tiết về mẫu xe dưới đây.&nbsp; Thiết kế thời trang sành điệu&nbsp; Mẫu xe điện YADEA Osta P sở hữu thiết kế thanh thoát với kích thước nhỏ gọn và những đường cong mềm mại. Vỏ xe cứng cáp được phủ bởi lớp sơn cao cấp với các màu mới lạ: xám nhạt ngọc trai, bạc lạnh, xám ngọc trai, vàng ánh kim và đen tuyền thể hiện nhiều nét cá tính riêng biệt.&nbsp; Đầu xe nổi bật với cụm đèn pha kim cương giúp tăng vẻ hiện đại. Yên ngồi rộng rãi và sàn để chân bằng phẳng giúp người lái có sự thoải mái xuyên suốt hành trình.&nbsp; Thiết kế sành điệu, trẻ trung của xe máy điện YADEA Osta P Động cơ công suất mạnh, vận hành ổn định&nbsp; Xe máy điện YADEA Osta P được trang bị động cơ công suất 1500W cho phép đạt vận tốc tối đa 63 km/h. Khả năng vận hành mượt mà trên nhiều địa hình và leo dốc dễ dàng.&nbsp; Di chuyển xa ấn tượng&nbsp; Osta P được trang bị dòng pin Lithium cao cấp có dung lượng 72V45Ah giúp xe đạt được quãng đường di chuyển 110 km/lần sạc (theo tiêu chuẩn WMTC). Hiệu suất xe dễ dàng đáp ứng nhu cầu di chuyển cường độ cao hàng ngày.&nbsp; Xe máy điện YADEA Osta P sở hữu hiệu suất ấn tượng Tính năng, tiện ích và công nghệ hiện đại&nbsp; Mẫu xe được trang bị các tính năng an toàn hiện đại gồm:&nbsp; Phanh đĩa tích hợp CBS giúp dừng xe nhanh chóng và an toàn ở tốc độ cao Giảm xóc thuỷ lực trước &#8211; sau chắc chắn, hấp thụ chấn động tốt, đảm bảo cho xe di chuyển êm ái và ổn định trên nhiều địa hình. Đồng hồ TFT với thiết kế chữ nhật hiện đại, hiển thị thông số sắc nét giúp người dùng dễ quan sát. Nhiều tính năng được tích hợp như: hỗ trợ chỉ đường, kết nối với ứng dụng YADEA trên smartphone cho phép tùy chỉnh âm thanh và nhận cuộc gọi mang lại trải nghiệm tiện lợi và thú vị.&nbsp; Công nghệ IoT hiện đại cung cấp giải pháp giám sát và điều khiển phương tiện toàn diện, bao gồm các tính năng: Mở khóa từ xa Định vị GPS Kích hoạt chống trộm Cảnh báo SOS Tiện ích cổng sạc type-C và type-A giúp người dùng sạc thiết bị điện tử thuận tiện trong khi di chuyển.&nbsp; Chế độ lái đa dạng: Eco/Sport/Tùy chỉnh để người dùng lựa chọn theo yêu cầu. Xe được tích hợp tính năng Cruise Control hỗ trợ lái xe&nbsp;&nbsp; Để mua xe máy điện YADEA Osta P chính hãng, khách hàng hãy đến đại lý uỷ quyền YADEA Việt Thanh với nhiều chi nhánh trên toàn quốc. Liên hệ tổng đài 1900 2082 của công ty để được tư vấn chi tiết.",
+      "specs": {
+        "congSuat": "Hub 1500W",
+        "tocDo": "63 km/h",
+        "pin": "Pin LFP 72V-45Ah",
+        "quangDuong": "110km / 1 lần sạc"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13761",
+      "name": "Xe Máy Điện YADEA Vekoo",
+      "slug": "xe-may-dien-yadea-vekoo",
+      "price": 15990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/03/xe-may-dien-yadea-vekoo-mau-trang-mat-trang.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Yadea Vekoo là một chiếc xe điện được thiết kế tập trung vào sự thoải mái và tiện lợi cho người dùng. Thiết kế công thái học của xe giúp người lái có tư thế ngồi chuẩn, giảm thiểu mệt mỏi khi di chuyển đường dài. Yên xe êm ái, sàn để chân rộng rãi cho phép người dùng thoải mái mang theo đồ đạc cá nhân. Xe được trang bị lốp 12 inch, tăng độ bám đường và khả năng vận hành trên nhiều địa hình. Với chiều cao yên xe phù hợp, người dùng có chiều cao từ 1m35 trở lên có thể thoải mái điều khiển xe. Thiết kế của Yadea Vekoo mang phong cách khỏe khoắn, năng động với trọng lượng nhẹ (75kg) giúp xe dễ dàng di chuyển. Mặt trước xe được thiết kế tinh giản, hiện đại, kết hợp với yên sau cao tạo tầm nhìn thoáng đãng cho người ngồi sau. Yadea Vekoo sử dụng ắc quy Graphene TTFAR bền bỉ, cho phép xe di chuyển quãng đường dài hơn sau mỗi lần sạc. Động cơ TTFAR 1000W mạnh mẽ mang lại trải nghiệm lái êm ái trên cả đường phố đông đúc và đường trường. Xe có khả năng chống nước chuẩn IPX6, giúp người dùng yên tâm di chuyển trong điều kiện thời tiết xấu. Xe được trang bị tính năng mở khóa Bluetooth thông minh, tăng cường tính bảo mật và tiện lợi. Người dùng cũng có thể tùy chỉnh âm thanh theo sở thích cá nhân. Hệ thống phanh cơ trên cả hai bánh và giảm xóc cao cấp mang lại trải nghiệm lái an toàn và thoải mái. Với những ưu điểm vượt trội về thiết kế, công nghệ và hiệu suất, Yadea Vekoo là một lựa chọn đáng tin cậy cho nhu cầu di chuyển hàng ngày. Bạn có thể trải nghiệm Yadea Vekoo tại hệ thống Xe Điện Việt Thanh để cảm nhận sự khác biệt.",
+      "specs": {
+        "tocDo": "38 km/h",
+        "pin": "Graphene 48V-22Ah",
+        "quangDuong": "65km mỗi lần sạc",
+        "congSuat": "Hub 400W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13786",
+      "name": "Xe Máy Điện YADEA Velax",
+      "slug": "xe-may-dien-yadea-velax",
+      "price": 31490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/06/xe-may-dien-yadea-velax.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "2025 là một năm đầy hứa hẹn của thị trường xe điện trong nước với sự cạnh tranh gắt gao giữa các thương hiệu. Rất nhiều sản phẩm mới được mang đến thể hiện rõ mức độ cải tiến vượt trội, giúp người tiêu dùng có cơ hội tận hưởng những trải nghiệm chất lượng chưa từng có. Mới đây, nhà sản xuất YADEA đã cho ra mắt mẫu xe máy điện YADEA Velax, mang đến những bất ngờ mới dành cho những tín đồ yêu thích công nghệ. Hãy cùng tìm hiểu chi tiết để hiểu rõ hơn về sản phẩm này. Dòng xe máy điện mang thiết kế thể thao&nbsp; Xe máy điện YADEA Velax được thiết kế nhằm hướng tới nhóm người trẻ trung, năng động, chính vì vậy mẫu xe mang đậm phong cách thể thao mạnh mẽ. Điểm nổi bật của Velax đến từ đường nét có sự sắc xảo và gai góc, tạo cho xe diện mạo hầm hố. Cùng với đó là màu sơn nổi bật và hoạ tiết cá tính giúp mẫu xe trở nên hiện đại. Bên cạnh đó, trên mẫu xe thể thao vẫn còn nhiều dấu ấn nổi bật khác. Mặt trước xe máy điện gồm đèn xi nhan được thiết kế cách điệu theo viền mặt nạ, đèn pha được tách thành hai phần, phía sau là đèn hậu mang hình biểu tượng YADEA quen thuộc. Tất cả các chi tiết góp phần làm nên tính mạnh mẽ và độc đáo cho xe điện Velax. Động cơ với sức mạnh ấn tượng&nbsp; Xe máy điện YADEA Velax tạo ấn tượng mạnh mẽ với chức năng vận hành linh hoạt, mang lại hiệu quả vượt trội. Động cơ được trang bị trên xe là loại Hub Motor có công suất định danh &#8211; tối đa lần lượt là 2000W và 3200W. Theo đó, việc di chuyển hoàn toàn dễ dàng đối với Velax. Mẫu xe có thể tăng tốc lên mức cao nhất 64km/h, nhờ đó người sử dụng sẽ có được trải nghiệm lái tuyệt vời.&nbsp; Động cơ Velax còn đạt chuẩn kháng nước IPX7, nhờ đó xe có thể hoạt động hiệu quả và an toàn trên đoạn đường ngập.&nbsp; Pin hiệu năng tốt Dòng xe máy điện hiện đại được trang bị Pin Lithium cao cấp độc quyền của YADEA. Dung lượng Pin lớn 72V30Ah giúp xe thực hiện quãng đường di chuyển xa lên tới 80 Km chỉ sau một lần sạc.&nbsp; Tính năng an toàn&nbsp; YADEA Velax là dòng xe điện cải tiến có tính an toàn cao nhờ trang bị phanh đĩa CBS hiện đại đồng bộ trước và sau. Cùng với đó, hệ thống giảm xóc giảm chấn thuỷ lực được tích hợp cho xe điện củng cố độ vững chắc và hấp thụ lực tốt, mang lại sự êm ái.&nbsp; Đèn pha trên Velax tích hợp công nghệ LED với độ cảm biến ánh sáng cấp C theo tiêu chuẩn của ô tô. Do đó, người dùng được hỗ trợ quan sát hiệu quả và an toàn, đảm bảo di chuyển tiện lợi trong mọi điều kiện.&nbsp; Tính năng thông minh&nbsp; Xe máy điện Velax cũng sở hữu đa dạng nhiều tính năng thông minh, đảm bảo trải nghiệm tuyệt vời cho người sử dụng. Đồng hồ điện tử với màn hình hiển thị VA cung cấp mọi thông số, dữ liệu vận hành như vận tốc, quãng đường, điện năng… một cách trực quan và sắc nét giúp người dùng quan sát thuận tiện.&nbsp; Chiếc xe được trang bị tính năng thông minh AIGO nhờ đó người dùng có thể thực hiện mở khoá xe thông qua điện thoại di động, đảm bảo nhanh chóng. Ngoài ra, ứng dụng trên thoại còn có tính năng định vị GPS giúp bạn xác định vị trí phương tiện chính xác. Bên cạnh đó, tính năng hàng rào điện tử giữ an toàn tuyệt đối cho phương tiện, nhờ vậy người dùng không phải lo lắng khi gửi xe bên ngoài.&nbsp; Tiện ích tiện lợi&nbsp; Xe máy điện với khoang cốp dưới yên rộng rãi giúp người dùng thuận tiện mang theo nhiều đồ dùng. Sức chứa của cốp có thể đủ cho mũ bảo hiểm, túi, áo khoác…&nbsp; Mẫu xe máy điện YADEA Velax nổi bật về tính năng hiện đại, tiện lợi hứa hẹn đem đến cho người tiêu dùng trải nghiệm tốt nhất và góp phần thúc đẩy thị trường xe xanh trở nên hấp dẫn hơn. Hãy nhanh tay sở hữu chiếc xe chất lượng này để nhận được những điều bất ngờ.&nbsp; YADEA Việt Thanh hiện đang phân phối sản phẩm chính hãng. Khách hàng có nhu cầu mua sản phẩm vui lòng liên hệ ngay Tổng đài của chúng tôi qua số 1900 2082.",
+      "specs": {
+        "tocDo": "64km/h",
+        "pin": "Pin lithium 72V30Ah",
+        "quangDuong": "80km mỗi lần sạc",
+        "congSuat": "Hub Motor"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13953",
+      "name": "Xe Máy Điện YADEA Velax H+",
+      "slug": "xe-may-dien-yadea-velax-h",
+      "price": 38990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/06/xe-may-dien-yadea-velax.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Phiên bản nâng cấp pin của YADEA Velax &#8211; YADEA Velax H+ tăng x2 lần độ dài quãng đường, đáp ứng tốt nhu cầu di chuyển thường xuyên. Không dừng lại ở đó, mẫu xe còn là biểu tượng mới cho sự hiện đại và tiện nghi với thiết kế mới lạ và nhiều tính năng thông minh. Tham khảo thông tin về sản phẩm này dưới đây. Nổi bật với thiết kế hiện đại, mạnh mẽ&nbsp; Xe máy điện Velax H+ cho thấy rõ nét dấu ấn tương lai khi kết hợp tinh tế giữa đường nét cuồn cuộn cùng các tông màu trầm, trang nhã: xám, đen, trắng tạo nên vẻ khoẻ khoắn nhưng cũng không kém phần sang trọng.&nbsp; Các chi tiết đèn trên xe cũng được xem là điểm nhấn độc đáo với thiết kế độc đáo, tinh xảo. Đèn đuôi với hình dạng logo YADEA tăng cường thêm khả năng nhận diện cho phương tiện.&nbsp; Yên xe rộng rãi và nhô cao về phía đuôi tạo cảm giác năng động. Sàn để chân bằng phẳng, được bổ sung các gờ cao su chống trượt cho người lái tư thế thoải mái an toàn.&nbsp; Vận hành với hiệu suất ấn tượng&nbsp; YADEA Velax H+ là dòng xe có sức mạnh vận hành dẫn đầu phân khúc xe máy điện hiện nay. Với động cơ inhub cải tiến, công suất danh định 2.000W &#8211; tối đa 3.050W tối đa, xe có thể tăng tốc nhanh chóng đạt mức cực đại 68 km/h và linh hoạt di chuyển trên mọi địa hình.&nbsp; Tính năng ấn tượng nhất của Velax H+ chính là di chuyển quãng đường dài gấp đôi so với phiên bản Velax. Dung lương pin LFP 72V-45Ah cho phép xe đi được tối đa 163 km / 1 lần sạc (trong điều kiện vận hành tiêu chuẩn).&nbsp; Vì vậy, YADEA Velax H+ được đánh giá là sự lựa chọn lý tưởng hàng đầu hướng tới nhóm người dùng ưa trải nghiệm hiệu suất cao.&nbsp; Công nghệ thông minh dẫn đầu xu thế&nbsp; Dòng xe máy điện thế hệ mới đại diện cho kỷ nguyên công nghệ của YADEA được tích hợp hệ thống điều khiển Aigo thông minh, mang lại cho người dùng lái xe thông minh với các chức năng được cung cấp:&nbsp; Mở khoá bằng Bluetooth Định vị xe, theo dõi hành trình Chia sẻ tài khoản gia đình cho phép nhiều người quản lý phương tiện Aisafety đây là tính năng thiết lập hàng rào điện tử giúp bảo vệ xe mọi lúc mọi nơi. Tính năng, tiện ích hiện đại&nbsp; YADEA Velax H+ được tối ưu an toàn với phanh đĩa CBS trên cả 2 bánh giúp tăng độ nhạy khi giảm tốc ở vận tốc lớn. Cùng với đó, giảm xóc thuỷ lực cao cấp đảm bảo cho xe di chuyển êm ái trên những địa hình xóc nảy.&nbsp; Vành xe được làm từ hợp kim cao cấp mang lại sự chắc chắn khi di chuyển. Lốp không săm giúp bám đường tốt và tránh trơn trượt khi đường ướt.&nbsp; Đèn full LED với đèn pha cung cấp góc chiếu rộng giúp di chuyển dễ dàng vào ban đêm và tăng khả năng nhận diện đối với các phương tiện xung quanh.&nbsp; Màn hình tinh thể lỏng LCD hiển thị sắc nét mọi thông số vận tốc, quãng đường, lượng điện… dễ dàng theo dõi.&nbsp; Cốp dưới yên được tối ưu rộng rãi nhờ thiết kế pin liền (không tháo rời) giúp để vật dụng dễ dàng từ mũ bảo hiểm, áo mưa, túi xách.&nbsp; Xe máy điện YADEA Velax H+ hội tụ thế mạnh cả về thiết kế, hiệu suất lẫn tính năng hứa hẹn giúp bạn tận hưởng việc di chuyển một cách đơn giản, hiện đại và tự tin. Để mua sản phẩm chính hãng, hãy đến ngay hệ thống showroom YADEA Việt Thanh trên toàn quốc. Liên hệ tới tổng đài 1900 2082 để được tư vấn chi tiết về sản phẩm, chính sách bảo hành và các chương trình ưu đãi mới nhất.",
+      "specs": {
+        "tocDo": "68 km/h",
+        "pin": "Pin lithium 72V-45Ah",
+        "quangDuong": "160 km / mỗi lần sạc",
+        "congSuat": "Hub Motor 2000W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13901",
+      "name": "Xe Máy Điện Yadea Velax U (2 Pin)",
+      "slug": "xe-may-dien-yadea-velax-u-2-pin",
+      "price": 52990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/01/xe-may-dien-yadea-velax-u-2-pin.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Yadea Velax U là mẫu xe máy điện hướng tới người dùng ưu tiên hiệu suất với trang bị 2 pin LFP chất lượng. Kết hợp tính năng công nghệ hiện đại, xe máy điện YADEA Velax U hứa hẹn tạo nên trải nghiệm sử dụng tuyệt vời. Dưới đây là thông tin mô tả chi tiết về sản phẩm. Ngoại hình hiện đại, mạnh mẽ Yadea Velax U 2 pin gây ấn tượng với sự kết hợp đường nét góc cạnh và hoạ tiết độc đáo. Cụm đèn LED trước được thiết kế sắc sảo, khẳng định phong cách thể thao. Đèn hậu mang hình logo thương hiệu là điểm nhận diện nổi bật của xe. Màu sắc trung tính với hai lựa chọn xanh lá, xanh dương giúp xe toát lên vẻ sang trọng và cao cấp. Yên ngồi được thiết kế nhô cao về phía sau mang lại tư thế lái xe khoẻ khoắn. Sàn để chân rộng rãi giúp người dùng điều chỉnh tư thế thoải mái khi di chuyển. Chiều dài tay lái vừa phải thuận tiện cầm nắm để điều khiển phương tiện linh hoạt. xe máy điện yadea velax u 2 pin Động cơ mạnh mẽ, ổn định Velax U 2 pin có công suất động cơ dẫn đầu trong phân khúc xe máy điện. Sức mạnh 3000W giúp xe đạt vận tốc tối đa 94 km/h, ngang khả năng của các dòng xe tay ga phân phối lớn. Cùng với đó là khả năng bứt tốc nhẹ nhàng, nhanh chóng và chinh phục mọi địa hình một cách dễ dàng. Hệ thống pin kép tăng hiệu suất vượt trội So với phiên bản Velax tiêu chuẩn, Velax U được trang bị hệ thống 2 pin LFP hiện đại. Với dung lượng mỗi pin 2,0kWh, xe có khả năng đạt được quãng đường tối đa 173 km sau khi sạc đầy. Thời gian sạc đầy 1 pin nhanh chóng, chỉ mất khoảng 5 tiếng. Đặc biệt, hệ thống pin được thiết kế tháo rời thuận tiện cho phép người dùng lựa chọn sử dụng 1 hoặc cả 2 pin tuỳ theo nhu cầu. Tính năng an toàn tiêu chuẩn cao Xe máy điện Velax U 2 pin được trang bị nhiều tính năng an toàn hiện đại. Hệ thống phanh đĩa được tích hợp công nghệ CBS giúp giảm tốc an toàn và kịp thời. Hệ thống đèn full LED với góc chiếu rộng, chiếu sáng tốt vào ban đêm giúp người dùng di chuyển an toàn. Giảm xóc thuỷ lực hấp thụ chấn động hiệu quả giúp xe di chuyển êm ái, ngay cả trên địa hình xấu hoặc tốc độ cao. Màn hình LCD hiển thị thông số sắc nét giúp người dùng dễ dàng theo dõi trong mọi điều kiện sáng. Ứng dụng thông minh trên Velax U cho phép người dùng khởi động từ xa, theo dõi vị trí GPS và lịch sử hàn trình. Ngoài ra, người dùng có thể chia sẻ quyền quản lý xe cho người khác. Tiện ích chất lượng Mẫu xe được thiết kế cốp rộng rãi giúp chứa mũ bảo hiểm và đồ dùng cá nhân cần thiết cho mỗi chuyến đi. Xe máy điện YADEA Velax U 2 pin chính hãng hiện được phân phối tại cửa hàng YADEA Việt Thanh. Khách hàng hãy đến ngay cửa hàng gần nhất để trải nghiệm trực tiếp sản phẩm hoặc gọi ngay tới tổng đài 1900 2082 của công ty để được tư vấn chi tiết.",
+      "specs": {
+        "tocDo": "94km/h",
+        "pin": "02 Pin lithium 74V-27Ah",
+        "quangDuong": "173km mỗi lần sạc",
+        "congSuat": "Hub Motor 3000W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13793",
+      "name": "Xe Máy Điện YADEA VoltGuard U50",
+      "slug": "xe-may-dien-yadea-voltguard-u50",
+      "price": 38990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/06/xe-may-dien-yadea-voltguard-u50-chinh-hang-2.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Yadea VoltGuard U50 sở hữu thiết kế mạnh mẽ, cá tính với đường nét sắc sảo và khung xe chắc chắn. Động cơ xe khỏe nên cho khả năng tăng tốc mượt mà và vận hành ổn định. Với phong cách cuốn hút và hiệu suất vượt trội, VoltGuard U50 là lựa chọn lý tưởng cho người thích sự mạnh mẽ. Thiết kế độc đáo tạo dấu ấn cá tính riêng Yadea VoltGuard U50 sở hữu thiết kế hiện đại, mạnh mẽ và đậm cá tính. Khung xe được chế tạo từ thép carbon Q235 chất lượng cao, kết hợp công nghệ kiểm tra kỹ thuật tiên tiến, mang lại độ bền vượt trội và khả năng chịu va chạm ấn tượng. Các đường nét góc cạnh cùng chi tiết tinh tế tạo nên vẻ ngoài năng động, nổi bật khi di chuyển. Thiết kế độc đáo, mạnh mẽ và khoẻ khoắn nên tạo dấu ấn cá tính riêng Đèn pha “LED Mắt Báo” đem đến ánh sáng rõ. Đồng hồ LED hiện đại đạt chuẩn chống nước IPX6 hiển thị rõ ràng mọi thông số vận hành. Các nút điều khiển được bố trí hợp lýcho phép người lái thao tác dễ dàng, mang lại trải nghiệm lái mượt mà, tiện lợi. Sàn để chân rộng rãi với chiều dài 287mm và yên xe dài 700mm siêu êm ái mang đến không gian thoải mái tối đa cho cả người lái lẫn người ngồi sau. Thiết kế này giúp duy trì tư thế vững vàng, giảm mệt mỏi trên những chặng đường dài, đồng thời góp phần tôn lên phong cách hiện đại, mạnh mẽ và đầy năng lượng của VoltGuard U50. Sàn để chân thoáng, yên xe êm tạo thoải mái cho người ngồi Sạc nhanh tiện lợi, pin nhẹ và an toàn vượt trội Yadea VoltGuard U50 được trang bị pin lithium dung lượng lớn 72V50Ah, cho phép xe di chuyển xa đến 200 km chỉ với một lần sạc. Pin lithium không chỉ bền bỉ, tuổi thọ cao mà còn tối ưu hiệu suất năng lượng, giúp duy trì công suất ổn định suốt quãng đường dài. Thời gian sạc đầy pin chỉ khoảng 5–6 giờ, mang lại sự tiện lợi và linh hoạt cho người dùng. Với thiết kế nhẹ và gọn, pin dễ dàng tháo lắp, đồng thời đảm bảo an toàn nhờ khả năng chống nhiệt, chống rò điện tốt. Tăng tốc nhanh, vận hành cực mượt Yadea VoltGuard U50 được trang bị động cơ 1500W mạnh mẽ, thiết kế mạch từ mới kết hợp dây đồng tối ưu, mang lại hiệu suất vượt trội lên tới hơn 90%. Động cơ này không chỉ giúp xe khởi động nhanh, phản hồi tức thì mà còn đảm bảo vận hành êm ái, mang đến trải nghiệm lái mượt mà và thoải mái trong mọi tình huống. Khả năng vận hành của xe mạnh mẽ, bứt tốc nhanh chóng Với khả năng bứt phá từ 0-30 km/h chỉ trong 4,31 giây và vận tốc tối đa đạt 63 km/h, VoltGuard U50 thể hiện sức mạnh vượt trội so với các mẫu xe điện cùng phân khúc. Công nghệ bảo vệ IP67 giúp động cơ chống nước, bụi bẩn và các tác nhân môi trường, đảm bảo độ bền lâu dài và hoạt động ổn định ngay cả khi di chuyển trong điều kiện thời tiết khắc nghiệt. Yadea VoltGuard U50 mang đến sự kết hợp hoàn hảo giữa sức mạnh, tốc độ và sự êm ái nên đã đáp ứng tốt nhu cầu di chuyển linh hoạt, bứt tốc nhanh chóng, mang đến cho người lái trải nghiệm hoàn hảo nhất. Điều khiển thông minh, linh hoạt và thuận tiện Yadea VoltGuard U50 sở hữu hệ thống thông minh, mang đến trải nghiệm tiện lợi và an toàn tối đa. Xe hỗ trợ kết nối không cần chìa khóa với nhiều phương thức mở khóa khác nhau: qua Yadea App, Bluetooth khi đến gần, Remote, hoặc khóa núm xoay. Người dùng có thể theo dõi tình trạng xe từ xa thông qua ứng dụng, bao gồm kiểm tra trạng thái pin, quãng đường di chuyển và cập nhật phần mềm OTA để nâng cấp tính năng mới liên tục. Xe tích hợp nhiều tính năng thông minh mang đến thuận tiện, an toàn Đặc biệt, Yadea VoltGuard U50 hỗ trợ chia sẻ tài khoản gia đình, cho phép tối đa 5 người cùng sử dụng và mở khóa xe dễ dàng từ xa. Hệ thống chống trộm thông minh với GPS định vị chuẩn xác, hàng rào điện tử, cảnh báo chuyển động bất thường và chế độ báo mất xe đảm bảo an toàn tuyệt đối. Nhiều tính năng tiện ích nổi bật VoltGuard U50 được trang bị nhiều tiện ích thông minh, mang lại sự thuận tiện và an toàn tối đa cho người dùng. Cụ thể gồm: &#8211; Xe sử dụng khóa núm xoay mở nguồn thông minh &#8211; Phanh đĩa trước và sau đảm bảo khả năng kiểm soát hiệu quả. &#8211; Lốp không săm giúp di chuyển an toàn và bền bỉ. &#8211; Xe có chế độ lái TTFAR/SPORT, đáp ứng nhu cầu di chuyển linh hoạt &#8211; Chân chống ngắt điện tự động khi được hạ xuống để bảo vệ người lái. &#8211; Cốp xe dung tích 20L rộng rãi, đủ chỗ cho balo, mũ bảo hiểm và nhiều vật dụng cá nhân.Cổng sạc USB tiện lợi giúp người dùng sạc điện thoại mọi lúc, ngay cả khi đang di chuyển. &#8211; Móc treo đồ dạng gập tăng thêm tiện ích, thuận tiện treo túi xách hay các vật dụng cá nhân khác. Nội dung trên đã chia sẻ chi tiết thông tin liên quan tới mẫu xe điện Yadea VoltGuard U50. Để đặt hàng hoặc tư vấn về giá thành, thủ tục hồ sơ khi mua thì hãy gọi ngay: 19002082 hoặc tham khảo qua website: yadeavietthanh.vn",
+      "specs": {
+        "congSuat": "Hub 1500W (tối đa 2800W)",
+        "tocDo": "63km/h",
+        "quangDuong": "200km (35km/h) cho mỗi lần sạc",
+        "pin": "Pin LFP 72V - 50Ah"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13954",
+      "name": "Xe Máy Điện Yadea VoltGuard U80 (Thêm Pin Phụ)",
+      "slug": "xe-may-dien-yadea-voltguard-u80",
+      "price": 38990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/03/xe-may-dien-yadea-voltguard-u80.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Xe Máy Điện Yadea VoltGuard U80 (Thêm Pin Phụ) - Xe điện Yadea chính hãng, bảo hành toàn quốc tại Yadea Tân Bình.",
+      "specs": {
+        "congSuat": "Hub 1500W (tối đa 2800W)",
+        "tocDo": "64 km/h",
+        "quangDuong": "200km (điều kiện tiêu chuẩn) cho mỗi lần sạc",
+        "pin": "Pin LFP 72V - 50Ah"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13751",
+      "name": "Xe Máy Điện YADEA X-Sky",
+      "slug": "xe-may-dien-yadea-x-sky",
+      "price": 11990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/03/xe-may-dien-yadea-x-sky-mau-trang-trang.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Bạn đang tìm kiếm một chiếc xe điện không chỉ mạnh mẽ, tiện dụng mà còn an toàn tuyệt đối? Hãy khám phá ngay Yadea X-Sky, mẫu xe máy điện mới nhất vừa được Yadea trình làng, hứa hẹn mang đến những trải nghiệm vượt trội. Yadea X-Sky khoác lên mình diện mạo hoàn toàn mới, là sự giao thoa tinh tế giữa vẻ đẹp tối giản, thanh lịch và phong cách hiện đại đầy cuốn hút. Từng đường nét trên xe đều được chăm chút tỉ mỉ, tạo nên một tổng thể hài hòa, khiến người đối diện không thể rời mắt ngay từ cái nhìn đầu tiên. Không chỉ đẹp mắt, X-Sky còn được thiết kế tối ưu hóa để mang lại trải nghiệm lái xe tuyệt vời nhất cho người dùng. Tư thế lái chuẩn công thái học giúp người lái luôn cảm thấy thoải mái, giảm thiểu tình trạng đau mỏi lưng, vai khi di chuyển trên những quãng đường dài. Đặc biệt, người dùng có thể dễ dàng tùy chỉnh vị trí ngồi linh hoạt, phù hợp với vóc dáng và sở thích cá nhân, mang lại cảm giác lái xe thoải mái và tự tin nhất. Điểm nhấn đặc biệt của Yadea X-Sky chính là tính năng an toàn tuyệt đối với chân chống ngắt điện. Đây là mẫu xe điện duy nhất trong phân khúc được trang bị tính năng này, giúp ngăn chặn các tình huống khởi động ngoài ý muốn, đặc biệt hữu ích khi đỗ xe hoặc khi có trẻ em tiếp xúc với xe. Khi chân chống được hạ xuống, hệ thống tự động ngắt điện, bảo vệ người dùng khỏi những nguy cơ tiềm ẩn. Tính năng này không chỉ mang lại sự an tâm tuyệt đối cho người dùng trong mọi hoàn cảnh. Không chỉ dừng lại ở thiết kế và tính năng an toàn, Yadea X-Sky còn sở hữu khả năng vận hành ấn tượng. Động cơ điện thế hệ mới với công suất lớn giúp xe vận hành mạnh mẽ, dễ dàng chinh phục những con dốc cao hay chở nặng. Bộ điều khiển FOC (Field-Oriented Control) giúp xe vận hành mượt mà, khởi động êm nhẹ và tăng tốc nhanh chóng. Công nghệ này không chỉ tối ưu hóa hiệu suất vận hành mà còn mang đến sự ổn định và tiết kiệm năng lượng cho xe. Hệ thống giảm xóc thủy lực cả trước và sau mang lại khả năng vận hành ổn định và êm ái trên mọi địa hình, giúp người lái luôn cảm thấy thoải mái và dễ chịu. Khi sở hữu Yadea X-Sky, người dùng sẽ được hưởng chế độ bảo hành vượt trội lên đến 2 năm hoặc 20.000 km, mang lại sự yên tâm tuyệt đối trong suốt quá trình sử dụng. Đặc biệt, Yadea còn áp dụng chế độ bảo hành lỗi 1 bình đổi 1 bộ, giúp người dùng tiết kiệm chi phí bảo trì và luôn đảm bảo xe hoạt động trong trạng thái tốt nhất. Với thiết kế đẹp mắt, tính năng an toàn vượt trội, khả năng vận hành mạnh mẽ và chế độ bảo hành ưu đãi, Yadea X-Sky là mẫu xe điện lý tưởng dành cho những người trẻ năng động, yêu thích phong cách và luôn muốn chinh phục những thử thách mới.",
+      "specs": {
+        "tocDo": "34 km/h",
+        "pin": "Graphene 48V-22Ah",
+        "quangDuong": "65km mỗi lần sạc",
+        "congSuat": "Hub 350W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13738",
+      "name": "Xe máy điện YADEA V002 U Pin Lithium",
+      "slug": "xe-may-dien-yadea-v002-u-pin-lithium",
+      "price": 45990000,
+      "salePrice": 38990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/02/4.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Phiên bản nâng cấp thông minh của dòng xe máy điện YADEA V002, xe Voltguard V002 Pin Lithium được mang tới thị trường năm 2025. Với nhiều cải tiến thay đổi, mẫu xe này sẽ mang đến cho bạn những bất ngờ đặc biệt. Sau đây là thông tin giới thiệu chi tiết về Voltguard U các khách hàng hãy tham khảo. Đánh giá xe máy điện YADEA V002 U Pin Lithium diện mạo mới Mẫu xe máy điện Voltguard V002 U – Pin Lithium có diện mạo hấp dẫn với hoạ tiết xuất hiện trên thân sườn đậm chất thể thao, cá tính cùng với các đường nét hầm hố. Với thiết kế này, mẫu xe phù hợp cho người dùng năng động, yêu thích hiện đại. Bên cạnh đó, ở phiên bản cao cấp, những lựa chọn màu sắc dành cho Voltguard V002 U – Pin Lithium cũng được chú trọng, mang sự độc đáo và thu hút. Thiết kế cao lớn của xe máy điện Voltguard V002 Pin Lithium cũng tạo ra tính phong khoáng và không gian rộng rãi cho người sử dụng. Mặt yên thoáng dành cho 2 người, khu vực để chân tạo thành góc vuông thoải mái và tay lái điều khiển vừa vặn. Để có được hình thức trọn vẹn, YADEA V002 U được trang bị những chi tiết đáng giá. Chiếc đèn pha cực lớn ở đầu xe kết hợp với cặp xi nhan hình tam giác phía dưới tạo nên mặt trước sắc sảo và mạnh mẽ. xe máy điện yadea voltguard u pin lithium mới nhất 2025 Xe máy điện YADEA V002 vận hành siêu bứt phá Trang bị cải tiến hàng đầu trên xe máy điện Voltguard V002 Pin Lithium là động cơ công nghệ TTFAR với công suất mạnh nhất hiện nay. Động cơ in-hub đặt ở bánh sau. Truyền động trực tiếp. Thông số định danh 3000 W. Nhưng thực tế tối đa có thể lên tới 4250 W ấn tượng. Giúp phương tiện thực hiện mọi hành trình một cách đơn giản. Khối động cơ cho vận tốc tối đa đạt 76k m/h. Quá ấn tượng cho một mẫu xe đô thị. Như vậy, khi các bạn đi đường lớn hoặc ra ngoại thành, vận tốc ấn tượng sẽ tăng trải nghiệm lái. Không còn cảm thấy một chiếc xe máy điện là “chậm chạp” nữa. Công nghệ động cơ TTFAR được áp dụng dành cho xe máy điện V002 Pin Lithium ổn định, mạnh mẽ, an toàn Điểm cộng rất lớn tiếp theo của xe máy điện là trang bị dòng Pin Lithium với dung lượng cao đặc biệt. Với thông số là 72V-50Ah. Chắc chắn sẽ mang đến hành trình dài lý tưởng. Theo thông số của hãng YADEA, V002 U sẽ có thể đạt 130 Km sau một lần sạc (điều kiện tiêu chuẩn). Một thông tin chắc chắn sẽ giúp khách hàng yên tâm. Đó là dòng pin lithium của YADEA sử dụng là loại pin sắt LFP. Đây chính là dòng pin tương tự như hãng xe VinFast đang sử dụng trên các mẫu xe máy điện. Ưu điểm đáng chú ý nhất của pin LFP là giúp đảm bảo an toàn hơn, hạn chế nguy cơ cháy nổ. Nếu có vấn đề về pin, các cell pin chỉ xì khói, chứ không phát ra tia lửa. Như vậy sẽ hạn chế tối đa nguy cơ cháy nổ trên xe máy điện. Tuổi thọ của pin lithium LFP trên V002 U thật ấn tượng. Tuổi thọ pin xe có thể vận hành từ 3 – 5 năm, thậm chí còn cao hơn. Riêng về chế độ bảo hành, YADEA cũng đang có rất nhiều ưu đãi cho khách hàng. Thời gian bảo hành pin là 3 năm. Tức là 36 tháng hoặc 30.000 km (tùy điều kiện nào đến trước). Trong đó, Pin Lithium được đổi mới nếu giãn nở, nứt, cháy nổ, bốc khói tự nhiên. Hoặc dung lượng giảm dưới 80% (trong 1-36 tháng) là được đổi mới rồi. Các tiện ích hiện đại trên xe máy điện YADEA V002 U Pin Lithium Các tính năng, tiện ích vượt trội khác Các tiện ích thông minh trên xe máy điện YADEA V002 U – Lithium mang lại trải nghiệm chưa từng có cho người sử dụng. Bạn có thể bắt đầu với việc khởi động xe bằng tính năng mở khoá đa dạng và thú vị như sử dụng app điện thoại, kết nối bluetooth, remote, dùng núm xoay. Màn hình đồng hồ rộng 8.4 inch tích hợp LED hiển thị thông tin dữ liệu chân thực và nhiều màu sắc giúp người dùng dễ dàng nắm bắt. Nhiều trang bị đặc biệt khác cũng có mặt trên xe máy điện YADEA V002 hỗ trợ tăng tiện nghi đáng kể cho người sử dụng. Với thiết kế móc nhỏ bên ngoài, bạn có thể những vật dụng nhỏ gọn. Bên dưới là cốp siêu rộng chứa được nhiều đồ dùng hơn. Ngoài ra, xe máy điện còn tích hợp cổng sạch USB cho người dùng sạc các thiết bị điện quan trọng. Xe máy điện YADEA V002 U Pin Lithium đã về hàng tại Yadea Việt Thanh. Đây cũng là một trong những sự lựa chọn đang cực kỳ HOT hiện này. Bạn hãy liên hệ qua Tổng Đài hỗ trợ 19002082 của YADEA Việt Thanh để được tư vấn kỹ lưỡng hơn về sản phẩm.",
+      "specs": {
+        "tocDo": "Trên 50 km/h",
+        "pin": "Pin Lithium 72V-50Ah",
+        "quangDuong": "200 km / 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13935",
+      "name": "Xe Máy Điện Yadea iCandy (Thiên Năng)",
+      "slug": "xe-may-dien-yadea-icandy",
+      "price": 14790000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/03/xe-may-dien-yadea-iCandy.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Mẫu xe điện mang tên gọi “kẹo ngọt” YADEA iCandy bước vào thị trường năm 2026 mang đến cho giới trẻ một lựa chọn thú vị. Diện mạo trẻ trung cùng các công nghệ thông minh hứa hẹn đem đến trải nghiệm di chuyển hàng ngày năng động và tiện lợi. Tham khảo ngay thông tin chi tiết về sản phẩm này sau đây. Thiết kế nhỏ gọn, trẻ trung&nbsp; YADEA iCandy khác biệt so với các dòng xe máy điện phổ thông ở kích thước nhỏ gọn. Kiểu dáng cong thon gọn và các màu sắc tươi sáng giúp mẫu xe trở nên trẻ trung và năng động. Cùng với đó, cụm đèn chiếu sáng trước và sau được thiết kế tối giản cung cấp thêm vẻ hiện đại và cá tính.&nbsp; Xe có chiều cao yên tương đối thấp 755mm phù hợp cho người dùng có vóc dáng nhỏ nhắn. Yên xe có độ cong nhẹ ở chính giữa, đặc biệt là sàn để sân rộng rãi mang đến chỗ ngồi thoải mái. Khoảng sáng gầm 145mm giúp leo dốc hay lội đường ngập thấp dễ dàng.&nbsp; xe máy điện yadea iCandy Động cơ và ắc quy chất lượng YADEA iCandy sở hữu động cơ TTFAR với công suất định mức 240W &#8211; tối đa 430W cho xe đạt vận tốc 14 km/h và vận hành mượt mà. Ắc quy được trang bị cho xe có dung lượng 48V20Ah cho phép di chuyển tối đa 70km/lần sạc (trong điều kiện vận hành tiêu chuẩn).&nbsp; xe máy điện yadea iCandy Hệ thống đèn full Led cao cấp&nbsp; Toàn xe được trang bị đèn LED cao cấp với cường độ ánh sáng mạnh mẽ giúp người dùng dễ dàng quan sát khi đi vào ban đêm.&nbsp; Màn hình LED hiện đại&nbsp; YADEA ICandy được trang bị màn hình LED 6.3 inch với độ sáng vượt trội hiển thị thông số (vận tốc, quãng đường, lượng pin…) rõ ràng giúp người lái theo dõi dễ dàng trong mọi điều kiện sáng. Các tính năng an toàn&nbsp; Xe được trang bị hai phanh cơ chất lượng giúp giảm tốc độ an toàn trong mọi trường hợp.&nbsp; Giảm xóc chắc chắn đảm bảo xe di chuyển nhẹ nhàng, êm ái trên mọi địa hình. Tiện ích, tính năng hiện đại&nbsp; Mẫu xe có cốp chứa đồ rộng 15L giúp chứa vừa mũ bảo hiểm hoặc các vật dùng cần thiết.&nbsp; Phía trước xe được trang bị thêm hộc chứa đồ và móc treo đồ giúp người dùng linh hoạt hơn trong mỗi hành trình.&nbsp; Hai chế độ lái Eco/Sport giúp người dùng vận hành xe tuỳ theo địa hình và ý muốn.&nbsp; Smartkey được trang bị cung cấp đa dạng tính năng hữu ích: khởi động từ xa, kích hoạt chống trộm và cảnh bảo lăn bánh.&nbsp; Trên đây là thông tin chi tiết về sản phẩm xe máy điện YADEA iCandy. Để mua xe điện YADEA chính hãng, giá tốt kèm theo chính sách bảo hành uy tín của nhà sản xuất, khách hàng hãy đến showroom YADEA Việt Thanh hoặc liên hệ qua tổng đài 1900 2082 của công ty để được tư vấn và hỗ trợ đặt hàng trực tuyến.",
+      "specs": {
+        "congSuat": "240w",
+        "pin": "Thiên Năng 48V-20Ah",
+        "tocDo": "14 km/h",
+        "quangDuong": "70km (Theo điều kiện tiêu chuẩn) / 1 lần sạc"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-dap-dien"
+      ]
+    },
+    {
+      "id": "13705",
+      "name": "Xe máy điện YADEA ORIS",
+      "slug": "xe-may-dien-yadea-oris",
+      "price": 22990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2022/12/xe-may-dien-yadea-oris-2-1.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Bạn đang cần tìm một mẫu xe điện thời trang, kiểu dáng Vespa mà thông minh thì đừng bỏ qua YADEA ORIS. Xe YADEA Oris được định vị là mẫu xe hướng đến hội chị em. Hoặc người làm về thời trang, cá tính. Thiết kế dáng Vespa thời trang, cổ điển Tổng thể xe đi theo lối scooter cổ điển đậm chất châu Âu. Điểm nhấn đặc biệt là phần kính chắn gió phía trước cao khoảng 25cm. Tạo nên một tổng thể xe vừa nữ tính, và rất thời trang. Giúp thỏa mãn mong muốn sở hữu một mẫu xe độc lạ, không đụng hàng. xe-may-dien-yadea-oris Phần yên xe nổi bật với màu nâu đậm sang chảnh. Đệm yên siêu êm ái, đàn hồi sâu. Vỏ bọc ngoài là da công nghiệp, độ bóng tốt. Dễ dàng vệ sinh và lau chùi. Bạn có thể kéo dãn vỏ yên, mà không lo bị biến dạng. Nhanh chóng trở lại trạng thái ban đầu. Vận hành êm ái, cực “chiều” người dùng Mẫu YADEA Oris được sản xuất để làm hài lòng hội chị em. Từ dáng ngồi đến thói quen sử dụng của khách hàng di chuyển hàng ngày. Chiều cao yên xe khiêm tốn khoảng 760mm. Nên các bạn cao khoảng 1m50 trở lên đã có thể ngồi vừa chân. Sàn để chân rộng cũng giúp các bạn ngồi thoải mái, thẳng lưng. Ngoài tư thế ngồi thoải mái, lái xe Oris cũng êm ái. Xe sử dụng động cơ khoảng 1200W mạnh mẽ. Vậy nên cảm giác xe không bị quá ì, lên dốc 2 người vẫn được. Xe đi êm ái nhờ hệ thống giảm xóc ống lồng phía trước, cặp lò xo kép phía sau. Xe được trang bị phanh đĩa cả bánh trước và sau. Vậy nên cực kỳ yên tâm khi di chuyển trong phố phường. Hệ thống Xe điện Việt Thanh tự hào là đơn vị luôn có hàng sớm nhất các mẫu xe hãng YADEA. Các bạn yêu thích mẫu Oris có thể đặt hàng trước để nhận được nhiều ưu đãi nhé. Hoặc ghé hệ thống gần 30 cửa hàng của Xe điện Việt Thanh trên toàn quốc tại đây!",
+      "specs": {
+        "tocDo": "50 km/h",
+        "pin": "72V - 22Ah",
+        "quangDuong": "Gần 100 km / 1 lần sạc",
+        "congSuat": "1200 W (tối đa 2500W)"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13626",
+      "name": "Xe máy điện YADEA OSSY",
+      "slug": "xe-may-dien-yadea-ossy",
+      "price": 23190000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/05/xe-may-dien-yadea-ossy-thumbnail-vuong.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Bạn đang cần tìm một mẫu xe điện thời trang, ấn tượng thì đừng bỏ qua YADEA OSSY. Một mẫu xe mới đang bán rất chạy tại thị trường Châu Âu được hãng YADEA đưa về Việt Nam. Xe YADEA Ossy được định vị là mẫu xe hướng đến hội chị em. Hoặc người làm về thời trang, cá tính. Thiết kế độc lạ, cổ điển thời thượng Tổng thể xe đi theo lối scooter cổ điển đậm chất châu Âu. Điểm nhấn đặc biệt là phần kính chắn gió phía trước cao khoảng 25cm. Tạo nên một tổng thể xe vừa nữ tính, và rất thời trang. Giúp thỏa mãn mong muốn sở hữu một mẫu xe độc lạ, không đụng hàng. Phần yên xe nổi bật với màu nâu đậm sang chảnh. Đệm yên siêu êm ái, đàn hồi sâu. Vỏ bọc ngoài là da công nghiệp, độ bóng tốt. Dễ dàng vệ sinh và lau chùi. Bạn có thể kéo dãn vỏ yên, mà không lo bị biến dạng. Nhanh chóng trở lại trạng thái ban đầu. Vận hành êm ái, cực “chiều” người dùng Mẫu YADEA Ossy được sản xuất để làm hài lòng hội chị em. Từ dáng ngồi đến thói quen sử dụng của khách hàng di chuyển hàng ngày. Chiều cao yên xe khiêm tốn khoảng 760mm. Nên các bạn cao khoảng 1m50 trở lên đã có thể ngồi vừa chân. Sàn để chân rộng cũng giúp các bạn ngồi thoải mái, thẳng lưng. Ngoài tư thế ngồi thoải mái, lái xe Ossy cũng êm ái. Xe sử dụng động cơ khoảng 1200W mạnh mẽ. Vậy nên cảm giác xe không bị quá ì, lên dốc 2 người vẫn được. Xe đi êm ái nhờ hệ thống giảm xóc ống lồng phía trước, cặp lò xo kép phía sau. Xe được trang bị phanh đĩa cả bánh trước và sau. Vậy nên cực kỳ yên tâm khi di chuyển trong phố phường. Hệ thống Xe điện Việt Thanh tự hào là đơn vị luôn có hàng sớm nhất các mẫu xe hãng YADEA. Các bạn yêu thích mẫu Ossy có thể đặt hàng trước để nhận được nhiều ưu đãi nhé. Hoặc ghé hệ thống gần 30 cửa hàng của Xe điện Việt Thanh trên toàn quốc tại đây!",
+      "specs": {
+        "tocDo": "50 km/h",
+        "pin": "72V - 22Ah",
+        "quangDuong": "Gần 100 km / 1 lần sạc",
+        "congSuat": "1200 W (tối đa 2500W)"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13936",
+      "name": "Xe máy điện Yadea Ova",
+      "slug": "xe-may-dien-yadea-ova",
+      "price": 18190000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/03/xe-may-dien-yadea-ova.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Năm 2026, YADEA cho ra mẫu xe máy điện YADEA Ova mang đến phong cách sành điệu đầy tươi mới và trải nghiệm hiện đại, tiện nghi hướng đến người dùng trẻ. Xem mô tả chi tiết dưới đây để hiểu rõ hơn về mẫu xe này.&nbsp; Thiết kế nhỏ gọn, sành điệu&nbsp; YADEA Ova theo đuổi phong cách sành điệu, nhẹ nhàng được thể hiện qua những đường cong mượt mà trên thân xe. Cùng với đó là kích thước nhỏ gọn tạo nên cảm giác bắt mắt và dễ chịu. Mẫu xe sở hữu những phối màu sơn mới lại cao cấp giúp diện mạo thêm cá tính và giữ được độ bền đẹp theo thời gian. Các lựa chọn bao gồm: trắng ngà &#8211; đỏ chili; trắng ngà &#8211; xanh rêu; vàng cam đất &#8211; trắng ngà; xanh thuỷ hạ &#8211; trắng ngà;&#8230; Bên cạnh đó, các chi tiết đèn trên xe cũng gây ấn tượng mạnh với hình khối tối giản, nhỏ gọn tạo nên cái nhìn hiện đại và trẻ trung.&nbsp;&nbsp; Ngoài vẻ đẹp hấp dẫn, thiết kế xe còn mang tính tiện lợi với yên ngồi thấp 740mm giúp người dùng dễ dàng chống chân. Ngoài ra, mặt yên được chia thành các ô oval tăng độ bám khi ngồi. Khoảng sáng gầm 140mm giúp xe lên dốc và lội nước an toàn. Tay lái &#8211; sàn để chân &#8211; yên tạo thành một góc tối ưu, đảm bảo tư thế lái xe thoải mái.&nbsp; xe máy điện yadea ova Động cơ và ắc quy mạnh mẽ Xe máy điện YADEA Ova được trang bị động cơ TTFAR cao cấp có công suất động cơ định mức 350W &#8211; tối đa 1450W; lực momen xoắn định mức 5.8 Nm và vận tốc cực đại 44 km/h. Điều này giúp xe tăng tốc nhanh và di chuyển một cách linh hoạt trên đường phố. Công nghệ TTFAR với chức năng thu hồi điện năng vừa đi vừa sạc cho xe di chuyển quãng đường xa hơn. Ắc quy Graphene TTFAR dung lượng 60V-22Ah có độ bền cao (hơn 1300 lần sạc) và duy trì hiệu suất ổn định, giúp xe đạt được quãng đường trên 60 km mỗi lần sạc đầy.&nbsp; Các tính năng hiện đại thông minh xe máy điện yadea ova Trang bị phanh đĩa trước tối ưu an toàn giúp dừng xe nhanh chóng và nhẹ nhàng trong những trường hợp khẩn cấp.&nbsp;&nbsp; Công nghệ LED được tích hợp cho toàn bộ đèn trên xe giúp người dùng quan sát rõ ràng trong điều kiện thiếu sáng.&nbsp; Hệ thống điều khiển thông minh Aigo Pro được kết nối với điện thoại thông minh cung cấp đa dạng tính năng: khởi động xe từ xa chỉ với 1 chạm, kích hoạt chống trộm, quản lý phương tiện… mang lại trải nghiệm hiện đại và tiện lợi cho người sử dụng.&nbsp; Xe được trang bị thêm khoá remote và khoá cơ giúp người dùng có nhiều phương án khởi động xe thuận tiện.&nbsp; Màn hình 5,5 inch hiển thị sắc nét các thông số vận hành quan trọng: vận tốc, quãng đường, lượng điện… giúp người dùng dễ dàng theo theo dõi.&nbsp; Tiện ích chất lượng Mẫu xe sở hữu cốp rộng rãi, dung tích 17L cho phép chứa nhiều vật dụng cần thiết như mũ bảo hiểm, áo mưa…&nbsp; Xe máy điện YADEA Ova được phân phối chính hãng tại hệ thống showroom YADEA Việt Thanh trên toàn quốc. Khách hàng hãy đến ngay địa chỉ gần nhất hoặc nhấc máy gọi ngay tới tổng đài 1900 2082 của chúng tôi để được tư vấn chi tiết về sản phẩm, các chương trình ưu đãi và chính sách bảo hành mới nhất.",
+      "specs": {
+        "tocDo": "42 km/h",
+        "pin": "Graphene 60V - 22Ah",
+        "quangDuong": "70 km / 1 lần sạc",
+        "congSuat": "1100 W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "12931",
+      "name": "Ắc Quy Yadea TTFAR 60V-26Ah",
+      "slug": "ac-quy-yadea-ttfar-60v-26ah",
+      "price": 4450000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2023/12/Thumbnail-ac-quy-yadea-ttfar-60v26ah.jpg",
+      "category": "ac-quy",
+      "featured": false,
+      "description": "Ắc quy Yadea TTFAR 60V-26Ah là dòng ắc quy Graphene thế hệ mới của nhà Yadea. Cùng đánh giá một số điểm nổi bật của dòng ắc quy này bạn nhé. Tổng quan về ắc quy TTFAR 60V-26Ah Đối với một chiếc xe điện thì ắc quy. Pin sử dụng trên xe là một vấn đề được người dùng quan tâm hàng đầu. Một chiếc xe điện dùng được bền lâu hay không thì chủ yếu được quyết định bởi ắc quy của chiếc xe đó. Bởi ắc quy sau thời gian sử dụng thì sẽ bị chai pin, phải thay bình mới. Hiện nay trên thị trường chủ yếu sử dụng các loại bình ắc quy axit chì trên xe máy điện. Graphene là một loại vật liệu siêu dẫn điện mới. Đã được đội ngũ nghiên cứu sản phẩm Yadea ứng dụng vào công nghệ sản xuất ắc quy trên các dòng xe điện. Ắc quy của hãng Yadea có thể sạc lên tới 1300 lần. Gấp 5 lần so với ắc quy thông thường chỉ có tuổi thọ từ 250-300 lần sạc mà thôi. Điều này giúp cho ắc quy TTFAR Yadea có tuổi thọ tương đương 3-5 năm, một con số cực kì ấn tượng. Ắc quy Yadea TTFAR 60V-26Ah Mẫu ắc quy TTFAR 60V-26Ah này được sử dụng trên các dòng xe máy điện mới nhà Yadea như Odora Pro, Orla. Đây đều là 2 mẫu xe máy điện phiên bản cao cấp của nhà Yadea. Thời gian bảo hành tốt nhất thị trường Hiện tại, ắc quy của nhà Yadea đang có chế độ bảo hành tốt nhất thị trường lên đến 18 tháng. Trong khi các dòng ắc quy khác chỉ bảo hành 6 tháng hoặc 1 năm mà thôi. Khi mua xe, bạn sẽ nhận được chế độ bảo hành cực tốt. Lỗi 2 bình đổi toàn bộ một bộ bình ắc quy. Có thể nói chất lượng của ắc quy cực kì tốt. Nếu không hãng Yadea cũng không thể đưa chế độ bảo hành như vậy được. Hiện tại, mẫu ắc quy Yadea TTFAR 60V-26Ah đang được bán tại Xe điện Việt Thanh với mức giá 4.500.000. Đây là một mức giá rất phù hợp với chất lượng. Bạn muốn mua ắc quy hãy ghé ngay cửa hàng Xe điện Việt Thanh để mua xe nhé.",
+      "specs": {},
+      "categories": [
+        "ac-quy"
+      ]
+    },
+    {
+      "id": "13572",
+      "name": "Xe máy điện YADEA I-Cute",
+      "slug": "xe-may-dien-yadea-i-cute",
+      "price": 15490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-icute.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Dòng xe máy điện YADEA i-Cute ra mắt năm 2023 sở hữu phong cách trẻ trung rất phù hợp với học sinh. Sau đây, hãy khám phá những chi tiết chính tạo nên dấu ấn của mẫu xe này. YADEA i-Cute với thiết kế siêu dễ thương Đây là một trong số ít xe máy điện ngoài thị trường hiện nay sở hữu sự dễ thương đúng nghĩa trong phong cách. Tên gọi i-Cute cùng với hoạ tiết xinh xắn là những chú mèo trên thân xe đã cho biết ngay về điều này. Dòng xe máy điện hiện đại, năng động với thiết kế bo tròn và kích thước nhỏ gọn toát lên sự ngộ nghĩnh. Màu sắc ngọt ngào, tươi tắn cũng góp phần tạo nên một mẫu xe điện trẻ trung, cá tính. Đây là điều thú vị giúp lôi cuốn ánh nhìn. Xe máy điện i-Cute nổi bật với phần đèn pha LED lớn hình vuông trước mặt nạ. cho thấy sự độc đáo và hiện đại. Hai đèn xi nhan tròn được thiết kế đặc biệt, đặt ở phía trên gần với tay lái. Dòng xe máy điện có chức năng vận hành như thế nào? Mẫu xe máy điện nhỏ gọn và dịu dàng đi cùng khả năng vận hành mềm mại, uyển chuyển. Động cơ xe sở hữu có công suất 400W trung bình và tối đa lên tới 1000W. Phương tiện có thể đạt vận tốc khoảng 30 km/h. Xe máy điện YADEA i-Cute có thể giúp phương tiện vận hành dễ dàng trong thành phố. Động cơ GTR độc quyền cũng có độ bền cao để bạn sử dụng xuyên suốt thời gian dài. Động cơ vận hành ấn tượng của mẫu xe máy điện YADEA i-Cute Trang bị ắc quy Graphene thông số 48V-26Ah giúp cho phương tiện có thể đi được khoảng 60km sau mỗi lần sạc nhờ đầy. Ắc quy Graphene hiện được đánh giá là ắc quy tối ưu nhất trên thị trường. Trang bị tiện ích cho xe máy điện YADEA i-Cute YADEA i-Cute với những trang bị chất lượng giúp phương tiện hỗ trợ người dùng điều khiển xe an toàn, thoải mái và tiện lợi. Trang bị phanh: dòng xe sử dụng phanh tang trống trên hai bánh xe với độ bền mang lại cực cao; đồng thời tay phanh cũng rất dễ dàng bóp và thả. Đèn pha công nghệ LED: với ba bóng đèn giúp tăng cường mức độ sáng để người dùng dễ dàng quan sát xung quanh. Cốp: với phần cốp sâu và rộng được thiết, người dùng có thể đựng nhiều vật dụng cần thiết khi cần ra ngoài. Tiện ích chống trộm: với tính năng này, người dùng có thể kích hoạt để bảo vệ phương tiện khi phải gửi xe ở ngoài, có thể phát hiện vấn đề khẩn cấp bất kỳ lúc vì xe được tích hợp còi báo động và đèn nháy. Đồng hồ hiển thị: thiết kế mặt đồng hồ tròn cá tính, hiện đại hiển thị thông số to rõ ràng. Địa chỉ mua xe YADEA i-Cute chính hãng Xe máy điện YADEA i-Cute chính hãng hiện được phân phối tại hệ thống&nbsp;YADEA Việt Thanh. Bạn có thể liên hệ ngay tới Tổng đài hỗ trợ 19002082 để được nhân viên tư vấn hỗ trợ.",
+      "specs": {
+        "tocDo": "30 km/h",
+        "pin": "Graphene TTFAR 48V - 22Ah",
+        "quangDuong": "50 km / 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13966",
+      "name": "Xe Máy Điện Yadea iCute H",
+      "slug": "xe-may-dien-yadea-icute-h",
+      "price": 15490000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/04/xe-may-dien-yadea-icute-h-2.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe Máy Điện Yadea iCute H - Xe điện Yadea chính hãng, bảo hành toàn quốc tại Yadea Tân Bình.",
+      "specs": {
+        "tocDo": "38 km/h",
+        "pin": "Graphene TTFAR 48V - 22Ah",
+        "quangDuong": "70 km / 1 lần sạc",
+        "congSuat": "TTFAR 350W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13571",
+      "name": "Xe máy điện YADEA M6i",
+      "slug": "xe-may-dien-yadea-m6i",
+      "price": 17990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-m6i.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "M6i là mẫu xe máy điện của thương hiệu YADEA, bước vào thị trường Việt Nam hồi năm 2021. Dòng xe thời trang cho thấy sự mới mẻ về thiết kế, thể hiện nét dịu dàng nữ tính chính vì vậy đã nhận được sự chú ý rất lớn của các khách hàng nữ. Thiết kế dẫn đầu xu hướng Dòng xe máy điện YADEA M6i dẫn đầu xu hướng với thiết kế tổng thể mới lạ, bo tròn ở phần trước và thân sườn. Nhiều bộ phận khác có sự đẹp mắt và lôi cuốn về kiểu dáng. YADEA M6i bứt phá diện mạo vượt trội, nhờ điều này mà dòng xe trở nên cực kỳ hấp dẫn trong mắt người tiêu dùng. Xe máy điện YADEA M6i đại diện cho phong cách trẻ trung, năng động với sự nhỏ gọn về kích thước và màu sắc tươi tắn, bóng sáng. Có các sự lựa chọn trắng, lam, đỏ mang lại nhiều phong cách khác nhau cho người dùng. Hình thức của YADEA M6i có sự hiện đại nhờ thiết kế đèn pha độc đáo nổi trên trên mặt trước với kích thước lớn. Trong khi hai chi tiết đèn xi nhan lại cực kỳ nhỏ gọn, sự đối lập này khiến phần nhìn của M6i càng đặc biệt hơn. Bên cạnh đó, ba chi tiết đèn sau của phương tiện lại sở hữu chung kiểu dáng. Nhìn chung, toàn bộ đèn trên xe máy điện M6i chính là yếu tố xây dựng nên hình thức độc lạ và ấn tượng cho sản phẩm. Khả năng vận hành của xe máy điện YADEA M6i Xe máy điện YADEA M6i với công nghệ TTFAR tiên tiến độc quyền mang tới hiệu suất tăng thêm 35% so với thông thường. Dòng xe sử dụng động cơ có cấu trúc cuộn dây đơn đem lại công suất ấn tượng 600W, công suất max lên tới 1200W. Do vậy, phương tiện có khả năng di chuyển vượt địa hình tốt và ổn định. Vận tốc của xe khá cao do thừa hưởng công suất lớn từ động cơ, mức cao nhất đạt khoảng 43 Km/h. Dòng xe cũng được trang bị loại ắc quy cao cấp nhất hiện nay là Graphene với ưu điểm tuổi thọ kéo dài. Ắc quy cho thời gian sử dụng kéo dài từ 3-5 năm tương đương số lần sạc &#8211; xả là 1300. Nếu người dùng cần tới một dòng xe với hiệu suất tốt thì YADEA M6i sẽ đáp ứng nhu cầu của bạn một cách hoàn hảo. Trang bị tiện ích trên xe máy điện YADEA M6i Ưu điểm của dòng xe máy điện YADEA M6i chính là những trang bị cải tiến của nhà sản xuất dành cho sản phẩm. Những tiện ích hướng tới độ bền và sự hiệu quả giúp cải thiện chất lượng trải nghiệm cho người sử dụng. Đèn công nghệ LED: đèn pha với cụm bóng đèn lớn chiếu ánh sáng mạnh mẽ, rõ ràng giúp người dùng an toàn trong khi điều khiển xe. Các chi tiết đèn khác cũng với khả năng chiếu sáng chất lượng hỗ trợ tối đa cho việc lái xe. Trang bị phanh đĩa: loại phanh được chủ yếu sử dụng cho các dòng xe máy điện đời mới cải tiến. Phanh đĩa mang lại hiệu quả phanh tốt, an toàn và độ bền cao. Đồng hồ hiển thị: màn hình tròn tinh thể lỏng (LCD) hiển thị thông số với sắc màu đa dạng, sinh động dễ dàng cho người dùng theo dõi. Cốp rộng: thể tích cốp 18L rộng rãi cho bạn để vừa những vật dụng lớn như túi xách, mũ bảo hiểm&#8230; Hai chế độ lái Eco duy trì vận hành với vận tốc trung bình khoảng 30Km/h và Power cho bạn cảm nhận sự tốc độ, có thể chạm tới mức vận tốc tối đa khi lái xe ở chế độ này. Xe máy điện YADEA M6i chính hãng hiện đang được phân phối chính hãng tại hệ thống YADEA Việt Thanh. Khách hàng có thể liên hệ Tổng Đài 19002082 để được nhân viên tư vấn chi tiết về sản phẩm.",
+      "specs": {
+        "tocDo": "max 45km/h",
+        "pin": "60V - 22 Ah",
+        "quangDuong": "max 101km (tùy biến theo tải trọng)",
+        "congSuat": "Yadea TTFAR"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13440",
+      "name": "Xe máy điện YADEA Ocean",
+      "slug": "xe-may-dien-yadea-ocean",
+      "price": 16990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-ocean-2023.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Mẫu xe máy điện YADEA Ocean ra mắt ở thời điểm giữa năm 2023 với phong cách mới đã tạo nên một sự bùng nổ mạnh mẽ, được rất nhiều người tiêu dùng quan tâm đặc biệt. Thiết kế tổng quát của YADEA Ocean Xe máy điện YADEA Ocean với hình thức đặc biệt, đây chính xác là mẫu xe đại diện cho xu hướng hiện đại với kiểu dáng được cách điệu; sự hoà trộn của đa dạng đường cong mang tới phong cách đầy phóng khoáng nhưng cũng cho thấy dấu ấn thời trang. Mẫu xe máy điện YADEA Ocean với hình thức hiện đại, phong cách phóng khoáng Mẫu xe được thiết kế liền mạch cho thấy sự hoàn chỉnh tuyệt đối. Phần thân sườn với nhiều điểm nhấn lạ mắt, bao gồm đường viền nổi ở mặt bên phải, dải hoạ tiết độc lạ bên trái hợp với tên và logo YADEA. Đầu xe được gắn tấm chắn giúp tạo thẩm mỹ. Mẫu xe Ocean có thiết kế chiều ngang lớn cho diện tích sàn để chân và yên ngồi rộng rãi với người sử dụng, nhìn chung có sự tiện nghi. Khoảng sáng gầm lớn tăng chiều cao cho phương tiện, đồng thời là ưu điểm giúp xe leo dốc. YADEA Ocean sử dụng các màu sơn cao cấp, sự đa dạng và tươi sáng mà các gam màu mang lại khiến mẫu xe thêm phần bắt mắt và càng trở nên thu hút. Xe máy điện với chức năng vận hành linh hoạt YADEA Ocean mang tới khả năng vận hành linh hoạt. Dòng xe với công suất động cơ định mức 600W, song thực tế vận tốc tối đa có thể đạt lên đến 1500W. Với hiệu suất lớn, xe máy điện có thể hoạt động linh hoạt, chinh phục đa dạng địa hình mang tới sự hiệu quả tối đa cho người sử dụng. Vận tốc xe có thể đạt lên tới 50Km/h. Động cơ xe máy điện YADEA Ocean với khả năng phục vụ vận hành ấn tượng Dòng xe máy điện YADEA Ocean được nhà sản xuất trang bị ắc quy làm từ vận liệu siêu dẫn Graphene mang đến hiệu suất vượt trội. Dung lượng ắc quy lớn 60V22Ah, giúp lưu trữ nhiều năng lượng. Đồng thời tích hợp sẵn công nghệ TTFAR nên phương tiện có khả năng thu hồi và tái tạo hiệu năng để sử dụng lại, cho nên không cần sạc xe thường xuyên. Chính vì vậy, YADEA Ocean sẽ giúp bạn tiết kiệm chi phí đáng kể. Động cơ xe máy điện Ocean có chức năng chống nước đạt tiêu chuẩn IPX7. Điều này giúp tăng độ bền và cho phương tiện khả năng thích nghi với điều kiện trời mưa, đường ngập. Các tính năng trang bị trên YADEA Ocean Xe máy điện YADEA Ocean có nhiều điểm đáng chú ý về tiện ích. Tất cả những sự cải tiến hiện đại trên phương tiện nhằm mang lại sự an toàn và thoải mái cho mọi người sử dụng, nên thương hiệu YADEA trong quá trình sản xuất đã đầu tư nghiên cứu rất kỹ. Xe máy điện mới YADEA Ocean mang lại cho người dùng trải nghiệm thú vị với nhiều tiện ích hiện đại Hệ thống an toàn trên dòng xe được đảm bảo với phanh đĩa hiện đại, được áp dụng cho xe điện đời mới. Và phuộc giảm xóc giúp cải thiện độ êm ái khi vận hành. Dòng xe trang bị chân chống trợ lực đặc biệt giúp nữ giới dễ dàng dựng xe mà không tốn nhiều sức lực. Xe máy điện mới được cung cấp Smartkey có chức năng khoá chống trộm, nên người dùng không phải lo lắng khi gửi xe ở nơi khác mà sợ mất cắp. Màn hình LCD hiện đại là trang bị giúp bạn dễ dàng theo dõi và nắm bắt thông tin vận hành về quãng đường, vận tốc, các chức năng đèn của phương tiện. Xe máy điện YADEA Ocean chính hãng được phân phối tại YADEA Việt Thanh. Liên hệ qua Tổng đài 19002082 để được nhân viên tư vấn hỗ trợ.",
+      "specs": {
+        "tocDo": "49 km/h",
+        "quangDuong": "80km mỗi lần sạc",
+        "pin": "TTFAR 60V-22Ah"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13663",
+      "name": "Xe máy điện YADEA S3",
+      "slug": "xe-may-dien-yadea-s3",
+      "price": 20990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/10/xe-may-dien-yadea-s3-yadeavietthanh.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện YADEA S3 là mẫu xe mang diện mạo đậm sự mạnh mẽ, chắc chắn và đầy cá tính. Chính bởi vậy, hiện đây là mẫu xe được khá nhiều bạn nam yêu thích và lựa chọn. Bên cạnh đó, phần động cơ xe cũng được đánh giá cao bởi sự mạnh mẽ. Để hiểu rõ hơn về mẫu xe này, hãy cùng YADEA Việt Thanh tham khảo nội dung thông tin qua bài viết sau. Ngoại hình chắc chắn và khoẻ khoắn Bất kỳ ai cũng dễ dàng nhận thấy YADEA S3 sở hữu thiết kế gần giống với một chiếc tay ga cỡ lớn mang đậm phong cách thể thao. Kích thước dài x rộng x cao của xe lần lượt là 1860×715×1100mm kết hợp với trọng lượng xe khoảng 118kg nên có thể thấy đây là chiếc xe có kích thước khá lớn, trọng lượng tương đối nặng và có sự đầm chắc. Đường nét trên xe mang đường gấp, xẻ thẳng vuông vức nên không chỉ gia tăng sự chịu lực của vỏ mà còn khiến xe trở nên cứng cáp, khoẻ mạnh và nam tính hơn. Logo xe được dập nổi nằm ở bên hông nên càng gia tăng sự nhận diện của người dùng đối với hãng YADEA. Hiện xe máy điện YADEA S3 có 3 màu cơ bản để người mua lựa chọn, cụ thể gồm: đỏ, đen, trắng. Xe có 5 lớp và được sử dụng sơn nhập khẩu chất lượng cao nên không chỉ mang đến sự đẹp mắt mà độ bền màu còn được đánh giá cao. Thiết kế xe máy điện YADEA S3 khoẻ khoắn, mang đậm tính thể thao Sở hữu ắc quy Graphene TTFAR bền bỉ Xe máy điện Yadea S3 được hãng trang bị ắc quy Graphene TTFAR với dung lượng 72V-22Ah. Điều này có nghĩa ắc quy không chỉ giúp lưu trữ điện năng lớn mà độ bền bỉ khá cao khi có thể đạt 1300 lần sạc ( tương đương khoảng 5 năm sử dụng) Mặt khác, nhờ đó xe chỉ cần một lần sạc pin đầy có thể di chuyển quãng đường dài 90km. Một con số ấn tượng và hơn rất nhiều so với những dòng ắc quy thông thường khác. Phần vỏ bình ắc quy được làm bởi nhựa ABS nên độ bền luôn được đánh giá cao. Hạn chế việc biến dạng, phồng rộp hoặc rò rỉ những dung dịch ra bên ngoài. Động cơ xe máy điện YADEA S3 có hiệu suất cao Theo đánh giá thì mẫu xe máy điện YADEA S3 sở hữu hiệu suất cao nên việc di chuyển luôn có sự ổn định. Nguyên nhân bởi xe có sự trang bị của khối động cơ GTR với công suất định mức khoảng 1.200W và tối đa khoảng 2.400W. So với nhiều dòng xe máy điện thể thao khác hiện có mặt trên thị trường thì đây là con số khá ấn tượng. Bên cạnh đó, vận tốc tối đa xe có thể đạt được khoảng 54km/h. Điều này sẽ giúp bạn tăng tốc nếu khi cần di chuyển nhanh đến đích cũng như k xảy ra tình trạng xe bị ì ạch hoặc di chuyển chậm gây ảnh hưởng lớn đến công việc của bạn. Động cơ xe YADEA S3 mạnh mẽ nên việc di chuyển luôn ổn định, êm mượt Hệ thống chống trộm đảm bảo an toàn Xe máy điện YADEA S3 được sở hữu nùm khoá Smartkey cao cấp nên khi sử dụng bạn có thể: mở cốp, mở khoá xe và khoá cổ xe. Mặt khác, xe cũng được trang bị hệ thống chống trộm thông minh. Điều này giúp cho việc bảo vệ chiếc xe được an toàn hơn với các tính năng như: Khoá bánh tự động, tìm xe, cảnh báo, hệ thống chống trộm,&#8230; giúp cho bạn quản lý được dễ dàng. Phanh xe được trang bị chắc chắn Mẫu xe máy điện YADEA S3 có sự trang bị hệ thống phanh đĩa cho cả trước và sau, piston được đối xứng cùng phần mâm phanh lớn rất đảm bảo tính năng an toàn cho người điều khiển. Phần má phanh có sự đối xứng nên việc di chuyển luôn an toàn; sẽ không có tình trạng tay lái bị lắc, đảo hay thậm chí bánh xe bị khoá khi bạn thực hiện phanh. Hệ thống phanh xe chắc chắn, luôn được đảm bảo an toàn Hệ thống đèn LED có sự chiếu sáng tốt YADEA S3 sở hữu hệ thống đèn Full LED với phần đầu có 4 cụm đèn pha chiếu sáng cùng 2 đèn kép chuyển hướng được thiết kế đường vòng cung. Việc chiếu sáng không chỉ rõ nét mà còn có góc chiếu sáng xa và rộng để người lái tiện quan sát, né tránh vật cản khi cần thiết. Phần đèn hậu lớn có ánh sáng phân tâng nên việc nhận diện dễ dàng. Người di chuyển phía sau luôn kịp thời nhìn để né tránh. Hệ thống đèn xe full LED nên luôn đảm bảo ánh sáng khi di chuyển Một số tính năng nổi bật khác Ngoài những tính năng nổi bật về xe máy điện YADEA S3 được kể trên thì mẫu xe còn sở hữu nhiều tính năng khác như: &#8211; Công nghệ chống nước đạt chuẩn IPX6 nên việc di chuyển dưới trời mưa luôn thoải mái. Không sợ tình trạng xe bị chết máy. &#8211; Cốp xe rộng để người dùng thoải mái chứa đồ đi làm hoặc đi học. &#8211; Xe có cổng sạc USB nên khi điện thoại hết pin bạn có thể tiến hành sạc ngay tức khắc. &#8211; Mọi nút công tắc trên xe đều được bố trí khoa học mang lại sự tiện lợi cho người lái. &#8211; Thiết kế xe phù hợp với dáng người Việt Nam nên việc chống chân hay giữ thăng bằng khá dễ dàng. Nếu bạn yêu thích mẫu xe máy điện YADEA S3 và mong muốn sở hữu chúng ngay hôm nay thì hãy liên hệ ngay qua số Hotline: 19002082 tham khảo nhiều mẫu xe máy điện khác tại cửa hàng YADEA Việt Thanh ngay hôm nay nhé!",
+      "specs": {
+        "tocDo": "50 km/h",
+        "pin": "Graphene TTFAR 72V-22 Ah",
+        "quangDuong": "90 km / 1 lần sạc",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13665",
+      "name": "Xe Máy Điện YADEA S3 PRO",
+      "slug": "xe-may-dien-yadea-s3-pro",
+      "price": 22990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/10/xe-may-dien-yadea-s3-pro-yadeavietthanh.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện S3 Pro là phiên bản nâng cấp của YADEA S3, sản phẩm chất lượng của thương hiệu YADEA. Với dấu ấn đặc biệt của hình thức và tính năng, dòng xe này đã chinh phục nhiều khách hàng, đặc biệt là giới trẻ. Xem chi tiết về mẫu xe ngay sau đây. Thiết kế hầm hồ, năng động, khoẻ khoắn Xe máy điện YADEA S3 Pro mang ngoại hình khoẻ khoắn, mạnh mẽ, đậm chất một mẫu xe thể thao. Kiểu dáng có sự cứng cáp được tạo nên bởi cách góc cạnh cùng với đó là những sắc màu cá tính là loại sơn mạ cao cấp có độ bền cao. YADEA S3 Pro được thiết kế dựa trên bộ khung kim loại vững chắc và bên ngoài là lớp vỏ áo dày nên chiếc xe có độ đầm chắc. Tải trọng xe máy điện theo đó khá lớn lên tới 180Kg dễ dàng cho bạn chở thêm người hoặc đồ phía sau. Thiết kế mẫu xe điện tạo sự thoải mái cho người sử dụng với yên không quá cao (750mm) có độ dốc vừa phải, cách tay lái không quá xa; sàn để chân rộng rãi. Mẫu xe được thiết kế sàn chân rộng rãi YADEA S3 Pro vận hành chất nhờ động cơ độc quyền cao cấp Gây ấn tượng về ngoại hình, bên cạnh đó, YADEA S3 Pro còn ghi dấu mạnh mẽ về hiệu suất vận hành. Nhờ trang bị động cơ độc quyền GTR YADEA đem đến công suất 1000W, cho xe di chuyển một cách linh hoạt, vượt mọi điều kiện dễ dàng như leo dốc, đi đường khó. Vận tốc tối đa là 50Km/h, kết hợp với mức công suất trên thì xe máy điện S3 YADEA phù hợp cho người chưa có bằng lái. Cùng với đó, không thể thiếu trang bị ắc quy dung lượng &#8220;khủng&#8221; 72v-38Ah, xe đảm bảo cho bạn một hành trình cực xa. Động cơ GTR được trang bị cho xe máy điện YADEA S3 Pro có hiệu suất cao Hệ thống đèn full LED tăng cường chiếu sáng YADEA S3 Pro với thiết kế dải đèn pha kết hợp xi nhan chia ngăn độc lạ tăng sự cá tính, quan trọng hơn là được trang bị lõi đèn LED tạo ra ánh sáng trắng, trong cực kỳ mạnh mẽ. Đèn đuôi kích thước lớn, vuông vắn phù hợp với dáng xe, đồng thời ra tín hiệu tốt. Mặt trước xe góc cạnh kết hợp đèn độc lạ Đảm bảo an toàn với phanh đĩa Với trang bị phanh đĩa gắn ở bánh xe trước, YADEA S3 Pro hoàn toàn đảm bảo an toàn. Dù trên địa hình nào, bạn cũng yên tâm vì bộ phận phanh sẽ hỗ trợ giữ an toàn tuyệt đối. YADEA S3 Pro đảm bảo an toàn với phanh đĩa Trang bị cặp giảm xóc mang lại độ êm Hệ thống giảm xóc thuỷ lực cao cấp trên xe máy điện là trang bị hoàn hảo giúp nâng tầm trải nghiệm người dùng. Giảm xóc trải qua thử nghiệm nâng cao cho kết quả tuyệt vời, nguyên vẹn không bị biến dạng. Chính vì vậy, khi sử dụng xe, bạn sẽ luôn cảm thấy êm ái. Loạt tiện ích tuyệt vời cho trải nghiệm tiện lợi Xe máy điện S3 Pro chưa thể coi là hoàn hảo nếu thiếu đi những tiện ích dưới đây. Cụm đồng hồ điện tử tinh thể lỏng rộng 5.3 inch giúp bạn quan sát thông số dễ dàng hơn, thuận tiện khi lái xe. Các thông số được hiển thị đầy đủ bao gồm vận tốc, quãng đường, lượng Pin được chia theo vạch, tín hiệu đèn. Thiết kế cốp sâu và rộng nê người dùng có thể cất, đựng đồ thoải mái, đặc biệt là khi phải đi xa. Xe máy điện YADEA S3 Pro được thiết kế cốp sâu, rộng Cụm công tắc được bố trí hai bên tay lái, thuận tiện để nhán nút. Khoá núm hiện đại, dễ dàng thao tác nên người dùng chỉ cần xoay núm đơn giản để mở ra. Đồng thời khoá này cũng thực hiện thêm các chức năng khác như: mở cốp, khoá cổ xe. Xe máy điện YADEA S3 Pro là một mẫu xe tuyệt vời sẽ cho bạn trải nghiệm sử dụng đáng nhớ và trên hết là cực kỳ hiệu quả. Liên hệ Tổng đài 19002082 của yadeavietthanh.vn để được tư vấn và hỗ trợ mua sản phẩm.",
+      "specs": {
+        "tocDo": "65 km/h",
+        "pin": "Graphene TTFAR 72V-38Ah",
+        "quangDuong": "150 km / 1 lần sạc",
+        "congSuat": "YADEA GTR"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13413",
+      "name": "Xe máy điện YADEA V002 (VFV)",
+      "slug": "xe-may-dien-yadea-v002",
+      "price": 27990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/03/xe-dien-yadea-voltguard-p.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "V002 Voltguard xuất hiện đã mang đến một cái nhìn hoàn toàn mới về xe máy điện, mang nhiều ưu điểm vượt trội để chứng tỏ đây là dòng xe xứng đáng dẫn đầu thị trường hiện nay. Hãy cùng tìm hiểu chi tiết hơn về sản phẩm này. Đánh giá xe máy điện YADEA V002 thông qua thiết kế Xe máy điện YADEA V002 được thiết kế theo xu hướng hiện đại, có sự cân xứng giữa kiểu dáng và kích thước. Đường nét vừa cứng cáp vừa uyển chuyển tạo nên phong cách đầy tinh tế. Dòng xe sở hữu kích thước tổng thể lớn, ngang tầm những xe tay ga chạy xăng phân khối lớn như SH Mode, Vision&#8230; Với thông số đo cụ thể lần lượt là 1924mm x 660mm x 1138mm, điều này giúp tăng phạm vi không gian sử dụng cho người điều khiển đặc biệt là các phần yên ngồi và sàn chân thoáng rộng, tạo sự thoải mái. Diện mạo xe máy điện YADEA V002 đậm chất hiện đại Dòng xe lộ diện với mặt nạ chữ V phá cách, đầu xe có đèn pha LED cực lớn. Đây là những cách điệu quan trọng giúp nâng tầm diện mạo xe máy điện thành sự cá tính vô cùng mạnh mẽ. YADEA Voltguard V002 với việc sở hữu diện mạo đặc trưng đặc biệt ấn tượng cho thấy dấu ấn đáng ghi nhớ mà nhà sản xuất YADEA để lại trên thị trường. Xe máy điện YADEA V002 vận hành siêu bứt phá Dòng xe máy điện YADEA V002 được trang bị động cơ cải tiến. Đây là dấu ấn lớn nhất giúp mẫu xe trở nên bứt phá và có sự cạnh tranh so với những đối thủ hàng đầu. Xe Máy Điện Yadea V002 Volt Guard P Công nghệ động cơ được YADEA sử dụng là hệ thống TTFAR tích hợp tới 6 chức năng trên 6 bộ phận quan trọng hàng đầu của phương tiện. Công nghệ mới được áp dụng đã tăng cường hiệu suất của xe máy điện V002, với công suất định mức 1500W đi kèm vận tốc thiết kế tối đa đạt tới 60Km/h. Bất ngờ hơn nữa khi YADEA đã công bố dòng xe có công suất tối đa lên tới 3000W, một thông số cao đặc biệt. Dòng xe máy điện Voltguard V002 được trang bị nguồn cấp điện bằng ắc quy Graphene thế hệ cao cấp với dung tích lớn 72V-38Ah. Bộ phận tích trữ điện hiệu quả, an toàn đồng thời có khả năng tiết kiệm điện năng nhờ công nghệ TTFAR, chính vì vậy một lần sạc phương tiện có thể đi quãng đường dài 200Km. Tiện ích vượt trội và đặc biệt trên YADEA V002 Trang bị trên xe máy điện YADEA V002 Voltguard với hệ thống phanh đĩa cao cấp, hỗ trợ phanh an toàn, hiệu quả trong mọi trường hợp. Đồng thời phuộc xe gồm hai loại ống lồng và lò xo giúp phương tiện êm ái hơn trong khi di chuyển. Dòng xe sử dụng đèn LED với độ sáng cao giúp quan sát dễ dàng Xe máy điện YADEA Voltguard V002 được tích hợp bảng đồng hồ điện tử thông minh, màn hình LCD với thông số lớn, hiển thị rõ ràng, dễ theo dõi. Các tiện ích hiện đại trên xe điện Yadea V002 Volt Guard P. Xe được trang bị Smartkey nhiều chức năng: khởi động, tìm xe, khoá chống trộm&#8230; bạn có thể thao tác từ xa với xe cực kỳ dễ dàng và thuận tiện. Nhiều trang bị đặc biệt khác cũng có mặt trên xe máy điện YADEA V002 hỗ trợ tăng tiện nghi đáng kể cho người sử dụng. Với thiết kế móc nhỏ bên ngoài, bạn có thể những vật dụng nhỏ gọn. Bên dưới là cốp siêu rộng chứa được nhiều đồ dùng hơn. Ngoài ra, xe máy điện còn tích hợp cổng sạch USB cho người dùng sạc các thiết bị điện quan trọng. Xe máy điện YADEA V002 Voltguard là dòng xe hàng đầu xét về thiết kế và tiện ích. Đây cũng là một trong những sự lựa chọn đang cực kỳ HOT hiện này. Bạn hãy liên hệ qua Tổng Đài hỗ trợ 19002082 của YADEA Việt Thanh để được tư vấn kỹ lưỡng hơn về sản phẩm.",
+      "specs": {
+        "tocDo": "50km/h",
+        "pin": "Graphene TTFAR 72V - 38Ah",
+        "quangDuong": "100km / 1 lần sạc",
+        "congSuat": "Hub"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13505",
+      "name": "Xe máy điện YADEA Vigor (Thiên Năng)",
+      "slug": "xe-may-dien-yadea-vigor",
+      "price": 17990000,
+      "salePrice": 16190000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-vigor.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Thương hiệu YADEA đã ra mắt mẫu xe máy điện Vigor với hình thức ấn tượng, phong cách theo đuổi xu hướng hiện đại. Dòng xe nhìn chung phù hợp với thị hiếu của đại đa số khách hàng Việt. Hình thức mang đầy vẻ mới lạ của YADEA Vigor Xe máy điện YADEA Vigor sở hữu kiểu dáng mới; toàn xe được thiết kế bo tròn đẹp mắt. Kích thước nhỏ gọn, chiều cao yên thấp tạo nên sự tiện lợi cho người điều khiển. Hình thức xe máy điện YADEA Vigor YADEA Vigor mang dấu ấn của sự hiện đại với một số chi tiết khác biệt so với thông thường. Đầu xe dẹt, đằng trước có dải đèn LED trang trí tạo thêm nổi bật. Mặt nạ phía dưới có đèn định vị dọc ở chính giữa và khu vực hốc lớn để đặt đèn pha. Sự đa dạng của các loại đèn chiếu đã khiến hình thức xe máy điện YADEA Vigor trông mới lạ và ấn tượng hơn. Mẫu xe có phần yên tròn, bề mặt rộng rãi giúp người ngồi thoải mái. Đêm yên cao cấp mềm mại mang đến sự dễ chịu. Chức năng vận hành ổn định của YADEA Vigor Dòng xe máy điện YADEA Vigor được trang bị loại động cơ độc quyền GTR 3.0 của YADEA với công suất định danh 600W, tối đa lên tới 1200W. Động cơ cao cấp giúp phương tiện vận hành hiệu quả, vận tốc tối đa đạt được khoảng 45km/h vừa đủ để bạn thực hiện di chuyển an toàn. Động cơ xe máy điện YADEA Vigor Xe máy điện YADEA Vigor sử dụng ắc quy Graphene cao cấp và tiết kiệm điện năng. Dung tích ắc quy lớn 60V – 22Ah giúp thực hiện được đoạn đường dài đến 80km sau mỗi lần sạc. Tuổi thọ ắc quy kéo dài, trải qua 1000 chu trình sạc &#8211; xả. Các trang bị khác trên xe máy điện YADEA Vigor Trang bị khác trên YADEA Vigor bao gồm những bộ phận cao cấp hỗ trợ vận hành hiệu quả và đảm bảo an toàn. Đèn LED trên xe vừa có khả năng chiếu sáng tạo hiệu ứng đẹp mắt, song vấn đề hàng đầu là tạo ánh sáng chất lượng giúp người dùng có thể quan sát, nhận diện người xung quanh dễ dàng nhất là khi lái xe vào trời tối. Thiết kế đèn trên xe máy điện YADEA Vigor Với phanh đĩa sử dụng cho bánh trước, người điều khiển có thể cho phương tiện giảm tốc hiệu quả và ổn định. Phanh sau là phanh cơ với độ bền cao. Dòng xe máy điện được trang bị tính năng điều khiển thông minh thông qua Smartkey. Ngoài ra, xe có chế đọ chống trộm với 6 tính năng hiện đại như khoá bánh, báo động còi,&#8230; Xe máy điện YADEA Vigor có phần cốp dưới yên rộng rãi nên người dùng có thể đựng nhiều vật dụng cần thiết. Xe máy điện YADEA Vigor chính hãng hiện đang có mặt tại YADEA Việt Thanh. Khách hàng vui lòng liên hệ Tổng Đài hỗ trợ 19002082 được nhân viên tư vấn chi tiết về sản phẩm và hỗ trợ mua hàng.",
+      "specs": {
+        "tocDo": "49 km/h",
+        "pin": "60V - 20Ah",
+        "quangDuong": "65-70km",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh"
+      ]
+    },
+    {
+      "id": "13482",
+      "name": "Xe máy điện YADEA X-bull",
+      "slug": "xe-may-dien-yadea-x-bull",
+      "price": 14490000,
+      "salePrice": 12990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/12/xe-may-dien-yadea-x-bull-mau-xanh-2.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "YADEA X-bull với hình thức lạ nhất trong số các dòng xe điện bò điên hiện nay. Dòng xe của YADEA cũng được kỳ vọng vào khả năng mạnh mẽ hơn so với các dòng xe còn lại trong phân khúc. Hình thức xe điện YADEA X-bull Dòng xe điện YADEA X-Bull sở hữu thiết kế nhỏ gọn, tối giản nhưng phong cách toát lên rõ sự khoẻ khoắn và trẻ trung. Ngoại trừ hai vành chắn bùn cong thì các các đường nét còn lại trên dòng xe đều cho thấy sự cứng cáp, góc cạnh. Hình thức xe máy điện Yadea Xbull YADEA X-Bull có cấu trúc tối ưu, chiều dài từ sàn để chân tới cuối đuôi xe lớn cho người dùng xe nhiều không gian để điều chỉnh tư thế khi lái xe, tạo sự thoải mái và tiện nghi. YADEA đã thiết kế khung bằng thép đồng thời kích thước nhỏ 1600 × 600 × 1100 (mm) tạo cảm giác rất chắc chắn cho tổng thể xe điện X-bull. Khả năng động cơ của xe điện YADEA X-bull Xe điện X-bull được trang bị động cơ công nghệ TTFAR độc quyền của YADEA với công suất định mức 600W, tối đa lên tới 1000W. Mẫu xe điện nhỏ gọn mang tới hiệu suất tốt có khả năng vận hành dễ dàng, vượt qua mọi địa hình. Động cơ xe máy điện YADEA Xbull Động cơ của xe điện mang khả năng chống nước theo tiêu chuẩn IPX7. Chính vì vậy phương tiện có thể đáp ứng việc vận hành trong điều kiện đường ngập khoảng 30 – 50cm. Được trang bị cho xe điện YADEA X-bull là ắc quy Graphene dung tích 48V – 22Ah, một lần sạc phương tiện có thể vận hành tối đa 60Km. Tiện ích quan trọng khác trên YADEA X-bull Xe máy điện YADEA X-bull được trang bị nhiều chi tiết hấp dẫn về hình thức và chức năng. Nổi bật hàng đầu là hệ thống đèn LED toàn xe, mặt trước đáng chú ývới đèn pha hình dạng logo thương hiệu cho thấy sự cao cấp. Thiết kế đèn pha đặc biệt ấn tượng trên xe máy điện YADEA Xbull Phanh trang bị cho xe điện X-bull với dây phanh được bọc vỏ PVC. Má phanh được làm từ chất liệu có độ bền cao, chống mài mòn và hoạt động hiệu quả. Tiện ích hiện đại có trên dòng xe X-bull mà người dùng có thể khám phá là chức năng mở khoá bằng chìa NFC, quẹt trực tiếp lên màn hình xe. Chìa khoá được tích hợp thêm tính năng chống trộm. Hỗ trợ tính năng có đèn và còi cảnh báo, trong tình huống khẩn cấp, các thiết bị sẽ hoạt động để báo hiệu. Mặt đồng hồ rộng 5,3 inch, công nghệ LCD hiển thị thông số đa sắc màu đẹp mắt, dễ dàng quan sát và theo dõi. Xe điện YADEA X-bull với trang bị nâng cấp toàn diện và thiết kế ấn tượng chính là dòng xe đặc biệt thích hợp dành cho giới trẻ. Khách hàng có nhu cầu mua xe và cần tư vấn vui lòng liên hệ Tổng Đài hỗ trợ 19002082 của YADEA Việt Thanh.",
+      "specs": {
+        "tocDo": "38 km/h",
+        "pin": "48V - 20Ah",
+        "quangDuong": "Max 60 km - Eco (tùy biến theo tải trọng)",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13907",
+      "name": "Xe máy điện YADEA X-bull H",
+      "slug": "xe-may-dien-yadea-x-bull-h",
+      "price": 14490000,
+      "salePrice": 13990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/01/xe-may-dien-yadea-x-bull-h.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Xe máy điện YADEA X-bull H phiên bản nâng cấp với diện mạo và tính năng đột phá mang đến cho người dùng cảm xúc trải nghiệm mới lạ. Thông tin chi tiết về thiết kế và tính năng của mẫu xe này sẽ được giới thiệu sau đây. Diện mạo hầm hố và uy lực Thiết kế YADEA X-bull H nâng tầm phong cách thể thao mạnh mẽ với những đường nét góc cạnh. Mặt nạ trước chính là tâm điểm với đèn pha vuông vức và cặp xi nhan mắt cáo tăng vẻ hiện đại. Màu sắc mới lạ gồm xanh, đen, xám xi măng và xám chì mang lại cho xe sự trẻ trung và cá tính. Kích thước mẫu xe nhỏ gọn với chiều cao yên 750mm giúp người dùng chống chân vừa vặn. Khung chắc chắn cho phép chở tối đa trọng lượng 75 kg. Khoảng sáng gầm 150mm giúp xe di chuyển dễ dàng, tránh va chạm. xe máy điện yadea x-bull h Công suất tăng, vận hành mạnh mẽ Phiên bản YADEA X-bull H được tăng cường thêm công suất lên mức tối đa 1000W và công nghệ chống nước IPX7. Nhờ đó, xe có thể đạt vận tốc 40 km/h và di chuyển linh hoạt, ổn định trong mọi điều kiện thời tiết. Bên cạnh đó là khả năng leo hầm ấn tượng với độ dốc 8 độ. Công nghệ hỗ trợ vận hành hiện đại X-bull H là mẫu xe điện đầu tiên được YADEA trang bị công nghệ vận hành an toàn, giúp người dùng luôn chủ động trong mọi hành trình. Công nghệ HDC (hỗ trợ đổ đèo) giúp kiểm soát tốc độ, tự động điều chỉnh vận tốc ở mức chậm giúp xe xuống dốc an toàn, giảm thiểu rủi ro trượt bánh. Công nghệ TCS (kiểm soát lực kéo) đảm bảo xe vận hành một cách chắc chắn trong điều kiện đường ướt trơn trượt. Ắc quy độc quyền bền bỉ Xe được trang bị ắc quy Graphene chất lượng 48V22Ah cho phép di chuyển quãng đường tối đa 70 km/lần sạc. Ắc quy độc quyền của YADEA có độ bền và tính an toàn cao giúp người dùng thoải mái sử dụng. xe máy điện yadea x-bull h Tính năng hiện đại, an toàn Hệ thống phanh tang trống trước sau với dây phanh sử dụng vỏ PVC tăng độ bền, giúp dừng xe an toàn trong mọi tình huống. Hệ thống đèn full LED cao cấp với ốp acrylic có độ trong 92% hỗ trợ người lái quan sát dễ dàng khi di chuyển vào buổi tối Màn hình LED kích thước 6,3 inch hiển thị thông số sắc nét và chi tiết giúp người dùng theo dõi dễ dàng. Công nghệ điều khiển Aigo tích hợp, mang đến trải nghiệm lái xe thông minh. Người dùng có thể mở khoá xe qua Bluetooth nhanh chóng; thiết lập nhận diện và bảo mật và chia sẻ tài khoản gia đình thuận tiện. Xe máy điện YADEA X-bull H chính hãng được phân phối tại cửa hàng YADEA Việt Thanh trên toàn quốc. Khách hàng hãy đến ngay địa chỉ gần nhất để mua xe. Ngoài ra, bạn có thể liên hệ tổng đài 1900 2082 của Việt Thanh để được hỗ trợ.",
+      "specs": {
+        "tocDo": "40km/h",
+        "pin": "Ắc quy Graphene 48V-22Ah",
+        "quangDuong": "70 Km / lần sạc (tùy biến theo tải trọng)",
+        "congSuat": "Hub 400W"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13721",
+      "name": "Xe máy điện YADEA X-zone",
+      "slug": "xe-may-dien-yadea-x-zone",
+      "price": 14990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/12/Anh-web.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Nhỏ gọn, dáng cao ráo, nam tính hơn, đi khỏe hơn là những điểm cải tiến đáng chú ý trên mẫu xe điện YADEA X-Zone 2024 mới này. Ngoại hình xe điện Yadea X-Zone 2024 Nhìn thoáng qua chắc chắn bạn sẽ thấy quen mắt. Bởi mẫu xe này là phiên bản cải tiến từ thiết kế đến chất lượng của mẫu xe Yadea X-Bull. Xe được sơn bóng cá tính và thể thao. Vành bánh xe trên phiên bản mới lớn hơn, tăng khả năng an toàn cho xe. Chiều cao yên 770mm nên xe khá phù hợp với các bạn học sinh có chiều cao tốt. Cao từ khoảng 1m45 trở lên sẽ ngồi vừa. Xe máy điện Yadea X-Zone không có quá nhiều chi tiết. Tạo nên phong cách khỏe khoắn, năng động. Trọng lượng xe chỉ 75kg nên di chuyển dễ dàng. Nổi bật ờ phần đầu xe là đèn pha Led thiết kế theo logo của hãng giúp xe độc đáo hơn. Ưu điểm của đèn pha này là khoảng chiếu sáng rộng hơn, xa hơn, rõ ràng hơn và an toàn hơn. Tương tự như các mẫu&nbsp;xe máy điện Yadea&nbsp;khác, mặt đèn pha xe X-Bull cũng được xử lý tia UV. Giúp tăng độ trong suốt, chống ố vàng sau thời gian dài sử dụng. Động cơ cùng khả năng vận hành trên Yadea X-Zone 2024 Yadea X-Zone được trang bị khối động cơ công nghệ GTR độc quyền. Đây là công nghệ do hãng nghiên cứu, phát triển và sản xuất. Xe có hai chế độ lái, phù hợp đi trong phố phường. Xe được trang bị 4 bình ắc quy 48V-22Ah khoẻ khoắn. Quãng đường đi xa tới 70km/1 lần sạc. Động cơ mạnh mẽ nên khả năng leo dốc&nbsp; hầm chung cư hay cầu vượt cũng tốt hơn. Xét về khả năng chống nước thì các mẫu xe máy điện đến từ hãng Yadea không bao giờ làm người dùng phải thất vọng. Xe máy điện Yadea X-Zone được trang bị công nghệ chống nước đạt chuẩn IPX6 cho toàn xe. Như vậy bạn hoàn toàn thoải mái di chuyển xe qua những đoạn đường ngập nước. Mà không lo phụ kiện hay động cơ bị hư hỏng gì.Xe điện X-Zone 2024 vẫn cần đăng kiểm vẫn là xe máy điện. Vẫn nên đăng ký biển số. Và xe dành cho các bạn từ cấp trở lên điều khiển mới đúng luật. Hệ thống phanh cơ trên cả 2 bánh cùng cặp giảm xóc cao cấp được sản xuất theo tiêu chuẩn của xe máy. Như vậy khi lái bạn sẽ cảm nhận được lực phanh nhẹ hơn, mượt hơn. Xe được bảo hành chính hãng 18 tháng đối với ắc quy. Các bạn chỉ cần mang xe ghé&nbsp;các chi nhánh&nbsp;của&nbsp;Xe Điện Việt Thanh&nbsp;sẽ được bảo hành chu đáo.",
+      "specs": {
+        "tocDo": "38 km/h",
+        "pin": "48V - 20Ah",
+        "quangDuong": "Max 60 km - Eco (tùy biến theo tải trọng)",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13525",
+      "name": "Xe máy điện YADEA Xmen Neo",
+      "slug": "xe-may-dien-yadea-xmen-neo",
+      "price": 17490000,
+      "salePrice": 15990000,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/xe-may-dien-yadea-xmen-neo.jpg",
+      "category": "xe-may-dien",
+      "featured": false,
+      "description": "Xe máy điện Xmen Neo được YADEA đưa ra thị trường với sự bùng nổ về hình thức cùng tiện ích chất lượng, hiện đại. Chứng tỏ cho sự cạnh tranh của dòng xe này với toàn bộ phân khúc xe điện Xmen hiện nay. Hãy xem đánh giá chi tiết về mẫu xe này. Thiết kế khoẻ khoắn, trẻ trung Dòng xe máy điện YADEA Xmen Neo mang phong cách thể thao khoẻ khoắn với thiết kế mặt nạ chữ X tiêu biểu và những đường cắt xẻ hợp thành các góc cạnh sắc nhọn. Sự mạnh mẽ của hình thức khiến mẫu xe trở nên cực kỳ thu hút trong mắt những bạn trẻ năng động. Hình thức của mẫu xe máy điện Xmen Neo Yadea Xe máy điện YADEA Xmen Neo nổi bật nhờ các chi tiết đặc biệt ở mặt trước. Tâm điểm là đèn pha hình trái tim độc đáo và 2 đèn xi nhan mắt cáo nhỏ đối xứng. Những bộ phận đặc biệt này đã khiến diện mạo XMEN Neo trở nên có hồn và rất đẹp. Dòng xe máy điện có thiết kế hầm hố với bộ khung to, chắc chắn được làm từ thép cán nguội kết hợp với vỏ ốp cứng bao bên ngoài. Dòng xe càng trở nên cá tính khi có hai bánh xe đường kính 12/12 inch, vành đúc cực kỳ chắc chắn với chấu kép trông ấn tượng. Động cơ xe Xe máy điện YADEA Xmen Neo chứng tỏ hiệu suất vận hành ấn tượng nhờ trang bị động cơ GTR YADEA với công 1000W. Vận tốc tối đa mà xe có thể đạt là khoảng 50Km/h. Ngoài ra, động cơ hiện đại của dòng xe mang tiêu chuẩn chống nước IPX có thể giúp phương tiện vận hành được trong những đoạn đường ngập sâu hoặc trời mưa. Khả năng vận hành của phương tiện cho thấy sự khoẻ khoắn và mạnh mẽ kể cả trường hợp chở nặng và vượt địa hình dễ dàng khi có thể leo dốc cao 11 độ. Với hiệu suất tối ưu, sức mạnh của dòng xe sẽ giúp người sử dụng di chuyển thoải mái mà không phải lo ngại về bất cứ tình huống nào. Trang bị ắc quy Graphene cho động cơ XMEN Neo, giúp phương tiện được tối ưu thêm về mặt hiệu suất. Đảm bảo tiết kiệm để sử dụng phương tiện trong thời gian dài. 5 bình ắc quy 60V-20Ah cho phương tiện di chuyển quãng đường lên tới 80Km/1 lần sạc. Tiện ích xe máy điện Xmen Neo mang lại Xe máy điện YADEA Xmen Neo sở hữu nhiều tiện ích hiện đại bao gồm: Đồng hồ điện tử hiện đại: Xmen Neo được trang bị đồng hồ cá tính, nhỏ gọn song hiển thị thông số rõ ràng. Trang bị đèn LED hiện đại: đèn LED được trang bị cho toàn bộ xe máy điện YADEA Xmen Neo mang lại khả năng chiếu sáng ấn tượng, rõ nét và siêu tiết kiệm điện. Trang bị phuộc đơn chắc chắn: dòng xe sở hữu phuộc đơn lò xo thuỷ lực cao cấp, giúp tăng sự êm ái khi vận hành. Trang bị phanh đĩa: bánh trước Xmen Neo sở hữu phanh đĩa với mâm to bản, giúp người dùng giảm tốc an toàn và hiệu quả trong quá trình lái xe. Trang bị chìa khoá: dòng xe máy điện Xmen Neo được trang bị nhiều khoá chức năng, gồm cả khoá cơ và khoá remote giúp chủ xe dễ dàng thao tác với phương tiện. Xe máy điện YADEA Xmen Neo hiện được phân phối chính hãng tại YADEA Việt Thanh. Khách hàng vui lòng liên hệ ngay Tổng Đài hỗ trợ 19002082 để được tư vấn chi tiết về sản phẩm.",
+      "specs": {
+        "tocDo": "38 km/h",
+        "pin": "48V - 20Ah",
+        "quangDuong": "Max 60 km - Eco (tùy biến theo tải trọng)",
+        "congSuat": "Điện 3 pha"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13869",
+      "name": "Xe Đạp Điện Trợ Lực Gấp Gọn Yadea Flit",
+      "slug": "xe-dap-dien-tro-luc-gap-gon-yadea-flit",
+      "price": 22990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2025/11/xe-dap-dien-tro-luc-yadea-flit-gap-gon-chinh-hang.jpg",
+      "category": "xe-dap-dien",
+      "featured": false,
+      "description": "YADEA Flit là mẫu xe đạp trợ lực điện sở hữu thiết kế gấp gọn dành cho người đề cao tính tiện lợi. Động cơ 250W cùng hệ thống cảm biến hiện đại đảm bảo vận hành nhẹ nhàng và an toàn. Thiết kế trẻ trung, gấp gọn tiện lợi YADEA Flit sở hữu phần khung làm từ hợp kim nhôm đảm bảo nhẹ nhàng và chắc chắn khi di chuyển. Xe đạp trợ lực điện YADEA Flit được thiết kế cấu trúc gấp gọn độc đáo mang lại tiện lợi. Người dùng có thể gập ngang thân xe, gập tay lái và cổ xe dễ dàng nhờ khớp nối linh hoạt và chốt khoá chắc chắn. Kích thước xe sau khi gập chỉ chưa đến 0.96m x 0.62m nên bạn có thể cất phương tiện ở những không gian chật hẹp như góc nhà, cốp xe&#8230; Mẫu xe có các tuỳ chọn màu sắc trẻ trung, cá tính như trắng và xanh lá để người dùng có thể lựa chọn. Thiết kế gấp gọn tiện lợi Vận hành nhẹ nhàng, êm ái Động cơ trợ lực YADEA Flit có công suất 250W giúp xe vận hành an toàn và đạt vận tốc tối đa 25 km/h. Hệ thống cảm biến nhịp đạp hỗ trợ người dùng đạp xe nhẹ nhàng, tiết kiệm sức lực. Bộ đề Shimano 7 cấp giúp bạn điều chỉnh số dễ dàng để vận hành linh hoạt trên mọi địa hình. Vận hành an toàn, nhẹ nhàng Pin Lithium cao cấp Pin Lithium có dung lượng 36V – 7.8Ah cung cấp cho xe quãng đường di chuyển tối đa 50 km mỗi lần sạc. Với thiết kế nằm gọn trong khung xe, pin được đảm bảo an toàn trước tác động từ bên ngoài. Các tính năng an toàn, hiện đại Đèn sáng chất lượng hỗ trợ quan sát tốt Đèn có độ sáng > 40 Lux giúp người dùng quan sát đường đi dễ dàng Phanh đĩa cơ: cung cấp lực phanh ổn định, giúp dừng xe an toàn ở mọi tốc độ. Đèn phía trước có độ sáng hơn 40 Lux giúp người lái xe quan sát dễ dàng khi di chuyển trên đường, đặc biệt là vào ban đêm. Màn hình LCD hiện đại hiển thị thông số vận hành rõ ràng, giúp người dùng dễ nhìn, dễ đọc. Lốp có gai giúp xe di chuyển bám đường tốt, đảm bảo an toàn trên địa hình nhiều khúc cua hoặc trơn ướt. Xe đạp trợ lực điện YADEA Flit được phân phối tại các đại lý xe điện YADEA chính hãng trên toàn quốc. Bạn hãy đến ngay hệ thống Xe Điện Việt Thanh để mua sản phẩm chính hãng, giá tốt và được bảo hành uy tín. Liên hệ Tổng đài 1900 2082 của công ty để được tư vấn.",
+      "specs": {
+        "tocDo": "25 km/h",
+        "quangDuong": "50 km / 1 lần sạc",
+        "congSuat": "Động cơ bánh sau, công suất đầu ra 250W",
+        "pin": "Pin Lithium lắp trong khung, 36 V – 7.8 Ah / 378 Wh"
+      },
+      "categories": [
+        "xe-dap-dien",
+        "xe-hoc-sinh",
+        "xe-di-lam"
+      ]
+    },
+    {
+      "id": "13921",
+      "name": "Xe Máy Điện Yadea Osta H",
+      "slug": "xe-may-dien-yadea-osta-h",
+      "price": 28990000,
+      "salePrice": null,
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/02/xe-may-dien-yadea-osta-h.jpg",
+      "category": "xe-may-dien",
+      "featured": true,
+      "description": "Osta H là mẫu xe máy điện được YADEA giới thiệu đầu năm 2026 cùng với phiên bản Osta H. Với sự hấp dẫn về hình thức và những đột phá mới lạ về công nghệ, YADEA Osta H được dự đoán là ứng viên hàng đầu chinh phục thị trường năm nay. Thông tin chi tiết về mẫu xe sẽ được cung cấp dưới đây. Thiết kế sành điệu và hiện đại&nbsp; Xe máy điện YADEA Osta H có sự hấp dẫn về ngoại hình hứa hẹn thu hút mọi đối tượng. Mẫu xe được thiết kế dựa trên những đường nét mềm mại, tinh xảo hoà cùng màu sơn bóng bẩy trẻ trung như: vàng, xám nhạt, xám ngọc trai, bạc, đen. Điều này tạo nên một diện mạo thanh thoát nhưng cũng không kém phần hiện đại và cá tính. Osta H cũng gây chú ý bởi nhiều chi tiết độc đáo. Cụm đèn trước &#8211; sau được thiết kế sắc sảo, đặc biệt là đèn pha kim cương viền kim loại giúp tăng vẻ sang trọng. Mặt yên ngồi bằng phẳng, rộng rãi cùng da bọc và đệm cao cấp mang lại cảm giác mềm mại, êm ái. Sàn để chân thoáng rộng giúp người điều chỉnh vị trí chân thoải mái.&nbsp; Hình thức sành điệu và hiện đại của YADEA Osta H+ Hiệu suất vận hành ấn tượng YADEA Osta H được trang bị động cơ công suất 1500W giúp xe đạt vận tốc đa 53 km/h. Mức vận tốc cho người dùng chưa có bằng lái nhưng đã đủ 16 tuổi. Công nghệ pin Lithium cao cấp với dung lượng lớn 72V30Ah cho phép xe di chuyển quãng đường tối đa lên tới 80 km/lần sạc. Với hiệu suất này, dòng xe dễ dàng thích hợp cho nhu cầu di chuyển với cường độ cao.&nbsp; Tính năng an toàn chất lượng&nbsp; Xe được trang bị phanh đĩa tích hợp CBS tăng khả năng xử lý tốc độ và an toàn khi lái xe ở tốc độ cao.&nbsp; Hệ thống đèn full LED cung cấp ánh sáng mạnh mẽ giúp người lái quan sát dẽ dàng khi di chuyển vào ban đêm.&nbsp; YADEA Osta H được trang bị nhiều tính năng an toàn hiện đại chất lượng Công nghệ hỗ trợ hiện đại&nbsp; Đồng hồ TFT hiển thị thông số sắc nét, tích hợp tính năng chỉ đường hỗ trợ giúp người dùng di chuyển dễ dàng. Ngoài ra, còn có các tính năng đặc biệt khác như tuỳ chỉnh âm thanh và nhận cuộc gọi tối ưu trải nghiệm hiện đại và tiện lợi.&nbsp; Công nghệ IoT hiện đại cung cấp đa dạng chức năng quản lý phương tiện thuận tiện cho người dùng:&nbsp; Mở khoá/điều khiển xe từ xa bằng điện thoại Bật định vị GPS chính xác giúp theo dõi xe dễ dàng Bật chống trộm, tự động cảnh báo khi có dấu hiệu bất thường Cảnh báo SOS, đổ xe tức thì Các chế độ lái đa dạng gồm: Eco/Sport/Tùy chỉnh cho phép người di chuyển tùy theo ý muốn. Bên cạnh đó, tính năng Cruise Control giúp giữ tay lái cho phép người dùng thư giãn trong những hành trình dài.&nbsp; Hệ thống TCS (kiểm soát lực kéo) và HDC (hỗ trợ đổ đèo) tăng cường an toàn cho xe khi chuyển. Cổng sạc type-C, type-A tiện lợi, giúp người dùng dễ dàng sạc điện thoại… trong quá trình di chuyển.&nbsp; Trên đây là thông tin chi tiết về mẫu xe máy điện mới 2026 YADEA Osta H. Để sở hữu sản phẩm chính hãng này, khách hàng hãy đến ngay đại lý uỷ quyền YADEA Việt Thanh trên toàn quốc. Liên hệ tổng đài 1900 2082 để được tư vấn chi tiết.",
+      "specs": {
+        "congSuat": "Hub 1500W",
+        "tocDo": "50 Km/h",
+        "pin": "Pin LFP 72V-30Ah",
+        "quangDuong": "75km / 1 lần sạc"
+      },
+      "categories": [
+        "xe-may-dien",
+        "xe-di-lam"
+      ]
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "title": "Các Mẫu Xe Điện YADEA Hot Năm 2025",
+      "date": "2025-08-15",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2024/01/yadea-viet-thanh-chinh-hang.jpg",
+      "excerpt": "Tổng hợp các mẫu xe điện Yadea được ưa chuộng nhất năm 2025."
+    },
+    {
+      "id": "2",
+      "title": "Xe máy điện được phép chạy bao nhiêu km/h?",
+      "date": "2023-04-19",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/03/xe-may-dien-yadea-ova.jpg",
+      "excerpt": "Quy định về tốc độ tối đa của xe máy điện tại Việt Nam."
+    },
+    {
+      "id": "3",
+      "title": "Top 05 Xe Điện YADEA Được Học Sinh Mua Nhiều Nhất",
+      "date": "2023-04-11",
+      "image": "https://yadeavietthanh.vn/wp-content/uploads/2026/03/xe-may-dien-yadea-iCandy.jpg",
+      "excerpt": "Danh sách 5 mẫu xe điện Yadea phù hợp nhất cho học sinh."
+    }
+  ],
+  "admin": {
+    "username": "admin",
+    "passwordHash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+  },
+  "homepage": {
+    "featuredProductIds": [
+      "13935",
+      "13932",
+      "13506",
+      "13761",
+      "13953",
+      "13901",
+      "13954",
+      "13936",
+      "13907",
+      "13921"
+    ],
+    "productsSectionTitle": "",
+    "productsButtonText": "XEM THÊM SẢN PHẨM",
+    "newsSectionTitle": "Thông tin hữu ích",
+    "storesSectionTitle": "Hệ thống cửa hàng",
+    "storesSectionSubtitle": "",
+    "showFeatures": true,
+    "showNews": true,
+    "showStores": true,
+    "showProducts": true
+  },
+  "footer": {
+    "aboutTitle": "Về Yadea Tân Bình",
+    "aboutLinks": [
+      {
+        "label": "Sản phẩm",
+        "url": "/san-pham.html"
+      },
+      {
+        "label": "Tìm cửa hàng",
+        "url": "/lien-he.html"
+      },
+      {
+        "label": "Tin tức",
+        "url": "/#news"
+      }
+    ],
+    "showCategories": true,
+    "categoriesTitle": "Danh mục",
+    "supportTitle": "Hỗ trợ khách hàng",
+    "supportLinks": [
+      {
+        "label": "Liên hệ",
+        "url": "/lien-he.html"
+      },
+      {
+        "label": "Chính sách bảo hành",
+        "url": "/lien-he.html"
+      },
+      {
+        "label": "Chính sách bảo mật",
+        "url": "/lien-he.html"
+      }
+    ],
+    "copyright": "© 2026 Yadea Tân Bình. Xe điện Yadea chính hãng.",
+    "companyInfo": "Công Ty TNHH Di Chuyển Thông Minh",
+    "showCompanyInfo": true
+  },
+  "contactPage": {
+    "title": "Liên hệ với chúng tôi",
+    "subtitle": "Hãy để lại thông tin, chúng tôi sẽ tư vấn miễn phí",
+    "formTitle": "Gửi yêu cầu tư vấn",
+    "storeTitle": "Yadea Tân Bình",
+    "storeMapLinkText": "Xem bản đồ →"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#F26E23",
+      "primaryDark": "#E05A10",
+      "primaryLight": "#FFF4ED",
+      "darkBtn": "#333333",
+      "headerBg": "#FFFFFF",
+      "navCategoryBg": "#F26E23",
+      "footerBg": "#FFFFFF",
+      "bodyBg": "#FFFFFF",
+      "textColor": "#212529"
+    },
+    "layout": {
+      "containerWidth": 1200,
+      "productColumns": 3,
+      "newsColumns": 3,
+      "btnRadius": 4,
+      "heroMaxHeight": 520
+    },
+    "header": {
+      "visible": true,
+      "logoHeight": 40,
+      "showSearch": true,
+      "searchPlaceholder": "Bạn tìm gì ...",
+      "showHotline": true,
+      "showFindStore": true,
+      "findStoreLabel": "Tìm cửa hàng",
+      "showNav": true,
+      "navCategoryLabel": "Danh mục"
+    },
+    "hero": {
+      "visible": true,
+      "autoplayMs": 5000,
+      "showDots": true
+    },
+    "features": {
+      "visible": true,
+      "bgColor": "#FFFFFF"
+    },
+    "products": {
+      "visible": true,
+      "title": "Sản phẩm nổi bật",
+      "count": 9,
+      "showMoreBtn": true,
+      "moreBtnLabel": "XEM THÊM SẢN PHẨM",
+      "showSaleBadge": true,
+      "buyLabel": "MUA NGAY",
+      "installmentLabel": "MUA TRẢ GÓP"
+    },
+    "news": {
+      "visible": true,
+      "title": "Thông tin hữu ích"
+    },
+    "stores": {
+      "visible": true,
+      "title": "Hệ thống cửa hàng",
+      "subtitle": ""
+    },
+    "footer": {
+      "visible": true,
+      "copyright": ""
+    },
+    "floatCta": {
+      "visible": true,
+      "showPhone": true,
+      "showZalo": true,
+      "showMessenger": true
+    },
+    "customCss": ""
+  },
+  "branches": [
+    {
+      "id": "main",
+      "name": "Chi nhánh chính - Âu Cơ",
+      "address": "658 Âu Cơ, P Bảy Hiền, TP.HCM",
+      "hotline": "0933 969396",
+      "mapLink": "",
+      "isMain": true
+    },
+    {
+      "id": "cn1",
+      "name": "CN1 - Tân Bình",
+      "address": "36-38 Trường Chinh, Phường 4, Tân Bình, TP HCM",
+      "hotline": "0778 123 268",
+      "mapLink": "",
+      "isMain": false
+    },
+    {
+      "id": "cn2",
+      "name": "CN2 - Tân Phú",
+      "address": "212 Hoà Bình, Phường Phú Thạnh, Q Tân Phú, Hồ Chí Minh",
+      "hotline": "0961 79 79 28",
+      "mapLink": "",
+      "isMain": false
+    },
+    {
+      "id": "cn3",
+      "name": "CN3 - Quận 6",
+      "address": "256B-C Nguyễn Văn Luông, Phường 11, Quận 6, Tp.HCM",
+      "hotline": "0933 831 866",
+      "mapLink": "",
+      "isMain": false
+    },
+    {
+      "id": "cn4",
+      "name": "CN4 - Gò Vấp",
+      "address": "165 Phạm Văn Chiêu, Phường 14, Gò Vấp, Tp.HCM",
+      "hotline": "0933 983 866",
+      "mapLink": "",
+      "isMain": false
+    },
+    {
+      "id": "cn5",
+      "name": "CN5 - Thủ Đức",
+      "address": "1236 Phạm Văn Đồng, Linh Tây, Thủ Đức, Tp.HCM",
+      "hotline": "079 8811 181",
+      "mapLink": "",
+      "isMain": false
+    },
+    {
+      "id": "cn6",
+      "name": "CN6 - Quận 8",
+      "address": "Số 9 Đường Số 2 KDC Phương Việt, Phường 6, Quận 8, Tp.HCM",
+      "hotline": "0933 792 866",
+      "mapLink": "",
+      "isMain": false
+    }
+  ]
+}

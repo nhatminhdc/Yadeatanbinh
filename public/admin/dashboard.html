@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tổng quan - Yadea Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm-body" data-admin-page="dashboard">
+  <div id="adm-loading" class="adm-loading">
+    <div class="adm-loading-box">
+      <div class="adm-spinner"></div>
+      <p>Đang tải trang quản trị...</p>
+      <p class="adm-loading-hint">Nếu treo lâu, hãy chạy <strong>start.command</strong> trong thư mục Yadea</p>
+    </div>
+  </div>
+  <div class="adm-app">
+    <aside class="adm-sidebar" id="admin-sidebar"></aside>
+    <div class="adm-main-wrap">
+      <header class="adm-topbar" id="admin-topbar"></header>
+      <main class="adm-content" id="dashboard-content"></main>
+    </div>
+  </div>
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>

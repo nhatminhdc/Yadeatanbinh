@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin tức - Yadea Admin</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm-body" data-admin-page="news">
+  <div class="adm-app">
+    <aside class="adm-sidebar" id="admin-sidebar"></aside>
+    <div class="adm-main-wrap">
+      <header class="adm-topbar" id="admin-topbar"></header>
+      <main class="adm-content">
+        <div class="adm-toolbar">
+          <div class="adm-toolbar-left"><span class="adm-count">Tin tức hiển thị trang chủ</span></div>
+          <div class="adm-toolbar-right">
+            <button class="adm-btn adm-btn-primary" id="add-news-btn">+ Thêm tin tức</button>
+          </div>
+        </div>
+        <div class="adm-card">
+          <div class="adm-table-wrap">
+            <table class="adm-table">
+              <thead>
+                <tr><th>Tiêu đề</th><th>Ngày</th><th>Thao tác</th></tr>
+              </thead>
+              <tbody id="news-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="adm-modal-overlay" id="form-modal">
+    <div class="adm-modal">
+      <div class="adm-modal-header">
+        <h3 id="modal-title"></h3>
+        <button class="adm-btn adm-btn-ghost" id="modal-close">&times;</button>
+      </div>
+      <div class="adm-modal-body" id="modal-body"></div>
+      <div class="adm-modal-footer">
+        <button class="adm-btn adm-btn-outline" id="modal-cancel">Hủy</button>
+        <button class="adm-btn adm-btn-primary" id="modal-save">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>
