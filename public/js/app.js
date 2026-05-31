@@ -618,7 +618,10 @@ function openOrderModal(productId) {
         closeOrderModal();
         showToast('Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất.');
       } else {
-        showToast('Không gửi được. Vui lòng gọi hotline hoặc thử lại sau.');
+        const supabaseErr = supabaseResult.status === 'rejected' ? String(supabaseResult.reason?.message || '') : '';
+        const telegramErr = telegramResult.status === 'rejected' ? String(telegramResult.reason?.message || '') : '';
+        console.error({ supabaseErr, telegramErr });
+        showToast('Không gửi được đơn hàng. Gọi hotline 0933 969396 hoặc thử lại sau.');
       }
     } catch (err) {
       console.error('Lead submit error:', err);
