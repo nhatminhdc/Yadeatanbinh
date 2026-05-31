@@ -2,4 +2,8 @@ node_modules/
 .DS_Store
 *.log
 .env
-.env.*
+.env.local
+.env.*.local
+public/js/supabase-config.js
+data/telegram.json
+data/supabase.json

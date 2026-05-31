@@ -21,6 +21,23 @@ const ICONS = {
 
 let siteData = null;
 let heroInterval = null;
+let supabaseConfigPromise = null;
+
+async function ensureSupabaseConfig() {
+  if (window.SUPABASE_CONFIG?.url && !window.SUPABASE_CONFIG.url.includes('YOUR_')) {
+    return window.SUPABASE_CONFIG;
+  }
+  if (!supabaseConfigPromise) {
+    supabaseConfigPromise = fetch('/api/public-config')
+      .then(async (res) => (res.ok ? res.json() : null))
+      .then((cfg) => {
+        if (cfg?.url && cfg?.anonKey) window.SUPABASE_CONFIG = cfg;
+        return window.SUPABASE_CONFIG || null;
+      })
+      .catch(() => null);
+  }
+  return supabaseConfigPromise;
+}
 
 function formatPrice(price) {
   return new Intl.NumberFormat('vi-VN').format(price) + ' đ';
@@ -71,8 +88,8 @@ async function notifyTelegramLead(lead) {
 }
 
 async function submitLeadToSupabase(lead) {
-  const cfg = window.SUPABASE_CONFIG;
-  if (!cfg?.url || !cfg?.anonKey || cfg.url.includes('YOUR_') || cfg.anonKey.includes('YOUR_')) {
+  const cfg = await ensureSupabaseConfig();
+  if (!cfg?.url || !cfg?.anonKey) {
     throw new Error('Chưa cấu hình Supabase');
   }
 

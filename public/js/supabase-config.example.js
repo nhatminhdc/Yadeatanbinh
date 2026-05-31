@@ -1,6 +1,7 @@
-// Sao chép file này thành supabase-config.js rồi điền thông tin Supabase của bạn.
+// Không dùng file này trên Vercel — key lấy từ Environment Variables.
+// Local: dùng .env hoặc data/supabase.json (xem .env.example)
 window.SUPABASE_CONFIG = {
-  url: 'https://xxxxxxxxxxxx.supabase.co',
-  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+  url: 'YOUR_SUPABASE_URL',
+  anonKey: 'YOUR_SUPABASE_ANON_KEY',
   table: 'leads',
 };

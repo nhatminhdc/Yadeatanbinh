@@ -1,16 +1,17 @@
 const http = require('http');
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { URL } = require('url');
 
 const { syncProducts } = require('./scripts/sync-products');
+const { getSupabaseConfig } = require('./lib/env');
+const { readData, readPublicData } = require('./lib/site-data');
+const { formatLeadTelegramMessage, sendTelegramMessage } = require('./lib/telegram');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data', 'site.json');
-const TELEGRAM_FILE = path.join(ROOT, 'data', 'telegram.json');
 const UPLOAD_DIR = path.join(ROOT, 'public', 'uploads');
 const SESSIONS = new Map();
 const SESSION_TTL = 24 * 60 * 60 * 1000;
@@ -33,87 +34,8 @@ function sha256(str) {
   return crypto.createHash('sha256').update(str).digest('hex');
 }
 
-function readData() {
-  return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-}
-
 function writeData(data) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
-}
-
-function readTelegramConfig() {
-  if (!fs.existsSync(TELEGRAM_FILE)) return null;
-  try {
-    const cfg = JSON.parse(fs.readFileSync(TELEGRAM_FILE, 'utf8'));
-    if (!cfg.botToken || !cfg.chatId || cfg.botToken.includes('YOUR_')) return null;
-    return cfg;
-  } catch {
-    return null;
-  }
-}
-
-function sendTelegramMessage(text) {
-  const cfg = readTelegramConfig();
-  if (!cfg) return Promise.reject(new Error('Chưa cấu hình Telegram'));
-
-  const payload = JSON.stringify({
-    chat_id: cfg.chatId,
-    text,
-    parse_mode: 'HTML',
-  });
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(
-      {
-        hostname: 'api.telegram.org',
-        path: `/bot${cfg.botToken}/sendMessage`,
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': Buffer.byteLength(payload),
-        },
-      },
-      (res) => {
-        let data = '';
-        res.on('data', chunk => { data += chunk; });
-        res.on('end', () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) resolve(data);
-          else reject(new Error(data || `Telegram HTTP ${res.statusCode}`));
-        });
-      }
-    );
-    req.on('error', reject);
-    req.write(payload);
-    req.end();
-  });
-}
-
-function escapeTelegramHtml(str) {
-  return String(str || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-
-function formatPriceVnd(price) {
-  const num = Number(price);
-  if (!Number.isFinite(num) || num <= 0) return '—';
-  return new Intl.NumberFormat('vi-VN').format(num) + ' đ';
-}
-
-function formatLeadTelegramMessage(lead) {
-  const priceText = lead.product_price_label
-    || formatPriceVnd(lead.product_price);
-
-  return [
-    '🛵 <b>ĐẶT HÀNG MỚI - Yadea Tân Bình</b>',
-    '',
-    `• <b>Tên khách hàng:</b> ${escapeTelegramHtml(lead.name)}`,
-    `• <b>Số điện thoại:</b> ${escapeTelegramHtml(lead.phone)}`,
-    `• <b>Dòng Xe Muốn Mua:</b> ${escapeTelegramHtml(lead.product_name || '—')}`,
-    `• <b>Giá xe:</b> ${escapeTelegramHtml(priceText)}`,
-    `• <b>Ghi chú:</b> ${escapeTelegramHtml(lead.note || '—')}`,
-  ].join('\n');
 }
 
 function parseBody(req) {
@@ -175,9 +97,17 @@ function sendFile(res, filePath) {
 
 async function handleAPI(req, res, pathname) {
   if (pathname === '/api/data' && req.method === 'GET') {
-    const data = readData();
-    const { admin, ...publicData } = data;
-    sendJSON(res, 200, publicData, true);
+    sendJSON(res, 200, readPublicData(), true);
+    return;
+  }
+
+  if (pathname === '/api/public-config' && req.method === 'GET') {
+    const cfg = getSupabaseConfig();
+    if (!cfg) {
+      sendJSON(res, 503, { error: 'Chưa cấu hình Supabase' });
+      return;
+    }
+    sendJSON(res, 200, cfg, true);
     return;
   }
 
