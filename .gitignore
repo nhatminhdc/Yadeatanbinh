@@ -3,5 +3,3 @@ node_modules/
 *.log
 .env
 .env.*
-public/js/supabase-config.js
-data/telegram.json
