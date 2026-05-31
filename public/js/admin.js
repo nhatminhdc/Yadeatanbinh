@@ -30,6 +30,7 @@ const IMAGE_SPECS = {
 
 async function api(url, options = {}) {
   const res = await fetch(url, {
+    credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json', ...options.headers },
     ...options,
   });
@@ -1968,7 +1969,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="adm-loading-box adm-error-box">
             <h3>⚠️ Không tải được trang admin</h3>
             <p>${esc(err.message || 'Lỗi không xác định')}</p>
-            <p class="adm-loading-hint">Hãy mở Terminal, vào thư mục <strong>Yadea</strong> và chạy file <strong>start.command</strong><br>Hoặc cài Node.js tại <a href="https://nodejs.org" target="_blank">nodejs.org</a></p>
+            <p class="adm-loading-hint">Vui lòng <a href="/admin/">đăng nhập</a> trước. Nếu vẫn lỗi, kiểm tra cấu hình <strong>SESSION_SECRET</strong> và <strong>SUPABASE_SERVICE_ROLE_KEY</strong> trên Vercel.</p>
             <a href="/admin/" class="adm-btn adm-btn-primary" style="margin-top:16px">Về trang đăng nhập</a>
           </div>`;
       }

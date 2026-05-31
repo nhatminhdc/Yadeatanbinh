@@ -47,6 +47,19 @@ add_env SUPABASE_TABLE "$SUPABASE_TABLE"
 add_env TELEGRAM_BOT_TOKEN "$TELEGRAM_BOT_TOKEN"
 add_env TELEGRAM_CHAT_ID "$TELEGRAM_CHAT_ID"
 
+if [ -z "${SESSION_SECRET:-}" ]; then
+  SESSION_SECRET=$(node -e "console.log(require('crypto').randomBytes(32).toString('hex'))")
+fi
+add_env SESSION_SECRET "$SESSION_SECRET"
+
+echo ""
+echo "⚠️  Thêm thủ công trên Vercel Dashboard:"
+echo "   SUPABASE_SERVICE_ROLE_KEY  (Supabase → Settings → API → service_role)"
+echo ""
+echo "Supabase SQL (chạy 1 lần):"
+echo "   scripts/supabase-site-config-setup.sql"
+echo "Seed dữ liệu (local, sau khi có service role key):"
+echo "   SUPABASE_SERVICE_ROLE_KEY=... node scripts/seed-site-config.js"
 echo ""
 echo "Xong. Redeploy: vercel --prod"
 echo "Hoặc Vercel Dashboard → Deployments → Redeploy"

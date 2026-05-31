@@ -4,11 +4,9 @@
  * - Cập nhật giá sản phẩm hiện có (giữ danh mục local)
  * - Thêm sản phẩm mới từ nguồn
  */
-const fs = require('fs');
 const path = require('path');
 const https = require('https');
-
-const DATA_FILE = path.join(__dirname, '..', 'data', 'site.json');
+const { readData, writeData, readDataSync, writeDataSync } = require('../lib/site-store');
 const SOURCE = 'https://yadeavietthanh.vn';
 
 const LOCAL_CAT_SLUGS = {
@@ -299,10 +297,25 @@ function setSyncStatus(site, status, extra = {}) {
   };
 }
 
+async function persistSite(site) {
+  if (process.env.VERCEL === '1' || process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    await writeData(site);
+  } else {
+    writeDataSync(site);
+  }
+}
+
+async function loadSite() {
+  if (process.env.VERCEL === '1' || process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return readData();
+  }
+  return readDataSync();
+}
+
 async function syncProducts(options = {}) {
-  const site = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  const site = await loadSite();
   setSyncStatus(site, 'updating', { message: 'Đang quét sản phẩm từ yadeavietthanh.vn...' });
-  fs.writeFileSync(DATA_FILE, JSON.stringify(site, null, 2));
+  await persistSite(site);
 
   try {
     const catMap = await fetchCategoryMap();
@@ -315,7 +328,7 @@ async function syncProducts(options = {}) {
     }
 
     setSyncStatus(site, 'updating', { message: 'Đang đồng bộ màu sắc sản phẩm...' });
-    fs.writeFileSync(DATA_FILE, JSON.stringify(site, null, 2));
+    await persistSite(site);
 
     await mapPool(incoming, async (product) => {
       const colors = await fetchProductColors(product.sourceLink);
@@ -335,15 +348,15 @@ async function syncProducts(options = {}) {
       total,
       source: SOURCE,
     });
-    fs.writeFileSync(DATA_FILE, JSON.stringify(site, null, 2));
+    await persistSite(site);
 
     return { count: total, updated, added, products: products.length };
   } catch (err) {
-    const siteErr = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    const siteErr = await loadSite();
     setSyncStatus(siteErr, 'error', {
       message: err.message || 'Đồng bộ thất bại',
     });
-    fs.writeFileSync(DATA_FILE, JSON.stringify(siteErr, null, 2));
+    await persistSite(siteErr);
     throw err;
   }
 }

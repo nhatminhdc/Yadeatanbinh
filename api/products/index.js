@@ -1,15 +1,3 @@
-const { readProductList } = require('../../lib/site-data');
-const { sendJson } = require('../../lib/http');
+const { handleApiRequest } = require('../lib/api-handler');
 
-module.exports = async (req, res) => {
-  if (req.method !== 'GET') {
-    sendJson(res, 405, { error: 'Method not allowed' });
-    return;
-  }
-
-  try {
-    sendJson(res, 200, readProductList(), true);
-  } catch (err) {
-    sendJson(res, 500, { error: err.message || 'Không đọc được sản phẩm' });
-  }
-};
+module.exports = (req, res) => handleApiRequest(req, res, '/api/products');
