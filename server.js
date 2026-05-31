@@ -5,9 +5,7 @@ const crypto = require('crypto');
 const { URL } = require('url');
 
 const { syncProducts } = require('./scripts/sync-products');
-const { getSupabaseConfig } = require('./lib/env');
-const { readData, readPublicData } = require('./lib/site-data');
-const { formatLeadTelegramMessage, sendTelegramMessage } = require('./lib/telegram');
+const { readData } = require('./lib/site-data');
 
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
@@ -97,17 +95,28 @@ function sendFile(res, filePath) {
 
 async function handleAPI(req, res, pathname) {
   if (pathname === '/api/data' && req.method === 'GET') {
-    sendJSON(res, 200, readPublicData(), true);
+    const { readSiteMeta } = require('./lib/site-data');
+    sendJSON(res, 200, readSiteMeta(), true);
     return;
   }
 
-  if (pathname === '/api/public-config' && req.method === 'GET') {
-    const cfg = getSupabaseConfig();
-    if (!cfg) {
-      sendJSON(res, 503, { error: 'Chưa cấu hình Supabase' });
-      return;
-    }
-    sendJSON(res, 200, cfg, true);
+  if (pathname === '/api/products' && req.method === 'GET') {
+    const handler = require('./api/products/index');
+    await handler(req, res);
+    return;
+  }
+
+  const productMatch = pathname.match(/^\/api\/products\/([^/]+)$/);
+  if (productMatch && req.method === 'GET') {
+    req.query = { slug: decodeURIComponent(productMatch[1]) };
+    const handler = require('./api/products/[slug]');
+    await handler(req, res);
+    return;
+  }
+
+  if (pathname === '/api/submit-lead' && req.method === 'POST') {
+    const submitLead = require('./api/submit-lead');
+    await submitLead(req, res);
     return;
   }
 
@@ -138,42 +147,6 @@ async function handleAPI(req, res, pathname) {
 
   if (pathname === '/api/auth/check' && req.method === 'GET') {
     sendJSON(res, 200, { authenticated: !!getSession(req) });
-    return;
-  }
-
-  if (pathname === '/api/submit-lead' && req.method === 'POST') {
-    const submitLead = require('./api/submit-lead');
-    await submitLead(req, res);
-    return;
-  }
-
-  if (pathname === '/api/notify-telegram' && req.method === 'POST') {
-    try {
-      const body = await parseBody(req);
-      const name = String(body.name || '').trim();
-      const phone = String(body.phone || '').trim();
-      const product_name = String(body.product_name || '').trim();
-      const product_price = body.product_price;
-      const product_price_label = String(body.product_price_label || '').trim();
-      const note = String(body.note || '').trim();
-
-      if (!name || !phone) {
-        sendJSON(res, 400, { error: 'Thiếu họ tên hoặc số điện thoại' });
-        return;
-      }
-
-      await sendTelegramMessage(formatLeadTelegramMessage({
-        name,
-        phone,
-        product_name,
-        product_price,
-        product_price_label,
-        note,
-      }));
-      sendJSON(res, 200, { success: true });
-    } catch (err) {
-      sendJSON(res, 500, { error: err.message || 'Gửi Telegram thất bại' });
-    }
     return;
   }
 
@@ -277,6 +250,8 @@ const server = http.createServer(async (req, res) => {
   let pathname = decodeURIComponent(url.pathname);
 
   res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
 
   if (pathname.startsWith('/api/')) {
     await handleAPI(req, res, pathname);

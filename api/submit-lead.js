@@ -2,6 +2,7 @@ const { parseBody, sendJson } = require('../lib/http');
 const { formatLeadTelegramMessage, sendTelegramMessage } = require('../lib/telegram');
 const { checkLeadSubmittedToday, insertLeadToSupabase } = require('../lib/leads');
 const { isValidVnPhone } = require('../lib/phone');
+const { isRateLimited } = require('../lib/rate-limit');
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
@@ -9,8 +10,19 @@ module.exports = async (req, res) => {
     return;
   }
 
+  if (isRateLimited(req)) {
+    sendJson(res, 429, { error: 'Quá nhiều yêu cầu. Vui lòng thử lại sau.', code: 'RATE_LIMIT' });
+    return;
+  }
+
   try {
     const body = await parseBody(req);
+
+    if (body.website || body._hp) {
+      sendJson(res, 200, { success: true });
+      return;
+    }
+
     const name = String(body.name || '').trim();
     const phone = String(body.phone || '').trim();
     const product_id = String(body.product_id || '').trim();

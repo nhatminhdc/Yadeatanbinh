@@ -5,9 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "node scripts/build-assets.js",
+    "postinstall": "node scripts/build-assets.js || true"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "esbuild": "^0.25.0"
   }
 }

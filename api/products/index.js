@@ -1,4 +1,4 @@
-const { readSiteMeta } = require('../lib/site-data');
+const { readProductList } = require('../lib/site-data');
 const { sendJson } = require('../lib/http');
 
 module.exports = async (req, res) => {
@@ -8,8 +8,8 @@ module.exports = async (req, res) => {
   }
 
   try {
-    sendJson(res, 200, readSiteMeta(), true);
+    sendJson(res, 200, readProductList(), true);
   } catch (err) {
-    sendJson(res, 500, { error: err.message || 'Không đọc được dữ liệu' });
+    sendJson(res, 500, { error: err.message || 'Không đọc được sản phẩm' });
   }
 };

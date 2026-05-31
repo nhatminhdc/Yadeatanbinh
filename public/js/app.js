@@ -19,7 +19,9 @@ const ICONS = {
   mail: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
 };
 
-let siteData = null;
+let siteMeta = null;
+let productsCache = null;
+let productDetailCache = {};
 let heroInterval = null;
 
 function formatPrice(price) {
@@ -31,11 +33,31 @@ function calcDiscount(price, salePrice) {
   return Math.round((1 - salePrice / price) * 100);
 }
 
-async function fetchData() {
-  if (siteData) return siteData;
+async function fetchSiteMeta() {
+  if (siteMeta) return siteMeta;
   const res = await fetch('/api/data');
-  siteData = await res.json();
-  return siteData;
+  siteMeta = await res.json();
+  return siteMeta;
+}
+
+async function fetchProducts() {
+  if (productsCache) return productsCache;
+  const res = await fetch('/api/products');
+  productsCache = await res.json();
+  return productsCache;
+}
+
+async function fetchProductDetail(slug) {
+  if (productDetailCache[slug]) return productDetailCache[slug];
+  const res = await fetch(`/api/products/${encodeURIComponent(slug)}`);
+  if (!res.ok) return null;
+  productDetailCache[slug] = await res.json();
+  return productDetailCache[slug];
+}
+
+async function fetchData() {
+  const [meta, products] = await Promise.all([fetchSiteMeta(), fetchProducts()]);
+  return { ...meta, products };
 }
 
 function showToast(msg) {
@@ -251,7 +273,8 @@ function highlightNav() {
   });
 }
 
-function productCardHTML(p) {
+function productCardHTML(p, hotline) {
+  const phone = hotline || siteMeta?.site?.phone || '';
   const discount = calcDiscount(p.price, p.salePrice);
   const displayPrice = p.salePrice || p.price;
   return `
@@ -268,7 +291,7 @@ function productCardHTML(p) {
         </div>
         <div class="product-actions">
           <button class="btn btn-primary" onclick="openOrderModal('${p.id}')">MUA NGAY</button>
-          <a href="tel:${siteData.site.phone.replace(/\s/g,'')}" class="btn btn-dark">MUA TRẢ GÓP</a>
+          <a href="tel:${phone.replace(/\s/g,'')}" class="btn btn-dark">MUA TRẢ GÓP</a>
         </div>
       </div>
     </article>
@@ -374,7 +397,7 @@ function renderHomepageCategories(data, hp) {
           <a href="/san-pham.html?category=${section.slug}" class="home-category-link">Xem tất cả →</a>
         </div>
         <div class="products-grid-4">
-          ${items.map(productCardHTML).join('')}
+          ${items.map(p => productCardHTML(p, data.site.phone)).join('')}
         </div>
         ${hasMore ? `
           <div class="home-category-more">
@@ -386,13 +409,14 @@ function renderHomepageCategories(data, hp) {
   }).join('');
 }
 
-function renderProducts(products, containerId, limit) {
+function renderProducts(products, containerId, limit, hotline) {
   const el = document.getElementById(containerId);
   if (!el) return;
 
   const items = limit ? products.slice(0, limit) : products;
+  const phone = hotline || siteMeta?.site?.phone || '';
   el.innerHTML = items.length
-    ? `<div class="products-grid">${items.map(productCardHTML).join('')}</div>`
+    ? `<div class="products-grid">${items.map(p => productCardHTML(p, phone)).join('')}</div>`
     : '<p style="text-align:center;color:var(--gray-500)">Không có sản phẩm nào.</p>';
 }
 
@@ -476,8 +500,14 @@ function getHomepageProducts(data) {
 }
 
 function openOrderModal(productId) {
-  const product = siteData.products.find(p => p.id === productId);
-  if (!product) return;
+  fetchProducts().then(products => {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    renderOrderModal(product, products, productId);
+  });
+}
+
+function renderOrderModal(product, allProducts, productId) {
 
   let modal = document.getElementById('order-modal');
   if (!modal) {
@@ -487,7 +517,7 @@ function openOrderModal(productId) {
     document.body.appendChild(modal);
   }
 
-  const sortedProducts = [...siteData.products].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+  const sortedProducts = [...allProducts].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
   const defaultPrice = product.salePrice || product.price;
 
   modal.innerHTML = `
@@ -498,6 +528,7 @@ function openOrderModal(productId) {
         ${product.name} - <strong style="color:var(--primary)">${formatPrice(defaultPrice)}</strong>
       </p>
       <form id="order-form">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
         <div class="form-group">
           <label>Họ tên *</label>
           <input type="text" name="name" required placeholder="Nguyễn Văn A">
@@ -529,7 +560,7 @@ function openOrderModal(productId) {
   modal.onclick = (e) => { if (e.target === modal) closeOrderModal(); };
 
   document.getElementById('order-product-select').onchange = (e) => {
-    const selected = siteData.products.find(p => p.id === e.target.value);
+    const selected = allProducts.find(p => p.id === e.target.value);
     if (!selected) return;
     const price = selected.salePrice || selected.price;
     document.getElementById('order-product-summary').innerHTML =
@@ -541,7 +572,7 @@ function openOrderModal(productId) {
     const form = e.target;
     const fd = new FormData(form);
     const productId = String(fd.get('product') || '');
-    const selected = siteData.products.find(p => String(p.id) === productId);
+    const selected = allProducts.find(p => String(p.id) === productId);
     const price = selected ? (selected.salePrice || selected.price || 0) : 0;
     const productPriceLabel = price > 0 ? formatPrice(price) : 'Liên hệ';
     const submitBtn = document.getElementById('order-submit-btn');
@@ -559,6 +590,7 @@ function openOrderModal(productId) {
         product_price_label: productPriceLabel,
         note: String(fd.get('note') || '').trim(),
         source: 'quick_order',
+        website: String(fd.get('website') || '').trim(),
       };
 
       await submitOrderLead(lead);
@@ -569,6 +601,8 @@ function openOrderModal(productId) {
       console.error('Lead submit error:', err);
       if (err.code === 'DUPLICATE_PHONE') {
         showToast(err.message || 'Số điện thoại này đã gửi đơn hôm nay. Vui lòng thử lại vào ngày mai.');
+      } else if (err.code === 'RATE_LIMIT') {
+        showToast('Quá nhiều yêu cầu. Vui lòng thử lại sau vài phút.');
       } else {
         showToast('Không gửi được đơn hàng. Gọi hotline 0933 969396 hoặc thử lại sau.');
       }
@@ -613,10 +647,11 @@ async function initHome() {
 }
 
 async function initProductsPage() {
-  const data = await fetchData();
-  renderHeader(data);
-  renderFooter(data);
-  renderFloatCTA(data);
+  const [data, products] = await Promise.all([fetchSiteMeta(), fetchProducts()]);
+  const fullData = { ...data, products };
+  renderHeader(fullData);
+  renderFooter(fullData);
+  renderFloatCTA(fullData);
 
   const params = new URLSearchParams(location.search);
   const category = params.get('category');
@@ -624,23 +659,23 @@ async function initProductsPage() {
   const query = params.get('q');
 
   if (slug) {
-    const product = data.products.find(p => p.slug === slug);
+    const product = await fetchProductDetail(slug);
     if (!product) { window.location.href = '/san-pham.html'; return; }
     const mainSection = document.querySelector('main.section');
     if (mainSection) mainSection.classList.add('hidden');
-    renderProductDetail(product, data);
+    renderProductDetail(product, fullData);
     return;
   }
 
-  let products = data.products;
-  if (category) products = products.filter(p => (p.categories || [p.category]).includes(category));
-  if (query) products = products.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+  let filtered = products;
+  if (category) filtered = filtered.filter(p => (p.categories || [p.category]).includes(category));
+  if (query) filtered = filtered.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
 
   const filterEl = document.getElementById('category-filter');
   if (filterEl) {
     filterEl.innerHTML = `
       <button class="filter-btn ${!category ? 'active' : ''}" onclick="location.href='/san-pham.html'">Tất cả</button>
-      ${data.categories.map(c => `
+      ${fullData.categories.map(c => `
         <button class="filter-btn ${category === c.slug ? 'active' : ''}" onclick="location.href='/san-pham.html?category=${c.slug}'">${c.name}</button>
       `).join('')}
     `;
@@ -653,7 +688,7 @@ async function initProductsPage() {
     else title.textContent = 'Sản phẩm';
   }
 
-  renderProducts(products, 'products-list');
+  renderProducts(filtered, 'products-list', null, fullData.site.phone);
 }
 
 function renderProductDetail(product, data) {
