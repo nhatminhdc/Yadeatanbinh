@@ -12,6 +12,15 @@ create table if not exists public.leads (
   created_at timestamptz default now()
 );
 
+-- Bổ sung cột nếu bảng đã tạo trước đó thiếu
+alter table public.leads add column if not exists id uuid default gen_random_uuid();
+alter table public.leads add column if not exists product_id text;
+alter table public.leads add column if not exists product_name text;
+alter table public.leads add column if not exists product_price bigint;
+alter table public.leads add column if not exists note text;
+alter table public.leads add column if not exists source text default 'quick_order';
+alter table public.leads add column if not exists created_at timestamptz default now();
+
 alter table public.leads enable row level security;
 
 drop policy if exists "Allow anonymous insert leads" on public.leads;
