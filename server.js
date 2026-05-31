@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -9,6 +10,7 @@ const { syncProducts } = require('./scripts/sync-products');
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data', 'site.json');
+const TELEGRAM_FILE = path.join(ROOT, 'data', 'telegram.json');
 const UPLOAD_DIR = path.join(ROOT, 'public', 'uploads');
 const SESSIONS = new Map();
 const SESSION_TTL = 24 * 60 * 60 * 1000;
@@ -37,6 +39,78 @@ function readData() {
 
 function writeData(data) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
+}
+
+function readTelegramConfig() {
+  if (!fs.existsSync(TELEGRAM_FILE)) return null;
+  try {
+    const cfg = JSON.parse(fs.readFileSync(TELEGRAM_FILE, 'utf8'));
+    if (!cfg.botToken || !cfg.chatId || cfg.botToken.includes('YOUR_')) return null;
+    return cfg;
+  } catch {
+    return null;
+  }
+}
+
+function sendTelegramMessage(text) {
+  const cfg = readTelegramConfig();
+  if (!cfg) return Promise.reject(new Error('Chưa cấu hình Telegram'));
+
+  const payload = JSON.stringify({
+    chat_id: cfg.chatId,
+    text,
+    parse_mode: 'HTML',
+  });
+
+  return new Promise((resolve, reject) => {
+    const req = https.request(
+      {
+        hostname: 'api.telegram.org',
+        path: `/bot${cfg.botToken}/sendMessage`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(payload),
+        },
+      },
+      (res) => {
+        let data = '';
+        res.on('data', chunk => { data += chunk; });
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) resolve(data);
+          else reject(new Error(data || `Telegram HTTP ${res.statusCode}`));
+        });
+      }
+    );
+    req.on('error', reject);
+    req.write(payload);
+    req.end();
+  });
+}
+
+function escapeTelegramHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function formatPriceVnd(price) {
+  const num = Number(price);
+  if (!Number.isFinite(num) || num <= 0) return '—';
+  return new Intl.NumberFormat('vi-VN').format(num) + ' đ';
+}
+
+function formatLeadTelegramMessage(lead) {
+  return [
+    '🛵 <b>ĐẶT HÀNG MỚI - Yadea Tân Bình</b>',
+    '',
+    `• <b>Tên khách hàng:</b> ${escapeTelegramHtml(lead.name)}`,
+    `• <b>Số điện thoại:</b> ${escapeTelegramHtml(lead.phone)}`,
+    `• <b>Dòng Xe Muốn Mua:</b> ${escapeTelegramHtml(lead.product_name || '—')}`,
+    `• <b>Giá xe:</b> ${escapeTelegramHtml(formatPriceVnd(lead.product_price))}`,
+    `• <b>Ghi chú:</b> ${escapeTelegramHtml(lead.note || '—')}`,
+  ].join('\n');
 }
 
 function parseBody(req) {
@@ -134,6 +208,28 @@ async function handleAPI(req, res, pathname) {
     return;
   }
 
+  if (pathname === '/api/notify-telegram' && req.method === 'POST') {
+    try {
+      const body = await parseBody(req);
+      const name = String(body.name || '').trim();
+      const phone = String(body.phone || '').trim();
+      const product_name = String(body.product_name || '').trim();
+      const product_price = body.product_price;
+      const note = String(body.note || '').trim();
+
+      if (!name || !phone) {
+        sendJSON(res, 400, { error: 'Thiếu họ tên hoặc số điện thoại' });
+        return;
+      }
+
+      await sendTelegramMessage(formatLeadTelegramMessage({ name, phone, product_name, product_price, note }));
+      sendJSON(res, 200, { success: true });
+    } catch (err) {
+      sendJSON(res, 500, { error: err.message || 'Gửi Telegram thất bại' });
+    }
+    return;
+  }
+
   const session = getSession(req);
   if (!session) {
     sendJSON(res, 401, { error: 'Unauthorized' });
@@ -199,12 +295,29 @@ async function handleAPI(req, res, pathname) {
     return;
   }
 
+  if (pathname === '/api/admin/sync-status' && req.method === 'GET') {
+    const data = readData();
+    sendJSON(res, 200, data.syncStatus || { status: 'idle', message: 'Chưa cập nhật giá' });
+    return;
+  }
+
   if (pathname === '/api/admin/sync-products' && req.method === 'POST') {
     try {
-      const count = await syncProducts();
-      sendJSON(res, 200, { success: true, count });
+      const result = await syncProducts();
+      const data = readData();
+      sendJSON(res, 200, {
+        success: true,
+        count: result.count,
+        updated: result.updated,
+        added: result.added,
+        syncStatus: data.syncStatus,
+      });
     } catch (err) {
-      sendJSON(res, 500, { error: err.message || 'Đồng bộ thất bại' });
+      const data = readData();
+      sendJSON(res, 500, {
+        error: err.message || 'Đồng bộ thất bại',
+        syncStatus: data.syncStatus,
+      });
     }
     return;
   }

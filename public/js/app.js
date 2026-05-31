@@ -50,6 +50,51 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
+async function notifyTelegramLead(lead) {
+  const res = await fetch('/api/notify-telegram', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: lead.name,
+      phone: lead.phone,
+      product_name: lead.product_name,
+      product_price: lead.product_price,
+      note: lead.note,
+    }),
+  });
+  if (!res.ok) {
+    let detail = '';
+    try { detail = await res.text(); } catch { /* ignore */ }
+    throw new Error(detail || `HTTP ${res.status}`);
+  }
+}
+
+async function submitLeadToSupabase(lead) {
+  const cfg = window.SUPABASE_CONFIG;
+  if (!cfg?.url || !cfg?.anonKey || cfg.url.includes('YOUR_') || cfg.anonKey.includes('YOUR_')) {
+    throw new Error('Chưa cấu hình Supabase');
+  }
+
+  const baseUrl = cfg.url.replace(/\/$/, '');
+  const table = cfg.table || 'leads';
+  const res = await fetch(`${baseUrl}/rest/v1/${table}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      apikey: cfg.anonKey,
+      Authorization: `Bearer ${cfg.anonKey}`,
+      Prefer: 'return=minimal',
+    },
+    body: JSON.stringify(lead),
+  });
+
+  if (!res.ok) {
+    let detail = '';
+    try { detail = await res.text(); } catch { /* ignore */ }
+    throw new Error(detail || `HTTP ${res.status}`);
+  }
+}
+
 function renderHeader(data) {
   const header = document.getElementById('header');
   if (!header) return;
@@ -88,8 +133,8 @@ function renderHeader(data) {
       <div class="container nav-inner">
         <div class="nav-category">${ICONS.menu} Danh mục</div>
         <a href="/san-pham.html?category=xe-may-dien" class="nav-link" data-cat="xe-may-dien">Xe Máy Điện</a>
-        <a href="/san-pham.html?category=xe-dap-dien" class="nav-link" data-cat="xe-dap-dien">Xe Đạp Điện</a>
-        <a href="/san-pham.html?category=xe-hoc-sinh" class="nav-link" data-cat="xe-hoc-sinh">Xe Cho Học Sinh</a>
+        <a href="/san-pham.html?category=xe-hoc-sinh" class="nav-link" data-cat="xe-hoc-sinh">Xe Máy Điện Học Sinh</a>
+        <a href="/san-pham.html?category=xe-dap-dien" class="nav-link" data-cat="xe-dap-dien">Xe Đạp Điện - Trợ Lực</a>
         <a href="/san-pham.html?category=xe-di-lam" class="nav-link" data-cat="xe-di-lam">Xe Cho Người Đi Làm</a>
         <a href="/san-pham.html?category=ac-quy" class="nav-link" data-cat="ac-quy">Ắc Quy</a>
         <a href="/#news" class="nav-link">Tin tức</a>
@@ -312,6 +357,57 @@ function renderFeatures(features) {
   `;
 }
 
+function getProductsByCategory(products, slug) {
+  return products.filter(p => (p.categories || [p.category]).includes(slug));
+}
+
+const DEFAULT_HOME_CATEGORIES = [
+  { slug: 'xe-may-dien', title: 'Xe máy điện', perRow: 4, rows: 2 },
+  { slug: 'xe-hoc-sinh', title: 'Xe máy điện học sinh', perRow: 4, rows: 2 },
+  { slug: 'xe-dap-dien', title: 'Xe Đạp Điện - Trợ Lực', perRow: 4, rows: 2 },
+];
+
+function renderHomepageCategories(data, hp) {
+  const el = document.getElementById('products');
+  if (!el) return;
+
+  const sections = hp.categorySections?.length ? hp.categorySections : DEFAULT_HOME_CATEGORIES;
+  const moreLabel = hp.productsButtonText || 'XEM THÊM';
+
+  el.innerHTML = sections.map(section => {
+    const limit = (section.perRow || 4) * (section.rows || 2);
+    const all = getProductsByCategory(data.products, section.slug);
+    const featuredIds = new Set(hp.featuredProductIds || []);
+    const sorted = [...all].sort((a, b) => {
+      const af = featuredIds.has(a.id) ? 0 : 1;
+      const bf = featuredIds.has(b.id) ? 0 : 1;
+      return af - bf || a.name.localeCompare(b.name, 'vi');
+    });
+    const items = sorted.slice(0, limit);
+    const hasMore = all.length > limit;
+    const title = section.title || data.categories.find(c => c.slug === section.slug)?.name || section.slug;
+
+    if (!items.length) return '';
+
+    return `
+      <section class="home-category-section" id="category-${section.slug}">
+        <div class="home-category-header">
+          <h2>${title}</h2>
+          <a href="/san-pham.html?category=${section.slug}" class="home-category-link">Xem tất cả →</a>
+        </div>
+        <div class="products-grid-4">
+          ${items.map(productCardHTML).join('')}
+        </div>
+        ${hasMore ? `
+          <div class="home-category-more">
+            <a href="/san-pham.html?category=${section.slug}" class="btn btn-primary btn-lg">${moreLabel}</a>
+          </div>
+        ` : ''}
+      </section>
+    `;
+  }).join('');
+}
+
 function renderProducts(products, containerId, limit) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -413,12 +509,16 @@ function openOrderModal(productId) {
     document.body.appendChild(modal);
   }
 
-  const price = product.salePrice || product.price;
+  const sortedProducts = [...siteData.products].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+  const defaultPrice = product.salePrice || product.price;
+
   modal.innerHTML = `
     <div class="modal">
       <button class="modal-close" onclick="closeOrderModal()">${ICONS.close}</button>
       <h3>Đặt hàng nhanh</h3>
-      <p style="margin-bottom:16px;color:var(--gray-700)">${product.name} - <strong style="color:var(--primary)">${formatPrice(price)}</strong></p>
+      <p class="order-product-summary" id="order-product-summary">
+        ${product.name} - <strong style="color:var(--primary)">${formatPrice(defaultPrice)}</strong>
+      </p>
       <form id="order-form">
         <div class="form-group">
           <label>Họ tên *</label>
@@ -429,14 +529,20 @@ function openOrderModal(productId) {
           <input type="tel" name="phone" required placeholder="0901234567">
         </div>
         <div class="form-group">
-          <label>Địa chỉ</label>
-          <input type="text" name="address" placeholder="Địa chỉ giao hàng">
+          <label>DÒNG XE MUỐN MUA *</label>
+          <select name="product" id="order-product-select" required>
+            ${sortedProducts.map(p => {
+              const pPrice = p.salePrice || p.price;
+              const label = `${p.name} - ${formatPrice(pPrice)}`;
+              return `<option value="${p.id}" ${p.id === productId ? 'selected' : ''}>${label}</option>`;
+            }).join('')}
+          </select>
         </div>
         <div class="form-group">
           <label>Ghi chú</label>
           <textarea name="note" placeholder="Yêu cầu thêm..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%">ĐẶT HÀNG</button>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%" id="order-submit-btn">GỬI</button>
       </form>
     </div>
   `;
@@ -444,10 +550,63 @@ function openOrderModal(productId) {
   modal.classList.add('open');
   modal.onclick = (e) => { if (e.target === modal) closeOrderModal(); };
 
-  document.getElementById('order-form').onsubmit = (e) => {
+  document.getElementById('order-product-select').onchange = (e) => {
+    const selected = siteData.products.find(p => p.id === e.target.value);
+    if (!selected) return;
+    const price = selected.salePrice || selected.price;
+    document.getElementById('order-product-summary').innerHTML =
+      `${selected.name} - <strong style="color:var(--primary)">${formatPrice(price)}</strong>`;
+  };
+
+  document.getElementById('order-form').onsubmit = async (e) => {
     e.preventDefault();
-    closeOrderModal();
-    showToast('Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất.');
+    const form = e.target;
+    const fd = new FormData(form);
+    const productId = fd.get('product');
+    const selected = siteData.products.find(p => p.id === productId);
+    const price = selected ? (selected.salePrice || selected.price) : null;
+    const submitBtn = document.getElementById('order-submit-btn');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang gửi...';
+
+    try {
+      const lead = {
+        name: String(fd.get('name') || '').trim(),
+        phone: String(fd.get('phone') || '').trim(),
+        product_id: productId,
+        product_name: selected?.name || '',
+        product_price: price,
+        note: String(fd.get('note') || '').trim(),
+        source: 'quick_order',
+      };
+
+      const [supabaseResult, telegramResult] = await Promise.allSettled([
+        submitLeadToSupabase(lead),
+        notifyTelegramLead(lead),
+      ]);
+
+      if (supabaseResult.status === 'rejected') {
+        console.error('Supabase error:', supabaseResult.reason);
+      }
+      if (telegramResult.status === 'rejected') {
+        console.error('Telegram error:', telegramResult.reason);
+      }
+
+      if (supabaseResult.status === 'fulfilled' || telegramResult.status === 'fulfilled') {
+        form.reset();
+        closeOrderModal();
+        showToast('Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất.');
+      } else {
+        showToast('Không gửi được. Vui lòng gọi hotline hoặc thử lại sau.');
+      }
+    } catch (err) {
+      console.error('Lead submit error:', err);
+      showToast('Không gửi được. Vui lòng gọi hotline hoặc thử lại sau.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'GỬI';
+    }
   };
 }
 
@@ -472,15 +631,7 @@ async function initHome() {
   if (hp.showProducts === false) {
     productsSection && (productsSection.style.display = 'none');
   } else {
-    const productsEl = document.getElementById('products');
-    if (productsEl && hp.productsSectionTitle) {
-      productsEl.innerHTML = `<div class="section-header"><h2>${hp.productsSectionTitle}</h2></div><div id="products-grid"></div>`;
-      renderProducts(getHomepageProducts(data), 'products-grid');
-    } else {
-      renderProducts(getHomepageProducts(data), 'products', null);
-    }
-    const btn = productsSection?.querySelector('.btn-more');
-    if (btn && hp.productsButtonText) btn.textContent = hp.productsButtonText;
+    renderHomepageCategories(data, hp);
   }
 
   const newsEl = document.getElementById('news');
@@ -542,45 +693,173 @@ function renderProductDetail(product, data) {
 
   const price = product.salePrice || product.price;
   const discount = calcDiscount(product.price, product.salePrice);
-  const catName = data.categories.find(c => c.slug === product.category)?.name || '';
+  const cat = data.categories.find(c => c.slug === product.category);
+  const catName = cat?.name || '';
+  const catLink = product.category ? `/san-pham.html?category=${product.category}` : '/san-pham.html';
+  const images = product.gallery?.length ? product.gallery : [product.image];
+  const specTable = product.specTable?.length ? product.specTable : Object.entries(product.specs || {}).map(([k, v]) => ({
+    name: k === 'tocDo' ? 'Tốc độ' : k === 'quangDuong' ? 'Quãng đường' : k === 'congSuat' ? 'Công suất' : 'Pin',
+    value: v,
+  }));
+  const phone = data.site.phone.replace(/\s/g, '');
 
   el.innerHTML = `
     <div class="container product-detail">
       <div class="breadcrumb">
         <a href="/">Trang chủ</a><span>/</span>
         <a href="/san-pham.html">Sản phẩm</a><span>/</span>
-        ${catName}
+        <a href="${catLink}">${catName}</a><span>/</span>
+        <span>${product.name}</span>
       </div>
+
       <div class="product-detail-grid">
-        <div class="product-detail-image">
-          ${discount ? `<span class="product-badge" style="position:absolute;top:24px;left:24px">-${discount}%</span>` : ''}
-          <img src="${product.image}" alt="${product.name}" loading="eager">
-        </div>
-        <div class="product-detail-info">
-          <h1>${product.name}</h1>
-          <div class="product-detail-price">
-            ${formatPrice(price)}
-            ${product.salePrice ? `<span class="price-old" style="font-size:20px">${formatPrice(product.price)}</span>` : ''}
+        <div class="product-detail-gallery">
+          <div class="product-detail-main">
+            ${discount ? `<span class="product-badge" id="detail-discount-badge">-${discount}%</span>` : '<span class="product-badge" id="detail-discount-badge" style="display:none"></span>'}
+            <img id="detail-main-img" src="${images[0]}" alt="${product.name}" loading="eager">
           </div>
-          <p class="product-description">${product.description}</p>
-          ${product.specs ? `
-            <div class="product-specs">
-              ${Object.entries(product.specs).map(([k, v]) => `
-                <div class="spec-item">
-                  <div class="value">${v}</div>
-                  <div class="label">${k === 'tocDo' ? 'Tốc độ' : k === 'quangDuong' ? 'Quãng đường' : k === 'congSuat' ? 'Công suất' : 'Pin'}</div>
-                </div>
+          ${images.length > 1 ? `
+            <div class="product-detail-thumbs">
+              ${images.map((img, i) => `
+                <button type="button" class="detail-thumb ${i === 0 ? 'active' : ''}" data-src="${img}" aria-label="Ảnh ${i + 1}">
+                  <img src="${img}" alt="" loading="lazy">
+                </button>
               `).join('')}
             </div>
           ` : ''}
-          <div class="detail-actions">
-            <button class="btn btn-primary btn-lg" onclick="openOrderModal('${product.id}')">MUA NGAY</button>
-            <a href="tel:${data.site.phone.replace(/\s/g,'')}" class="btn btn-dark btn-lg">MUA TRẢ GÓP</a>
+        </div>
+
+        <div class="product-detail-info">
+          <h1>${product.name}</h1>
+          <div class="product-detail-price-row">
+            <span class="product-detail-price" id="detail-price">${formatPrice(price)}</span>
+            ${product.salePrice ? `<span class="price-old" id="detail-price-old">${formatPrice(product.price)}</span>` : '<span class="price-old" id="detail-price-old" style="display:none"></span>'}
+          </div>
+
+          ${product.colors?.length ? `
+            <div class="product-color-section">
+              <span class="product-color-label">Màu sắc:</span>
+              <div class="product-color-swatches" id="product-color-swatches">
+                ${product.colors.map((c, i) => `
+                  <button type="button"
+                    class="color-swatch ${i === 0 ? 'active' : ''}${c.hex?.toLowerCase() === '#ffffff' || c.hex?.toLowerCase() === '#fff' ? ' is-light' : ''}"
+                    data-index="${i}"
+                    style="--swatch-color: ${c.hex || '#ccc'}"
+                    title="${c.name}"
+                    aria-label="${c.name}">
+                  </button>
+                `).join('')}
+              </div>
+              <span class="product-color-name" id="detail-color-name">${product.colors[0].name}</span>
+            </div>
+          ` : ''}
+
+          ${product.promotion ? `
+            <div class="product-promo-box">
+              <div class="product-promo-label">KHUYẾN MÃI</div>
+              <p>${product.promotion}</p>
+            </div>
+          ` : ''}
+
+          <div class="product-detail-cta">
+            <button class="pd-btn pd-btn-buy" onclick="openOrderModal('${product.id}')">
+              <strong>MUA NGAY</strong>
+              <small>Giao hàng miễn phí</small>
+            </button>
+            <a href="tel:${phone}" class="pd-btn pd-btn-installment">
+              <strong>MUA TRẢ GÓP 0%</strong>
+              <small>Visa, Master, JCB</small>
+            </a>
+          </div>
+
+          <button class="pd-btn pd-btn-order" onclick="openOrderModal('${product.id}')">ĐẶT HÀNG</button>
+
+          <div class="product-trust-grid">
+            <div class="product-trust-item"><span>🛡️</span><div><strong>Bảo hành 3 năm</strong><small>Chính hãng Yadea</small></div></div>
+            <div class="product-trust-item"><span>🚚</span><div><strong>Vận chuyển phí 30Km</strong><small>Nội thành TP.HCM</small></div></div>
+            <div class="product-trust-item"><span>✅</span><div><strong>Chính hãng 100%</strong><small>Đền tiền gấp 5 lần</small></div></div>
+            <div class="product-trust-item"><span>🔄</span><div><strong>Đổi hàng miễn phí</strong><small>Trong 72 giờ</small></div></div>
           </div>
         </div>
       </div>
+
+      <div class="product-detail-tabs">
+        <button type="button" class="pd-tab active" data-tab="specs">Thông số kỹ thuật</button>
+        <button type="button" class="pd-tab" data-tab="desc">Mô tả chi tiết</button>
+      </div>
+      <div class="product-detail-panel active" id="panel-specs">
+        ${specTable.length ? `
+          <table class="product-spec-table">
+            <tbody>
+              ${specTable.map(s => `<tr><th>${s.name}</th><td>${s.value}</td></tr>`).join('')}
+            </tbody>
+          </table>
+        ` : '<p class="product-no-spec">Chưa có thông số kỹ thuật.</p>'}
+      </div>
+      <div class="product-detail-panel" id="panel-desc">
+        <div class="product-desc-content">${product.description}</div>
+      </div>
     </div>
   `;
+
+  el.querySelectorAll('.detail-thumb').forEach(btn => {
+    btn.onclick = () => {
+      document.getElementById('detail-main-img').src = btn.dataset.src;
+      el.querySelectorAll('.detail-thumb').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    };
+  });
+
+  const colors = product.colors || [];
+  if (colors.length) {
+    const mainImg = document.getElementById('detail-main-img');
+    const priceEl = document.getElementById('detail-price');
+    const priceOldEl = document.getElementById('detail-price-old');
+    const colorNameEl = document.getElementById('detail-color-name');
+    const badgeEl = document.getElementById('detail-discount-badge');
+
+    function applyColor(idx) {
+      const c = colors[idx];
+      if (!c) return;
+      if (c.image && mainImg) mainImg.src = c.image;
+      const p = c.price ?? product.price;
+      const sp = c.salePrice ?? product.salePrice;
+      const display = sp || p;
+      if (priceEl) priceEl.textContent = formatPrice(display);
+      if (priceOldEl) {
+        if (sp && p && sp < p) {
+          priceOldEl.textContent = formatPrice(p);
+          priceOldEl.style.display = '';
+        } else {
+          priceOldEl.style.display = 'none';
+        }
+      }
+      const d = calcDiscount(p, sp);
+      if (badgeEl) {
+        if (d) {
+          badgeEl.textContent = `-${d}%`;
+          badgeEl.style.display = '';
+        } else {
+          badgeEl.style.display = 'none';
+        }
+      }
+      if (colorNameEl) colorNameEl.textContent = c.name;
+      el.querySelectorAll('.color-swatch').forEach((s, i) => s.classList.toggle('active', i === idx));
+    }
+
+    el.querySelectorAll('.color-swatch').forEach(btn => {
+      btn.onclick = () => applyColor(parseInt(btn.dataset.index, 10));
+    });
+  }
+
+  el.querySelectorAll('.pd-tab').forEach(tab => {
+    tab.onclick = () => {
+      el.querySelectorAll('.pd-tab').forEach(t => t.classList.remove('active'));
+      el.querySelectorAll('.product-detail-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(`panel-${tab.dataset.tab}`)?.classList.add('active');
+    };
+  });
 
   document.title = product.name + ' - ' + data.site.name;
 }

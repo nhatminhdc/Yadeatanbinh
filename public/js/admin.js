@@ -285,6 +285,7 @@ async function initDashboard() {
   const featuredIds = adminData.homepage?.featuredProductIds || products.filter(p => p.featured).map(p => p.id);
   const featured = featuredIds.map(id => products.find(p => p.id === id)).filter(Boolean);
   const onSale = products.filter(p => p.salePrice && p.salePrice < p.price);
+  const sync = adminData.syncStatus || { status: 'idle', message: 'Chưa cập nhật giá' };
 
   document.getElementById('dashboard-content').innerHTML = `
     <div class="adm-stats">
@@ -307,6 +308,26 @@ async function initDashboard() {
         <div class="label">Banner & Tin tức</div>
         <div class="value">${adminData.banners.length} / ${adminData.news.length}</div>
         <div class="sub">Nội dung trang chủ</div>
+      </div>
+    </div>
+
+    <div class="adm-card adm-sync-card">
+      <div class="adm-card-header">
+        <h3>Cập nhật giá từ Yadea Việt Thanh</h3>
+        ${renderSyncBadge(sync.status)}
+      </div>
+      <div class="adm-card-body">
+        <p class="adm-panel-hint">Quét và lấy giá bán mới, sản phẩm mới từ <a href="https://yadeavietthanh.vn/" target="_blank" rel="noopener">yadeavietthanh.vn</a>. Danh mục sản phẩm bạn đã chỉnh trong admin vẫn được giữ nguyên.</p>
+        <div class="adm-sync-info" id="sync-status-text">
+          <span class="adm-sync-msg">${esc(sync.message || '')}</span>
+          ${sync.updatedAt ? `<span class="adm-sync-time">Lần cuối: ${formatSyncTime(sync.updatedAt)}</span>` : ''}
+        </div>
+        <div class="adm-sync-actions">
+          <button type="button" class="adm-btn adm-btn-primary" id="sync-price-btn" ${sync.status === 'updating' ? 'disabled' : ''}>
+            ${sync.status === 'updating' ? '⏳ Đang cập nhật...' : '↻ Cập nhật giá'}
+          </button>
+          <a href="/admin/products.html" class="adm-btn adm-btn-outline">Xem sản phẩm</a>
+        </div>
       </div>
     </div>
 
@@ -400,6 +421,68 @@ async function initDashboard() {
       </div>
     </div>
   `;
+  bindDashboardSync();
+}
+
+function renderSyncBadge(status) {
+  const map = {
+    completed: { cls: 'success', label: 'Hoàn thành' },
+    updating: { cls: 'updating', label: 'Đang Cập Nhật' },
+    error: { cls: 'error', label: 'Lỗi' },
+    idle: { cls: 'idle', label: 'Chưa chạy' },
+  };
+  const s = map[status] || map.idle;
+  return `<span class="adm-sync-badge ${s.cls}">${s.label}</span>`;
+}
+
+function formatSyncTime(iso) {
+  try {
+    return new Date(iso).toLocaleString('vi-VN');
+  } catch {
+    return iso;
+  }
+}
+
+function bindDashboardSync() {
+  document.getElementById('sync-price-btn')?.addEventListener('click', runPriceSync);
+}
+
+async function runPriceSync() {
+  const btn = document.getElementById('sync-price-btn');
+  const statusEl = document.getElementById('sync-status-text');
+  const badge = document.querySelector('.adm-sync-card .adm-sync-badge');
+
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = '⏳ Đang cập nhật...';
+  }
+  if (badge) {
+    badge.className = 'adm-sync-badge updating';
+    badge.textContent = 'Đang Cập Nhật';
+  }
+  if (statusEl) {
+    statusEl.innerHTML = '<span class="adm-sync-msg">Đang quét sản phẩm từ yadeavietthanh.vn...</span>';
+  }
+
+  try {
+    const result = await api('/api/admin/sync-products', { method: 'POST' });
+    adminData = await api('/api/admin/data');
+    showToast(`Cập nhật xong: ${result.updated || 0} giá, ${result.added || 0} SP mới`);
+    await initDashboard();
+  } catch (err) {
+    showToast(err.message || 'Cập nhật giá thất bại', true);
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = '↻ Cập nhật giá';
+    }
+    if (badge) {
+      badge.className = 'adm-sync-badge error';
+      badge.textContent = 'Lỗi';
+    }
+    if (statusEl) {
+      statusEl.innerHTML = `<span class="adm-sync-msg">${esc(err.message || 'Lỗi đồng bộ')}</span>`;
+    }
+  }
 }
 
 /* ─── Settings ─── */
@@ -629,11 +712,30 @@ function renderBannerPanel() {
 
 function renderHomepagePanel() {
   const hp = adminData.homepage;
+  const sections = hp.categorySections || [
+    { slug: 'xe-may-dien', title: 'Xe máy điện' },
+    { slug: 'xe-hoc-sinh', title: 'Xe máy điện học sinh' },
+    { slug: 'xe-dap-dien', title: 'Xe Đạp Điện - Trợ Lực' },
+  ];
   const selectedIds = hp.featuredProductIds || [];
   const selectedProducts = selectedIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
   const unselected = adminData.products.filter(p => !selectedIds.includes(p.id));
 
+  const sectionStats = sections.map(s => {
+    const count = adminData.products.filter(p => (p.categories || [p.category]).includes(s.slug)).length;
+    return `<li><strong>${esc(s.title)}</strong> — ${count} sản phẩm · hiển thị 8 (2 hàng × 4)${count > 8 ? ' · có nút Xem thêm' : ''}</li>`;
+  }).join('');
+
   return `
+    <div class="adm-card">
+      <div class="adm-card-header"><h3>Danh mục sản phẩm trang chủ</h3></div>
+      <div class="adm-card-body">
+        <p class="adm-panel-hint">Trang chủ hiển thị 3 danh mục, mỗi danh mục 2 hàng × 4 sản phẩm. Nếu nhiều hơn 8 sản phẩm sẽ có nút <strong>Xem thêm</strong>.</p>
+        <ul class="adm-category-stats">${sectionStats}</ul>
+        <div class="adm-form-group" style="margin-top:16px"><label>Nhãn nút Xem thêm</label><input class="adm-input" id="hp-products-btn" value="${esc(hp.productsButtonText || 'XEM THÊM SẢN PHẨM')}"></div>
+      </div>
+    </div>
+
     <div class="adm-card">
       <div class="adm-card-header"><h3>Hiển thị trang chủ</h3></div>
       <div class="adm-card-body">
@@ -642,10 +744,6 @@ function renderHomepagePanel() {
           <label class="adm-check"><input type="checkbox" id="hp-show-products" ${hp.showProducts !== false ? 'checked' : ''}> Sản phẩm</label>
           <label class="adm-check"><input type="checkbox" id="hp-show-news" ${hp.showNews !== false ? 'checked' : ''}> Tin tức</label>
           <label class="adm-check"><input type="checkbox" id="hp-show-stores" ${hp.showStores !== false ? 'checked' : ''}> Cửa hàng</label>
-        </div>
-        <div class="adm-form-row">
-          <div class="adm-form-group"><label>Tiêu đề sản phẩm (để trống = ẩn)</label><input class="adm-input" id="hp-products-title" value="${esc(hp.productsSectionTitle || '')}" placeholder="VD: Sản phẩm nổi bật"></div>
-          <div class="adm-form-group"><label>Nút xem thêm</label><input class="adm-input" id="hp-products-btn" value="${esc(hp.productsButtonText || 'XEM THÊM SẢN PHẨM')}"></div>
         </div>
         <div class="adm-form-row">
           <div class="adm-form-group"><label>Tiêu đề tin tức</label><input class="adm-input" id="hp-news-title" value="${esc(hp.newsSectionTitle || 'Thông tin hữu ích')}"></div>
@@ -657,11 +755,11 @@ function renderHomepagePanel() {
 
     <div class="adm-card">
       <div class="adm-card-header">
-        <h3>Sản phẩm hiển thị trang chủ</h3>
+        <h3>Sản phẩm ưu tiên (trong từng danh mục)</h3>
         <span class="adm-count">${selectedProducts.length} sản phẩm</span>
       </div>
       <div class="adm-card-body">
-        <p class="adm-panel-hint">Chọn sản phẩm và sắp xếp thứ tự hiển thị trên trang chủ (kéo thả hoặc dùng nút ↑↓).</p>
+        <p class="adm-panel-hint">Sản phẩm được chọn sẽ hiển thị trước trong danh mục tương ứng trên trang chủ (tối đa 8 sản phẩm/danh mục).</p>
         <div class="adm-hp-picker">
           <div class="adm-hp-col">
             <div class="adm-hp-col-title">Đã chọn (thứ tự hiển thị)</div>
@@ -1004,7 +1102,6 @@ function bindCustomizeEvents() {
       showProducts: document.getElementById('hp-show-products').checked,
       showNews: document.getElementById('hp-show-news').checked,
       showStores: document.getElementById('hp-show-stores').checked,
-      productsSectionTitle: document.getElementById('hp-products-title').value.trim(),
       productsButtonText: document.getElementById('hp-products-btn').value.trim(),
       newsSectionTitle: document.getElementById('hp-news-title').value.trim(),
       storesSectionTitle: document.getElementById('hp-stores-title').value.trim(),
@@ -1156,7 +1253,7 @@ function rebuildProductsToolbar() {
       <span class="adm-count" id="product-count"></span>
     </div>
     <div class="adm-toolbar-right">
-      <button class="adm-btn adm-btn-outline" id="sync-products-btn">↻ Đồng bộ từ Yadea</button>
+      <button class="adm-btn adm-btn-outline" id="sync-products-btn">↻ Cập nhật giá</button>
       <button class="adm-btn adm-btn-primary" id="add-product-btn">+ Thêm sản phẩm</button>
     </div>
   `;
@@ -1178,19 +1275,19 @@ function initProductsToolbar() {
   };
   document.getElementById('add-product-btn').onclick = () => openProductForm();
   document.getElementById('sync-products-btn').onclick = async () => {
-    if (!confirm('Đồng bộ lại toàn bộ sản phẩm từ yadeavietthanh.vn? Dữ liệu sản phẩm hiện tại sẽ được thay thế.')) return;
+    if (!confirm('Cập nhật giá và sản phẩm mới từ yadeavietthanh.vn?\nDanh mục bạn đã chỉnh sẽ được giữ nguyên.')) return;
     const btn = document.getElementById('sync-products-btn');
     btn.disabled = true;
-    btn.textContent = 'Đang đồng bộ...';
+    btn.textContent = 'Đang cập nhật...';
     try {
-      const { count } = await api('/api/admin/sync-products', { method: 'POST' });
+      const { updated, added, count } = await api('/api/admin/sync-products', { method: 'POST' });
       adminData = await api('/api/admin/data');
-      showToast(`Đã đồng bộ ${count} sản phẩm!`);
+      showToast(`Cập nhật ${updated || 0} giá, ${added || 0} SP mới (nguồn: ${count})`);
       renderShell('products', 'Sản phẩm', true);
       rebuildProductsToolbar();
       renderProductsTable();
     } catch (err) { showToast(err.message, true); }
-    finally { btn.disabled = false; btn.textContent = '↻ Đồng bộ từ Yadea'; }
+    finally { btn.disabled = false; btn.textContent = '↻ Cập nhật giá'; }
   };
 }
 
