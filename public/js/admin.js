@@ -979,12 +979,31 @@ function renderHomepagePanel() {
   `;
 }
 
+function getProductsForCategory(slug) {
+  return adminData.products.filter(p => (p.categories || [p.category]).includes(slug));
+}
+
+function sortProductsByName(list) {
+  return [...list].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+}
+
+function renderCategoryAvailableList(unselected, slug) {
+  const sorted = sortProductsByName(unselected);
+  if (!sorted.length) {
+    return '<p class="adm-empty-sm">Đã thêm hết sản phẩm trong danh mục</p>';
+  }
+  return `
+    <p class="adm-empty-sm adm-cat-avail-hint">Còn ${sorted.length} sản phẩm · cuộn để xem tất cả</p>
+    ${sorted.map(p => catAvailableRow(p, slug)).join('')}
+  `;
+}
+
 function renderCategoryPriorityBlock(section) {
   const slug = section.slug;
   const limit = (section.perRow || 4) * (section.rows || 2);
   const selectedIds = section.productIds || [];
   const selectedProducts = selectedIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
-  const categoryProducts = adminData.products.filter(p => (p.categories || [p.category]).includes(slug));
+  const categoryProducts = getProductsForCategory(slug);
   const unselected = categoryProducts.filter(p => !selectedIds.includes(p.id));
   const defaultTitle = HOME_CATEGORY_DEFAULTS.find(d => d.slug === slug)?.title || section.title;
 
@@ -1007,13 +1026,10 @@ function renderCategoryPriorityBlock(section) {
           </div>
         </div>
         <div class="adm-hp-col">
-          <div class="adm-hp-col-title">Thêm từ danh mục này</div>
+          <div class="adm-hp-col-title">Thêm từ danh mục này (${unselected.length})</div>
           <input class="adm-input cat-search" data-slug="${slug}" type="search" placeholder="Tìm sản phẩm...">
           <div class="adm-hp-available cat-available-list" id="cat-available-${slug}">
-            ${unselected.length
-              ? unselected.slice(0, 30).map(p => catAvailableRow(p, slug)).join('')
-              : '<p class="adm-empty-sm">Đã thêm hết sản phẩm trong danh mục</p>'}
-            ${unselected.length > 30 ? `<p class="adm-empty-sm">+ ${unselected.length - 30} sản phẩm — dùng tìm kiếm</p>` : ''}
+            ${renderCategoryAvailableList(unselected, slug)}
           </div>
         </div>
       </div>
@@ -1590,12 +1606,12 @@ function filterCategoryAvailable(slug, query) {
   const selected = new Set(sec.productIds);
   const list = document.getElementById(`cat-available-${slug}`);
   if (!list) return;
-  const filtered = adminData.products
-    .filter(p => (p.categories || [p.category]).includes(slug) && !selected.has(p.id))
-    .filter(p => !q || p.name.toLowerCase().includes(q))
-    .slice(0, 30);
+  const filtered = sortProductsByName(
+    getProductsForCategory(slug).filter(p => !selected.has(p.id))
+  ).filter(p => !q || p.name.toLowerCase().includes(q));
+
   list.innerHTML = filtered.length
-    ? filtered.map(p => catAvailableRow(p, slug)).join('')
+    ? renderCategoryAvailableList(filtered, slug)
     : '<p class="adm-empty-sm">Không tìm thấy sản phẩm</p>';
   list.querySelectorAll('.cat-add-btn').forEach(btn => {
     btn.onclick = () => addToCategory(btn.dataset.slug, btn.dataset.id);
@@ -1609,7 +1625,7 @@ function refreshCategoryPicker(slug) {
 
   const limit = (sec.perRow || 4) * (sec.rows || 2);
   const selectedProducts = sec.productIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
-  const categoryProducts = adminData.products.filter(p => (p.categories || [p.category]).includes(slug));
+  const categoryProducts = getProductsForCategory(slug);
   const unselected = categoryProducts.filter(p => !sec.productIds.includes(p.id));
   const searchVal = block.querySelector('.cat-search')?.value || '';
 
@@ -1627,9 +1643,7 @@ function refreshCategoryPicker(slug) {
   if (!searchVal.trim()) {
     const availList = block.querySelector('.cat-available-list');
     if (availList) {
-      availList.innerHTML = unselected.length
-        ? unselected.slice(0, 30).map(p => catAvailableRow(p, slug)).join('')
-        : '<p class="adm-empty-sm">Đã thêm hết sản phẩm trong danh mục</p>';
+      availList.innerHTML = renderCategoryAvailableList(unselected, slug);
       availList.querySelectorAll('.cat-add-btn').forEach(btn => {
         btn.onclick = () => addToCategory(btn.dataset.slug, btn.dataset.id);
       });

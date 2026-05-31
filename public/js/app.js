@@ -411,7 +411,6 @@ function getSectionProducts(allProducts, section) {
   const limit = (section.perRow || 4) * (section.rows || 2);
   const byCategory = getProductsByCategory(allProducts, section.slug);
   const productMap = Object.fromEntries(allProducts.map(p => [p.id, p]));
-  const categoryIds = new Set(byCategory.map(p => p.id));
   const ids = section.productIds || [];
 
   if (!ids.length) {
@@ -420,7 +419,7 @@ function getSectionProducts(allProducts, section) {
 
   const items = ids
     .map(id => productMap[id])
-    .filter(p => p && categoryIds.has(p.id))
+    .filter(Boolean)
     .slice(0, limit);
 
   return { items, hasMore: byCategory.length > items.length };
