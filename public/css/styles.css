@@ -1,4 +1,4 @@
-/* Yadea Tân Bình — Yadea Việt Thanh style + SF Pro */
+/* Yadea Tân Bình — SF Pro */
 :root {
   --primary: #F26E23;
   --primary-dark: #E05A10;
@@ -64,7 +64,7 @@ ul { list-style: none; }
 .header-action:hover { color: var(--primary); }
 .menu-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; }
 
-/* Nav bar — giống Viet Thanh */
+/* Nav bar */
 .nav { background: var(--white); border-bottom: 1px solid var(--gray-300); }
 .nav-inner { display: flex; align-items: stretch; height: var(--nav-h); overflow-x: auto; scrollbar-width: none; }
 .nav-inner::-webkit-scrollbar { display: none; }
@@ -178,7 +178,7 @@ ul { list-style: none; }
 .price-old { font-size: 13px; color: var(--gray-500); text-decoration: line-through; }
 .product-actions { display: flex; gap: 8px; margin-top: auto; }
 
-/* Buttons — giống Viet Thanh */
+/* Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 10px 16px; border-radius: var(--radius-btn); font-size: 13px; font-weight: 700;

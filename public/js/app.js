@@ -28,6 +28,27 @@ function formatPrice(price) {
   return new Intl.NumberFormat('vi-VN').format(price) + ' đ';
 }
 
+const HOTLINE_DISPLAY = '0933 96 93 96';
+
+function formatHotlineDisplay(phone) {
+  const digits = String(phone || '').replace(/\D/g, '');
+  if (digits.startsWith('84')) {
+    const local = `0${digits.slice(2)}`;
+    if (local.length === 10) {
+      return `${local.slice(0, 4)} ${local.slice(4, 6)} ${local.slice(6, 8)} ${local.slice(8, 10)}`;
+    }
+  }
+  if (digits.length === 10 && digits.startsWith('0')) {
+    return `${digits.slice(0, 4)} ${digits.slice(4, 6)} ${digits.slice(6, 8)} ${digits.slice(8, 10)}`;
+  }
+  const trimmed = String(phone || '').trim();
+  return trimmed || HOTLINE_DISPLAY;
+}
+
+function hotlineTel(phone) {
+  return formatHotlineDisplay(phone).replace(/\s/g, '');
+}
+
 function calcDiscount(price, salePrice) {
   if (!salePrice || salePrice >= price) return 0;
   return Math.round((1 - salePrice / price) * 100);
@@ -112,9 +133,9 @@ function renderHeader(data) {
           <button type="button" aria-label="Tìm" onclick="document.getElementById('search-input').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}))">${ICONS.search}</button>
         </div>
         <div class="header-actions">
-          <a href="tel:${data.site.hotline.replace(/\s/g,'')}" class="header-action">
+          <a href="tel:${hotlineTel(data.site.hotline)}" class="header-action">
             ${ICONS.phone}
-            <span>${data.site.hotline}</span>
+            <span>${formatHotlineDisplay(data.site.hotline)}</span>
           </a>
           <a href="/lien-he.html" class="header-action">
             ${ICONS.map}
@@ -170,7 +191,7 @@ function renderFooter(data) {
   ).join('');
   const supportLinks = (f.supportLinks || []).map(l => {
     let url = l.url;
-    if (!url || url === 'tel:') url = `tel:${data.site.phone.replace(/\s/g, '')}`;
+    if (!url || url === 'tel:') url = `tel:${hotlineTel(data.site.phone)}`;
     const isExternal = url.startsWith('http');
     return `<a href="${url}" class="footer-link"${isExternal ? ' target="_blank" rel="noopener"' : ''}>${l.label}</a>`;
   }).join('');
@@ -187,7 +208,7 @@ function renderFooter(data) {
         <div class="footer-brand">
           <img src="${data.site.logo}" alt="${data.site.name}" loading="lazy">
           <p>${data.site.tagline}</p>
-          <a href="tel:${data.site.hotline.replace(/\s/g,'')}" class="footer-hotline">${data.site.hotline}</a>
+          <a href="tel:${hotlineTel(data.site.hotline)}" class="footer-hotline">${formatHotlineDisplay(data.site.hotline)}</a>
           <p>${data.site.address}</p>
         </div>
         <div>
@@ -214,8 +235,8 @@ function renderFloatCTA(data) {
   if (!cta) return;
 
   cta.innerHTML = `
-    <a href="tel:${data.site.phone.replace(/\s/g,'')}" class="float-btn phone" aria-label="Gọi điện">${ICONS.phone}</a>
-    <a href="https://zalo.me/${data.site.zalo.replace(/\s/g,'')}" class="float-btn zalo" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+    <a href="tel:${hotlineTel(data.site.phone)}" class="float-btn phone" aria-label="Gọi điện">${ICONS.phone}</a>
+    <a href="https://zalo.me/${hotlineTel(data.site.zalo)}" class="float-btn zalo" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
     <a href="${data.site.facebook}" class="float-btn messenger" target="_blank" rel="noopener" aria-label="Messenger">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.08 2 11.08c0 2.85 1.39 5.38 3.57 7.02L4 22l4.2-1.65C9.42 20.78 10.68 21 12 21c5.52 0 10-4.08 10-9.08S17.52 2 12 2z"/></svg>
     </a>
@@ -291,7 +312,7 @@ function productCardHTML(p, hotline) {
         </div>
         <div class="product-actions">
           <button class="btn btn-primary" onclick="openOrderModal('${p.id}')">MUA NGAY</button>
-          <a href="tel:${phone.replace(/\s/g,'')}" class="btn btn-dark">MUA TRẢ GÓP</a>
+          <a href="tel:${hotlineTel(phone)}" class="btn btn-dark">MUA TRẢ GÓP</a>
         </div>
       </div>
     </article>
@@ -473,7 +494,6 @@ function renderStores(data, hp) {
 
 function branchCardHTML(b, isMainCard) {
   const isMain = isMainCard || b.isMain === true;
-  const tel = (b.hotline || '').replace(/\s/g, '');
   const mapHref = b.mapLink || '/lien-he.html';
   const isExternal = mapHref.startsWith('http');
   return `
@@ -483,7 +503,7 @@ function branchCardHTML(b, isMainCard) {
         ${isMain ? '<span class="store-badge-main">CHI NHÁNH CHÍNH</span>' : ''}
         <h3>${b.name}</h3>
         <p>${b.address}</p>
-        <p class="store-hotline">Hotline: <a href="tel:${tel}">${b.hotline}</a></p>
+        <p class="store-hotline">Hotline: <a href="tel:${hotlineTel(b.hotline)}">${formatHotlineDisplay(b.hotline)}</a></p>
         <a href="${mapHref}"${isExternal ? ' target="_blank" rel="noopener"' : ''}>Xem bản đồ →</a>
       </div>
     </article>
@@ -604,7 +624,7 @@ function renderOrderModal(product, allProducts, productId) {
       } else if (err.code === 'RATE_LIMIT') {
         showToast('Quá nhiều yêu cầu. Vui lòng thử lại sau vài phút.');
       } else {
-        showToast('Không gửi được đơn hàng. Gọi hotline 0933 969396 hoặc thử lại sau.');
+        showToast(`Không gửi được đơn hàng. Gọi hotline ${HOTLINE_DISPLAY} hoặc thử lại sau.`);
       }
     } finally {
       submitBtn.disabled = false;
@@ -705,7 +725,7 @@ function renderProductDetail(product, data) {
     name: k === 'tocDo' ? 'Tốc độ' : k === 'quangDuong' ? 'Quãng đường' : k === 'congSuat' ? 'Công suất' : 'Pin',
     value: v,
   }));
-  const phone = data.site.phone.replace(/\s/g, '');
+  const phone = hotlineTel(data.site.phone);
 
   el.innerHTML = `
     <div class="container product-detail">

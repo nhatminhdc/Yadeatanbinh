@@ -1,7 +1,7 @@
 const { parseBody, sendJson } = require('../lib/http');
 const { formatLeadTelegramMessage, sendTelegramMessage } = require('../lib/telegram');
 const { checkLeadSubmittedToday, insertLeadToSupabase } = require('../lib/leads');
-const { isValidVnPhone } = require('../lib/phone');
+const { isValidVnPhone, HOTLINE_DISPLAY } = require('../lib/phone');
 const { isRateLimited } = require('../lib/rate-limit');
 
 module.exports = async (req, res) => {
@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
     const alreadySubmitted = await checkLeadSubmittedToday(phone);
     if (alreadySubmitted) {
       sendJson(res, 429, {
-        error: 'Số điện thoại này đã gửi đơn hàng hôm nay. Vui lòng thử lại vào ngày mai hoặc gọi hotline 0933 969396.',
+        error: `Số điện thoại này đã gửi đơn hàng hôm nay. Vui lòng thử lại vào ngày mai hoặc gọi hotline ${HOTLINE_DISPLAY}.`,
         code: 'DUPLICATE_PHONE',
       });
       return;

@@ -313,7 +313,7 @@ async function initDashboard() {
 
     <div class="adm-card adm-sync-card">
       <div class="adm-card-header">
-        <h3>Cập nhật giá từ Yadea Việt Thanh</h3>
+        <h3>Cập nhật giá từ Yadea Tân Bình</h3>
         ${renderSyncBadge(sync.status)}
       </div>
       <div class="adm-card-body">
@@ -866,7 +866,7 @@ function renderBranchEditorRow(b, index, total) {
       </label>
       <div class="adm-form-row">
         <div class="adm-form-group"><label>Tên chi nhánh</label><input class="adm-input branch-name" value="${esc(b.name)}" placeholder="CN1 - Tân Bình"></div>
-        <div class="adm-form-group"><label>Hotline</label><input class="adm-input branch-hotline" value="${esc(b.hotline)}" placeholder="0933 969396"></div>
+        <div class="adm-form-group"><label>Hotline</label><input class="adm-input branch-hotline" value="${esc(b.hotline)}" placeholder="0933 96 93 96"></div>
       </div>
       <div class="adm-form-group"><label>Địa chỉ</label><input class="adm-input branch-address" value="${esc(b.address)}"></div>
       <div class="adm-form-group">
