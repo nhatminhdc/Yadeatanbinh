@@ -672,6 +672,85 @@ async function renderUsersTable() {
 /* ─── Website Customize ─── */
 let customizeTab = 'brand';
 
+const HOME_CATEGORY_DEFAULTS = [
+  { slug: 'xe-may-dien', title: 'Xe máy điện', perRow: 4, rows: 2 },
+  { slug: 'xe-hoc-sinh', title: 'Xe điện học sinh', perRow: 4, rows: 2 },
+  { slug: 'xe-dap-dien', title: 'Xe đạp điện - trợ lực', perRow: 4, rows: 2 },
+];
+
+function ensureCategorySections() {
+  const hp = adminData.homepage;
+  if (!hp.categorySections?.length) {
+    hp.categorySections = HOME_CATEGORY_DEFAULTS.map(s => ({ ...s, productIds: [] }));
+  }
+
+  for (const def of HOME_CATEGORY_DEFAULTS) {
+    let sec = hp.categorySections.find(s => s.slug === def.slug);
+    if (!sec) {
+      sec = { ...def, productIds: [] };
+      hp.categorySections.push(sec);
+    }
+    if (!Array.isArray(sec.productIds)) sec.productIds = [];
+    sec.perRow = sec.perRow || 4;
+    sec.rows = sec.rows || 2;
+  }
+
+  hp.categorySections = HOME_CATEGORY_DEFAULTS.map(def => {
+    const sec = hp.categorySections.find(s => s.slug === def.slug);
+    return {
+      slug: def.slug,
+      title: sec?.title || def.title,
+      perRow: sec?.perRow || 4,
+      rows: sec?.rows || 2,
+      productIds: sec?.productIds || [],
+    };
+  });
+
+  const globalIds = hp.featuredProductIds || [];
+  const needsMigrate = globalIds.length && hp.categorySections.every(s => !s.productIds.length);
+  if (needsMigrate) {
+    for (const id of globalIds) {
+      const p = adminData.products.find(x => x.id === id);
+      if (!p) continue;
+      const cats = p.categories || [p.category];
+      for (const sec of hp.categorySections) {
+        const limit = sec.perRow * sec.rows;
+        if (cats.includes(sec.slug) && sec.productIds.length < limit && !sec.productIds.includes(id)) {
+          sec.productIds.push(id);
+        }
+      }
+    }
+  }
+
+  syncFeaturedFlagsFromSections();
+}
+
+function syncFeaturedFlagsFromSections() {
+  const ids = new Set((adminData.homepage?.categorySections || []).flatMap(s => s.productIds || []));
+  adminData.homepage.featuredProductIds = [...ids];
+  adminData.products.forEach(p => { p.featured = ids.has(p.id); });
+}
+
+function getCategorySection(slug) {
+  ensureCategorySections();
+  return adminData.homepage.categorySections.find(s => s.slug === slug);
+}
+
+function syncProductToCategorySections(product) {
+  ensureCategorySections();
+  const cats = product.categories || [product.category];
+  adminData.homepage.categorySections.forEach(sec => {
+    const limit = (sec.perRow || 4) * (sec.rows || 2);
+    if (product.featured && cats.includes(sec.slug) && !sec.productIds.includes(product.id) && sec.productIds.length < limit) {
+      sec.productIds.push(product.id);
+    }
+    if (!product.featured) {
+      sec.productIds = sec.productIds.filter(id => id !== product.id);
+    }
+  });
+  syncFeaturedFlagsFromSections();
+}
+
 function ensureCustomizeDefaults() {
   if (!adminData.homepage) {
     adminData.homepage = {
@@ -685,8 +764,10 @@ function ensureCustomizeDefaults() {
       showNews: true,
       showStores: true,
       showProducts: true,
+      categorySections: HOME_CATEGORY_DEFAULTS.map(s => ({ ...s, productIds: [] })),
     };
   }
+  ensureCategorySections();
   if (!adminData.footer) {
     adminData.footer = {
       aboutTitle: 'Về ' + adminData.site.name,
@@ -852,28 +933,16 @@ function renderBannerPanel() {
 }
 
 function renderHomepagePanel() {
+  ensureCategorySections();
   const hp = adminData.homepage;
-  const sections = hp.categorySections || [
-    { slug: 'xe-may-dien', title: 'Xe máy điện' },
-    { slug: 'xe-hoc-sinh', title: 'Xe máy điện học sinh' },
-    { slug: 'xe-dap-dien', title: 'Xe Đạp Điện - Trợ Lực' },
-  ];
-  const selectedIds = hp.featuredProductIds || [];
-  const selectedProducts = selectedIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
-  const unselected = adminData.products.filter(p => !selectedIds.includes(p.id));
-
-  const sectionStats = sections.map(s => {
-    const count = adminData.products.filter(p => (p.categories || [p.category]).includes(s.slug)).length;
-    return `<li><strong>${esc(s.title)}</strong> — ${count} sản phẩm · hiển thị 8 (2 hàng × 4)${count > 8 ? ' · có nút Xem thêm' : ''}</li>`;
-  }).join('');
+  const sections = hp.categorySections;
 
   return `
     <div class="adm-card">
       <div class="adm-card-header"><h3>Danh mục sản phẩm trang chủ</h3></div>
       <div class="adm-card-body">
-        <p class="adm-panel-hint">Trang chủ hiển thị 3 danh mục, mỗi danh mục 2 hàng × 4 sản phẩm. Nếu nhiều hơn 8 sản phẩm sẽ có nút <strong>Xem thêm</strong>.</p>
-        <ul class="adm-category-stats">${sectionStats}</ul>
-        <div class="adm-form-group" style="margin-top:16px"><label>Nhãn nút Xem thêm</label><input class="adm-input" id="hp-products-btn" value="${esc(hp.productsButtonText || 'XEM THÊM SẢN PHẨM')}"></div>
+        <p class="adm-panel-hint">Trang chủ hiển thị 3 danh mục, mỗi danh mục 2 hàng × 4 sản phẩm (tối đa 8). Nếu nhiều hơn 8 sản phẩm sẽ có nút <strong>Xem thêm</strong>.</p>
+        <div class="adm-form-group"><label>Nhãn nút Xem thêm</label><input class="adm-input" id="hp-products-btn" value="${esc(hp.productsButtonText || 'XEM THÊM SẢN PHẨM')}"></div>
       </div>
     </div>
 
@@ -897,31 +966,11 @@ function renderHomepagePanel() {
     <div class="adm-card">
       <div class="adm-card-header">
         <h3>Sản phẩm ưu tiên (trong từng danh mục)</h3>
-        <span class="adm-count">${selectedProducts.length} sản phẩm</span>
       </div>
       <div class="adm-card-body">
-        <p class="adm-panel-hint">Sản phẩm được chọn sẽ hiển thị trước trong danh mục tương ứng trên trang chủ (tối đa 8 sản phẩm/danh mục).</p>
-        <div class="adm-hp-picker">
-          <div class="adm-hp-col">
-            <div class="adm-hp-col-title">Đã chọn (thứ tự hiển thị)</div>
-            <div class="adm-hp-selected" id="hp-selected-list">
-              ${selectedProducts.length ? selectedProducts.map((p, i) => hpProductRow(p, i, selectedProducts.length)).join('') : '<p class="adm-empty-sm">Chưa chọn sản phẩm nào</p>'}
-            </div>
-          </div>
-          <div class="adm-hp-col">
-            <div class="adm-hp-col-title">Thêm sản phẩm</div>
-            <input class="adm-input" type="search" id="hp-search" placeholder="Tìm sản phẩm...">
-            <div class="adm-hp-available" id="hp-available-list">
-              ${unselected.slice(0, 50).map(p => `
-                <div class="adm-hp-item" data-id="${p.id}">
-                  <img src="${esc(p.image)}" alt="">
-                  <span>${esc(p.name)}</span>
-                  <button type="button" class="adm-btn adm-btn-sm adm-btn-primary hp-add-btn" data-id="${p.id}">+ Thêm</button>
-                </div>
-              `).join('')}
-              ${unselected.length > 50 ? `<p class="adm-empty-sm">+ ${unselected.length - 50} sản phẩm khác — dùng tìm kiếm</p>` : ''}
-            </div>
-          </div>
+        <p class="adm-panel-hint">Chọn xe hiển thị trước trong từng danh mục. Tiêu đề chỉ viết hoa chữ cái đầu (VD: Xe máy điện).</p>
+        <div class="adm-cat-priority-list">
+          ${sections.map(section => renderCategoryPriorityBlock(section)).join('')}
         </div>
         <button class="adm-btn adm-btn-primary" id="save-homepage-btn" style="margin-top:20px">💾 Lưu trang chủ</button>
       </div>
@@ -929,16 +978,68 @@ function renderHomepagePanel() {
   `;
 }
 
-function hpProductRow(p, index, total) {
+function renderCategoryPriorityBlock(section) {
+  const slug = section.slug;
+  const limit = (section.perRow || 4) * (section.rows || 2);
+  const selectedIds = section.productIds || [];
+  const selectedProducts = selectedIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
+  const categoryProducts = adminData.products.filter(p => (p.categories || [p.category]).includes(slug));
+  const unselected = categoryProducts.filter(p => !selectedIds.includes(p.id));
+  const defaultTitle = HOME_CATEGORY_DEFAULTS.find(d => d.slug === slug)?.title || section.title;
+
   return `
-    <div class="adm-hp-item adm-hp-selected-item" data-id="${p.id}">
+    <div class="adm-cat-priority" data-slug="${slug}">
+      <div class="adm-cat-priority-head">
+        <div class="adm-form-group adm-cat-title-field">
+          <label>Tiêu đề danh mục</label>
+          <input class="adm-input cat-section-title" value="${esc(section.title || defaultTitle)}" placeholder="${esc(defaultTitle)}">
+        </div>
+        <span class="adm-count">${selectedProducts.length}/${limit} ưu tiên · ${categoryProducts.length} SP</span>
+      </div>
+      <div class="adm-hp-picker adm-hp-picker-compact">
+        <div class="adm-hp-col">
+          <div class="adm-hp-col-title">Đã chọn (kéo thứ tự ↑↓)</div>
+          <div class="adm-hp-selected cat-selected-list" id="cat-selected-${slug}">
+            ${selectedProducts.length
+              ? selectedProducts.map((p, i) => hpProductRow(p, i, selectedProducts.length, slug)).join('')
+              : '<p class="adm-empty-sm">Chưa chọn — hiển thị theo tên A-Z</p>'}
+          </div>
+        </div>
+        <div class="adm-hp-col">
+          <div class="adm-hp-col-title">Thêm từ danh mục này</div>
+          <input class="adm-input cat-search" data-slug="${slug}" type="search" placeholder="Tìm sản phẩm...">
+          <div class="adm-hp-available cat-available-list" id="cat-available-${slug}">
+            ${unselected.length
+              ? unselected.slice(0, 30).map(p => catAvailableRow(p, slug)).join('')
+              : '<p class="adm-empty-sm">Đã thêm hết sản phẩm trong danh mục</p>'}
+            ${unselected.length > 30 ? `<p class="adm-empty-sm">+ ${unselected.length - 30} sản phẩm — dùng tìm kiếm</p>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function catAvailableRow(p, slug) {
+  return `
+    <div class="adm-hp-item" data-id="${p.id}">
+      <img src="${esc(p.image)}" alt="">
+      <span>${esc(p.name)}</span>
+      <button type="button" class="adm-btn adm-btn-sm adm-btn-primary cat-add-btn" data-id="${p.id}" data-slug="${slug}">+ Thêm</button>
+    </div>
+  `;
+}
+
+function hpProductRow(p, index, total, slug = '') {
+  return `
+    <div class="adm-hp-item adm-hp-selected-item" data-id="${p.id}" data-slug="${slug}">
       <span class="adm-hp-order">${index + 1}</span>
       <img src="${esc(p.image)}" alt="">
       <span class="adm-hp-name">${esc(p.name)}</span>
       <div class="adm-hp-actions">
-        <button type="button" class="adm-btn-icon hp-move-up" data-id="${p.id}" ${index === 0 ? 'disabled' : ''} title="Lên">↑</button>
-        <button type="button" class="adm-btn-icon hp-move-down" data-id="${p.id}" ${index === total - 1 ? 'disabled' : ''} title="Xuống">↓</button>
-        <button type="button" class="adm-btn-icon hp-remove" data-id="${p.id}" title="Xóa">×</button>
+        <button type="button" class="adm-btn-icon cat-move-up" data-id="${p.id}" data-slug="${slug}" ${index === 0 ? 'disabled' : ''} title="Lên">↑</button>
+        <button type="button" class="adm-btn-icon cat-move-down" data-id="${p.id}" data-slug="${slug}" ${index === total - 1 ? 'disabled' : ''} title="Xuống">↓</button>
+        <button type="button" class="adm-btn-icon cat-remove" data-id="${p.id}" data-slug="${slug}" title="Xóa">×</button>
       </div>
     </div>
   `;
@@ -1338,6 +1439,7 @@ function bindCustomizeEvents() {
   bindBranchEditorEvents(panel);
 
   document.getElementById('save-homepage-btn')?.addEventListener('click', async () => {
+    collectCategorySectionsFromDOM();
     adminData.homepage = {
       ...adminData.homepage,
       showFeatures: document.getElementById('hp-show-features').checked,
@@ -1349,8 +1451,28 @@ function bindCustomizeEvents() {
       storesSectionTitle: document.getElementById('hp-stores-title').value.trim(),
       storesSectionSubtitle: document.getElementById('hp-stores-sub').value.trim(),
     };
-    syncFeaturedFlags();
+    syncFeaturedFlagsFromSections();
     await saveData();
+  });
+
+  panel.querySelectorAll('.cat-add-btn').forEach(btn => {
+    btn.onclick = () => addToCategory(btn.dataset.slug, btn.dataset.id);
+  });
+
+  panel.querySelectorAll('.cat-remove').forEach(btn => {
+    btn.onclick = () => removeFromCategory(btn.dataset.slug, btn.dataset.id);
+  });
+
+  panel.querySelectorAll('.cat-move-up').forEach(btn => {
+    btn.onclick = () => moveCategoryProduct(btn.dataset.slug, btn.dataset.id, -1);
+  });
+
+  panel.querySelectorAll('.cat-move-down').forEach(btn => {
+    btn.onclick = () => moveCategoryProduct(btn.dataset.slug, btn.dataset.id, 1);
+  });
+
+  panel.querySelectorAll('.cat-search').forEach(input => {
+    input.oninput = () => filterCategoryAvailable(input.dataset.slug, input.value);
   });
 
   panel.querySelectorAll('.link-add-btn').forEach(btn => {
@@ -1372,115 +1494,113 @@ function bindCustomizeEvents() {
   panel.querySelectorAll('.link-remove').forEach(btn => {
     btn.onclick = () => btn.closest('.adm-link-row')?.remove();
   });
+}
 
-  panel.querySelectorAll('.hp-add-btn').forEach(btn => {
-    btn.onclick = () => {
-      const id = btn.dataset.id;
-      if (!adminData.homepage.featuredProductIds.includes(id)) {
-        adminData.homepage.featuredProductIds.push(id);
-        refreshHomepagePicker();
-      }
-    };
-  });
-
-  panel.querySelectorAll('.hp-remove').forEach(btn => {
-    btn.onclick = () => {
-      adminData.homepage.featuredProductIds = adminData.homepage.featuredProductIds.filter(x => x !== btn.dataset.id);
-      refreshHomepagePicker();
-    };
-  });
-
-  panel.querySelectorAll('.hp-move-up').forEach(btn => {
-    btn.onclick = () => moveHomepageProduct(btn.dataset.id, -1);
-  });
-
-  panel.querySelectorAll('.hp-move-down').forEach(btn => {
-    btn.onclick = () => moveHomepageProduct(btn.dataset.id, 1);
-  });
-
-  document.getElementById('hp-search')?.addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase().trim();
-    const selected = new Set(adminData.homepage.featuredProductIds);
-    const list = document.getElementById('hp-available-list');
-    const filtered = adminData.products.filter(p => !selected.has(p.id) && (!q || p.name.toLowerCase().includes(q))).slice(0, 30);
-    list.innerHTML = filtered.length
-      ? filtered.map(p => `
-          <div class="adm-hp-item" data-id="${p.id}">
-            <img src="${esc(p.image)}" alt="">
-            <span>${esc(p.name)}</span>
-            <button type="button" class="adm-btn adm-btn-sm adm-btn-primary hp-add-btn" data-id="${p.id}">+ Thêm</button>
-          </div>
-        `).join('')
-      : '<p class="adm-empty-sm">Không tìm thấy sản phẩm</p>';
-    list.querySelectorAll('.hp-add-btn').forEach(b => {
-      b.onclick = () => {
-        if (!adminData.homepage.featuredProductIds.includes(b.dataset.id)) {
-          adminData.homepage.featuredProductIds.push(b.dataset.id);
-          refreshHomepagePicker();
-        }
-      };
-    });
+function collectCategorySectionsFromDOM() {
+  document.querySelectorAll('.adm-cat-priority').forEach(el => {
+    const slug = el.dataset.slug;
+    const sec = getCategorySection(slug);
+    if (!sec) return;
+    sec.title = el.querySelector('.cat-section-title')?.value.trim() || sec.title;
+    sec.productIds = [...el.querySelectorAll('.cat-selected-list .adm-hp-selected-item')].map(row => row.dataset.id);
   });
 }
 
-function moveHomepageProduct(id, dir) {
-  const ids = adminData.homepage.featuredProductIds;
+function addToCategory(slug, productId) {
+  const sec = getCategorySection(slug);
+  const limit = (sec.perRow || 4) * (sec.rows || 2);
+  if (sec.productIds.includes(productId)) return;
+  if (sec.productIds.length >= limit) {
+    showToast(`Tối đa ${limit} sản phẩm ưu tiên/danh mục`, true);
+    return;
+  }
+  sec.productIds.push(productId);
+  refreshCategoryPicker(slug);
+}
+
+function removeFromCategory(slug, productId) {
+  const sec = getCategorySection(slug);
+  sec.productIds = sec.productIds.filter(id => id !== productId);
+  refreshCategoryPicker(slug);
+}
+
+function moveCategoryProduct(slug, id, dir) {
+  const sec = getCategorySection(slug);
+  const ids = sec.productIds;
   const i = ids.indexOf(id);
   if (i < 0) return;
   const j = i + dir;
   if (j < 0 || j >= ids.length) return;
   [ids[i], ids[j]] = [ids[j], ids[i]];
-  refreshHomepagePicker();
+  refreshCategoryPicker(slug);
+}
+
+function filterCategoryAvailable(slug, query) {
+  const sec = getCategorySection(slug);
+  const q = query.toLowerCase().trim();
+  const selected = new Set(sec.productIds);
+  const list = document.getElementById(`cat-available-${slug}`);
+  if (!list) return;
+  const filtered = adminData.products
+    .filter(p => (p.categories || [p.category]).includes(slug) && !selected.has(p.id))
+    .filter(p => !q || p.name.toLowerCase().includes(q))
+    .slice(0, 30);
+  list.innerHTML = filtered.length
+    ? filtered.map(p => catAvailableRow(p, slug)).join('')
+    : '<p class="adm-empty-sm">Không tìm thấy sản phẩm</p>';
+  list.querySelectorAll('.cat-add-btn').forEach(btn => {
+    btn.onclick = () => addToCategory(btn.dataset.slug, btn.dataset.id);
+  });
+}
+
+function refreshCategoryPicker(slug) {
+  collectCategorySectionsFromDOM();
+  const sec = getCategorySection(slug);
+  const block = document.querySelector(`.adm-cat-priority[data-slug="${slug}"]`);
+  if (!block) return;
+
+  const limit = (sec.perRow || 4) * (sec.rows || 2);
+  const selectedProducts = sec.productIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
+  const categoryProducts = adminData.products.filter(p => (p.categories || [p.category]).includes(slug));
+  const unselected = categoryProducts.filter(p => !sec.productIds.includes(p.id));
+  const searchVal = block.querySelector('.cat-search')?.value || '';
+
+  const selectedList = block.querySelector('.cat-selected-list');
+  if (selectedList) {
+    selectedList.innerHTML = selectedProducts.length
+      ? selectedProducts.map((p, i) => hpProductRow(p, i, selectedProducts.length, slug)).join('')
+      : '<p class="adm-empty-sm">Chưa chọn — hiển thị theo tên A-Z</p>';
+    selectedList.querySelectorAll('.cat-remove').forEach(btn => {
+      btn.onclick = () => removeFromCategory(btn.dataset.slug, btn.dataset.id);
+    });
+    selectedList.querySelectorAll('.cat-move-up').forEach(btn => {
+      btn.onclick = () => moveCategoryProduct(btn.dataset.slug, btn.dataset.id, -1);
+    });
+    selectedList.querySelectorAll('.cat-move-down').forEach(btn => {
+      btn.onclick = () => moveCategoryProduct(btn.dataset.slug, btn.dataset.id, 1);
+    });
+  }
+
+  const countEl = block.querySelector('.adm-count');
+  if (countEl) countEl.textContent = `${selectedProducts.length}/${limit} ưu tiên · ${categoryProducts.length} SP`;
+
+  if (!searchVal.trim()) {
+    const availList = block.querySelector('.cat-available-list');
+    if (availList) {
+      availList.innerHTML = unselected.length
+        ? unselected.slice(0, 30).map(p => catAvailableRow(p, slug)).join('')
+        : '<p class="adm-empty-sm">Đã thêm hết sản phẩm trong danh mục</p>';
+      availList.querySelectorAll('.cat-add-btn').forEach(btn => {
+        btn.onclick = () => addToCategory(btn.dataset.slug, btn.dataset.id);
+      });
+    }
+  } else {
+    filterCategoryAvailable(slug, searchVal);
+  }
 }
 
 function syncFeaturedFlags() {
-  const ids = new Set(adminData.homepage?.featuredProductIds || []);
-  adminData.products.forEach(p => { p.featured = ids.has(p.id); });
-}
-
-function refreshHomepagePicker() {
-  const selectedIds = adminData.homepage.featuredProductIds;
-  const selectedProducts = selectedIds.map(id => adminData.products.find(p => p.id === id)).filter(Boolean);
-  const unselected = adminData.products.filter(p => !selectedIds.includes(p.id));
-  const search = document.getElementById('hp-search')?.value.toLowerCase().trim() || '';
-
-  const selectedList = document.getElementById('hp-selected-list');
-  if (selectedList) {
-    selectedList.innerHTML = selectedProducts.length
-      ? selectedProducts.map((p, i) => hpProductRow(p, i, selectedProducts.length)).join('')
-      : '<p class="adm-empty-sm">Chưa chọn sản phẩm nào</p>';
-    selectedList.querySelectorAll('.hp-remove').forEach(btn => {
-      btn.onclick = () => {
-        adminData.homepage.featuredProductIds = adminData.homepage.featuredProductIds.filter(x => x !== btn.dataset.id);
-        refreshHomepagePicker();
-      };
-    });
-    selectedList.querySelectorAll('.hp-move-up').forEach(btn => {
-      btn.onclick = () => moveHomepageProduct(btn.dataset.id, -1);
-    });
-    selectedList.querySelectorAll('.hp-move-down').forEach(btn => {
-      btn.onclick = () => moveHomepageProduct(btn.dataset.id, 1);
-    });
-  }
-
-  const availableList = document.getElementById('hp-available-list');
-  if (availableList && !search) {
-    availableList.innerHTML = unselected.slice(0, 50).map(p => `
-      <div class="adm-hp-item" data-id="${p.id}">
-        <img src="${esc(p.image)}" alt="">
-        <span>${esc(p.name)}</span>
-        <button type="button" class="adm-btn adm-btn-sm adm-btn-primary hp-add-btn" data-id="${p.id}">+ Thêm</button>
-      </div>
-    `).join('') + (unselected.length > 50 ? `<p class="adm-empty-sm">+ ${unselected.length - 50} sản phẩm khác — dùng tìm kiếm</p>` : '');
-    availableList.querySelectorAll('.hp-add-btn').forEach(b => {
-      b.onclick = () => {
-        if (!adminData.homepage.featuredProductIds.includes(b.dataset.id)) {
-          adminData.homepage.featuredProductIds.push(b.dataset.id);
-          refreshHomepagePicker();
-        }
-      };
-    });
-  }
+  syncFeaturedFlagsFromSections();
 }
 
 /* ─── Products ─── */
@@ -1655,9 +1775,7 @@ async function saveProduct() {
   }
 
   ensureCustomizeDefaults();
-  const ids = adminData.homepage.featuredProductIds;
-  if (product.featured && !ids.includes(product.id)) ids.push(product.id);
-  if (!product.featured) adminData.homepage.featuredProductIds = ids.filter(id => id !== product.id);
+  syncProductToCategorySections(product);
 
   await saveData();
   closeModal();

@@ -464,7 +464,12 @@ ul { list-style: none; }
   .float-btn { width: 44px; height: 44px; }
 }
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr; }
-  .products-grid-4 { grid-template-columns: 1fr; }
+  .products-grid,
+  .products-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .product-image img { padding: 10px; }
+  .product-body { padding: 8px 8px 10px; }
+  .product-name { font-size: 11px; min-height: 30px; }
+  .price-current { font-size: 14px; }
+  .btn { padding: 7px 6px; font-size: 10px; }
   .features-grid { grid-template-columns: 1fr; }
 }

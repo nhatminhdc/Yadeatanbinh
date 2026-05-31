@@ -402,10 +402,34 @@ function getProductsByCategory(products, slug) {
 }
 
 const DEFAULT_HOME_CATEGORIES = [
-  { slug: 'xe-may-dien', title: 'Xe máy điện', perRow: 4, rows: 2 },
-  { slug: 'xe-hoc-sinh', title: 'Xe máy điện học sinh', perRow: 4, rows: 2 },
-  { slug: 'xe-dap-dien', title: 'Xe Đạp Điện - Trợ Lực', perRow: 4, rows: 2 },
+  { slug: 'xe-may-dien', title: 'Xe máy điện', perRow: 4, rows: 2, productIds: [] },
+  { slug: 'xe-hoc-sinh', title: 'Xe điện học sinh', perRow: 4, rows: 2, productIds: [] },
+  { slug: 'xe-dap-dien', title: 'Xe đạp điện - trợ lực', perRow: 4, rows: 2, productIds: [] },
 ];
+
+function getSectionProducts(allProducts, section, hp) {
+  const limit = (section.perRow || 4) * (section.rows || 2);
+  const byCategory = getProductsByCategory(allProducts, section.slug);
+  const productMap = Object.fromEntries(allProducts.map(p => [p.id, p]));
+
+  if (section.productIds?.length) {
+    const picked = section.productIds.map(id => productMap[id]).filter(Boolean);
+    const pickedSet = new Set(section.productIds);
+    const rest = byCategory
+      .filter(p => !pickedSet.has(p.id))
+      .sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+    const items = [...picked, ...rest].slice(0, limit);
+    return { items, hasMore: byCategory.length > limit };
+  }
+
+  const featuredIds = new Set(hp.featuredProductIds || []);
+  const sorted = [...byCategory].sort((a, b) => {
+    const af = featuredIds.has(a.id) ? 0 : 1;
+    const bf = featuredIds.has(b.id) ? 0 : 1;
+    return af - bf || a.name.localeCompare(b.name, 'vi');
+  });
+  return { items: sorted.slice(0, limit), hasMore: byCategory.length > limit };
+}
 
 function renderHomepageCategories(data, hp) {
   const el = document.getElementById('products');
@@ -415,16 +439,7 @@ function renderHomepageCategories(data, hp) {
   const moreLabel = hp.productsButtonText || 'XEM THÊM';
 
   el.innerHTML = sections.map(section => {
-    const limit = (section.perRow || 4) * (section.rows || 2);
-    const all = getProductsByCategory(data.products, section.slug);
-    const featuredIds = new Set(hp.featuredProductIds || []);
-    const sorted = [...all].sort((a, b) => {
-      const af = featuredIds.has(a.id) ? 0 : 1;
-      const bf = featuredIds.has(b.id) ? 0 : 1;
-      return af - bf || a.name.localeCompare(b.name, 'vi');
-    });
-    const items = sorted.slice(0, limit);
-    const hasMore = all.length > limit;
+    const { items, hasMore } = getSectionProducts(data.products, section, hp);
     const title = section.title || data.categories.find(c => c.slug === section.slug)?.name || section.slug;
 
     if (!items.length) return '';
