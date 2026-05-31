@@ -14,3 +14,4 @@ data/supabase.public.json
 lib/deploy-config.js
 scripts/pydeps/
 public/uploads/products/
+.vercel
