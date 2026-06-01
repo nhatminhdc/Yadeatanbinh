@@ -458,41 +458,6 @@ function attachProductSearchSuggest({ box, input, list, products = [], onSubmitQ
   return { hideSuggest, submitQuery };
 }
 
-function renderHomeProductSearch(products = []) {
-  const container = document.getElementById('products');
-  if (!container) return;
-
-  let wrap = document.getElementById('home-product-search');
-  if (!wrap) {
-    wrap = document.createElement('div');
-    wrap.id = 'home-product-search';
-    wrap.className = 'home-product-search-wrap';
-    container.parentNode.insertBefore(wrap, container);
-  }
-
-  wrap.innerHTML = `
-    <div class="home-search-box search-box-wrap" id="home-search-box">
-      <form class="home-product-search" id="home-product-search-form" role="search" autocomplete="off">
-        ${ICONS.search}
-        <input type="search" name="home-product-q" id="home-search-input" placeholder="Tìm xe Yadea..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tìm sản phẩm" aria-expanded="false" aria-controls="home-search-suggest" aria-autocomplete="list">
-        <button type="submit" class="home-search-submit">Tìm</button>
-      </form>
-      <ul class="product-search-suggest hidden" id="home-search-suggest" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
-    </div>
-  `;
-
-  const box = document.getElementById('home-search-box');
-  const form = document.getElementById('home-product-search-form');
-  const input = document.getElementById('home-search-input');
-  const list = document.getElementById('home-search-suggest');
-  const suggest = attachProductSearchSuggest({ box, input, list, products });
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    suggest?.submitQuery();
-  });
-}
-
 function initSearch(data) {
   const products = data.products || [];
   attachProductSearchSuggest({
@@ -888,7 +853,6 @@ async function initHome() {
   if (hp.showProducts === false) {
     productsSection && (productsSection.style.display = 'none');
   } else {
-    renderHomeProductSearch(data.products || []);
     renderHomepageCategories(data, hp);
   }
 
