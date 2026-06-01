@@ -47,8 +47,17 @@ ul { list-style: none; }
   height: var(--header-top-h); gap: 20px;
 }
 .logo img { height: 40px; width: auto; max-width: 220px; object-fit: contain; }
+.search-box-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 480px;
+}
+.search-box-wrap .search-box {
+  max-width: none;
+  width: 100%;
+}
 .search-box {
-  flex: 1; max-width: 480px; display: flex; align-items: center;
+  display: flex; align-items: center;
   border: 1px solid var(--gray-300); border-radius: var(--radius); padding: 0 14px; height: 42px;
 }
 .search-box input { border: none; outline: none; width: 100%; font-size: 14px; background: transparent; font-family: inherit; }
@@ -82,7 +91,7 @@ ul { list-style: none; }
 .nav-link:hover, .nav-link.active { color: var(--primary); border-bottom-color: var(--primary); }
 
 .mobile-search { display: none; padding: 10px 15px; border-bottom: 1px solid var(--gray-300); }
-.mobile-search .search-box { max-width: 100%; }
+.mobile-search .search-box-wrap { max-width: 100%; flex: none; width: 100%; }
 
 .mobile-nav { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.45); }
 .mobile-nav.open { display: block; }
@@ -159,6 +168,10 @@ ul { list-style: none; }
 .home-search-box {
   position: relative; width: 100%; max-width: 360px;
 }
+.home-search-box.search-box-wrap {
+  flex: none;
+  max-width: 360px;
+}
 .home-product-search {
   display: flex; align-items: center; gap: 8px;
   width: 100%;
@@ -182,39 +195,39 @@ ul { list-style: none; }
 }
 .home-search-submit:hover { background: var(--primary-dark); }
 
-.home-search-suggest {
-  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 200;
+.product-search-suggest {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 3000;
   margin: 0; padding: 6px 0; list-style: none;
   background: var(--white); border: 1px solid var(--gray-300);
   border-radius: 12px; box-shadow: var(--shadow-md);
   max-height: min(320px, 50vh); overflow-y: auto;
 }
-.home-search-suggest.hidden { display: none; }
-.home-search-suggest-item {
+.product-search-suggest.hidden { display: none; }
+.product-search-suggest-item {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 12px; cursor: pointer; transition: background .15s;
 }
-.home-search-suggest-item:hover,
-.home-search-suggest-item.active { background: #f0f7ff; }
-.home-search-suggest-item img {
+.product-search-suggest-item:hover,
+.product-search-suggest-item.active { background: #f0f7ff; }
+.product-search-suggest-item img {
   width: 40px; height: 40px; object-fit: contain; border-radius: 6px;
   background: #fff; flex-shrink: 0;
 }
-.home-search-suggest-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.home-search-suggest-name {
+.product-search-suggest-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.product-search-suggest-name {
   font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.35;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.home-search-suggest-price-row {
+.product-search-suggest-price-row {
   display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px;
 }
-.home-search-suggest-price {
+.product-search-suggest-price {
   font-size: 13px; font-weight: 700; color: var(--primary);
 }
-.home-search-suggest-old {
-  font-size: 11px; color: var(--gray-500); text-decoration: line-through; margin-left: 6px; font-weight: 400;
+.product-search-suggest-old {
+  font-size: 11px; color: var(--gray-500); text-decoration: line-through; font-weight: 400;
 }
-.home-search-suggest-empty {
+.product-search-suggest-empty {
   padding: 12px; text-align: center; font-size: 13px; color: var(--gray-500);
 }
 
@@ -505,7 +518,7 @@ ul { list-style: none; }
 }
 @media (max-width: 768px) {
   :root { --header-top-h: 56px; }
-  .search-box { display: none; }
+  .header-inner > .search-box-wrap { display: none; }
   .header-action span { display: none; }
   .menu-toggle { display: flex; }
   .mobile-search { display: block; }

@@ -145,10 +145,13 @@ function renderHeader(data) {
         <a href="/" class="logo">
           <img src="${data.site.logo}" alt="${data.site.name}" height="40" loading="eager">
         </a>
-        <div class="search-box">
-          ${ICONS.search}
-          <input type="text" id="search-input" placeholder="Bạn tìm gì ..." aria-label="Tìm kiếm">
-          <button type="button" aria-label="Tìm" onclick="document.getElementById('search-input').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}))">${ICONS.search}</button>
+        <div class="search-box-wrap" id="header-search-wrap">
+          <div class="search-box">
+            ${ICONS.search}
+            <input type="search" id="search-input" name="product-q" placeholder="Bạn tìm gì ..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tìm kiếm" aria-expanded="false" aria-controls="search-suggest" aria-autocomplete="list">
+            <button type="button" aria-label="Tìm" onclick="document.getElementById('search-input').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter'}))">${ICONS.search}</button>
+          </div>
+          <ul class="product-search-suggest hidden" id="search-suggest" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
         </div>
         <div class="header-actions">
           <a href="tel:${hotlineTel(data.site.hotline)}" class="header-action">
@@ -163,10 +166,15 @@ function renderHeader(data) {
       </div>
     </div>
     <div class="mobile-search mb-show">
-      <div class="container"><div class="search-box" style="max-width:100%">
-        ${ICONS.search}
-        <input type="text" id="search-input-mobile" placeholder="Bạn tìm gì ...">
-      </div></div>
+      <div class="container">
+        <div class="search-box-wrap" id="mobile-search-wrap">
+          <div class="search-box">
+            ${ICONS.search}
+            <input type="search" id="search-input-mobile" name="product-q-mobile" placeholder="Bạn tìm gì ..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tìm kiếm" aria-expanded="false" aria-controls="search-suggest-mobile" aria-autocomplete="list">
+          </div>
+          <ul class="product-search-suggest hidden" id="search-suggest-mobile" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
+        </div>
+      </div>
     </div>
     <nav class="nav">
       <div class="container nav-inner">
@@ -188,14 +196,6 @@ function renderHeader(data) {
 
   initMobileNav();
   initSearch(data);
-  const mobileSearch = document.getElementById('search-input-mobile');
-  if (mobileSearch) {
-    mobileSearch.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && mobileSearch.value.trim()) {
-        window.location.href = `/san-pham.html?q=${encodeURIComponent(mobileSearch.value.trim())}`;
-      }
-    });
-  }
   highlightNav();
 }
 
@@ -324,6 +324,140 @@ function productDisplayPrice(p) {
   return amount ? formatPrice(amount) : 'Liên hệ';
 }
 
+function goToProduct(slug) {
+  if (!slug) return;
+  window.location.href = `/san-pham.html?slug=${encodeURIComponent(slug)}`;
+}
+
+function renderProductSuggestHTML(matches) {
+  if (!matches.length) {
+    return '<li class="product-search-suggest-empty">Không tìm thấy sản phẩm</li>';
+  }
+  return matches.map((p, i) => {
+    const oldPrice = p.salePrice && p.price
+      ? `<span class="product-search-suggest-old">${formatPrice(p.price)}</span>`
+      : '';
+    return `
+      <li class="product-search-suggest-item" role="option" data-index="${i}" data-slug="${escapeHtml(p.slug)}">
+        <img src="${escapeHtml(p.image)}" alt="" loading="lazy" width="40" height="40">
+        <span class="product-search-suggest-text">
+          <span class="product-search-suggest-name">${escapeHtml(p.name)}</span>
+          <span class="product-search-suggest-price-row">
+            <span class="product-search-suggest-price">${productDisplayPrice(p)}</span>
+            ${oldPrice}
+          </span>
+        </span>
+      </li>
+    `;
+  }).join('');
+}
+
+function attachProductSearchSuggest({ box, input, list, products = [], onSubmitQuery }) {
+  if (!input || !list) return;
+
+  let suggestMatches = [];
+  let activeIndex = -1;
+  let debounceTimer = null;
+
+  function hideSuggest() {
+    list.classList.add('hidden');
+    list.innerHTML = '';
+    suggestMatches = [];
+    activeIndex = -1;
+    input.setAttribute('aria-expanded', 'false');
+  }
+
+  function renderSuggest(matches) {
+    suggestMatches = matches;
+    activeIndex = -1;
+    list.innerHTML = renderProductSuggestHTML(matches);
+    list.classList.remove('hidden');
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function refreshSuggest() {
+    const q = input.value || '';
+    if (q.trim().length < 1) {
+      hideSuggest();
+      return;
+    }
+    renderSuggest(filterProductsSuggest(products, q));
+  }
+
+  function setActiveIndex(index) {
+    activeIndex = index;
+    list.querySelectorAll('.product-search-suggest-item').forEach((el, i) => {
+      el.classList.toggle('active', i === index);
+    });
+    list.querySelector('.product-search-suggest-item.active')?.scrollIntoView({ block: 'nearest' });
+  }
+
+  function submitQuery() {
+    if (activeIndex >= 0 && suggestMatches[activeIndex]) {
+      goToProduct(suggestMatches[activeIndex].slug);
+      return;
+    }
+    if (onSubmitQuery) onSubmitQuery(input.value);
+    else goToProductSearch(input.value);
+  }
+
+  input.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(refreshSuggest, 150);
+  });
+
+  input.addEventListener('focus', () => {
+    if ((input.value || '').trim()) refreshSuggest();
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hideSuggest();
+      return;
+    }
+    if (e.key === 'Enter') {
+      if (activeIndex >= 0 && suggestMatches[activeIndex]) {
+        e.preventDefault();
+        goToProduct(suggestMatches[activeIndex].slug);
+        return;
+      }
+      if (input.value.trim()) {
+        e.preventDefault();
+        submitQuery();
+      }
+      return;
+    }
+    if (!suggestMatches.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActiveIndex(Math.min(activeIndex + 1, suggestMatches.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveIndex(Math.max(activeIndex - 1, 0));
+    }
+  });
+
+  list.addEventListener('click', (e) => {
+    const item = e.target.closest('.product-search-suggest-item');
+    if (!item) return;
+    goToProduct(item.dataset.slug);
+  });
+
+  list.addEventListener('mouseover', (e) => {
+    const item = e.target.closest('.product-search-suggest-item');
+    if (item) setActiveIndex(Number(item.dataset.index));
+  });
+
+  if (box) {
+    document.addEventListener('click', (e) => {
+      if (!box.contains(e.target)) hideSuggest();
+    });
+  }
+
+  return { hideSuggest, submitQuery };
+}
+
 function renderHomeProductSearch(products = []) {
   const container = document.getElementById('products');
   if (!container) return;
@@ -337,13 +471,13 @@ function renderHomeProductSearch(products = []) {
   }
 
   wrap.innerHTML = `
-    <div class="home-search-box" id="home-search-box">
+    <div class="home-search-box search-box-wrap" id="home-search-box">
       <form class="home-product-search" id="home-product-search-form" role="search" autocomplete="off">
         ${ICONS.search}
-        <input type="search" name="q" id="home-search-input" placeholder="Tìm xe Yadea..." autocomplete="off" aria-label="Tìm sản phẩm" aria-expanded="false" aria-controls="home-search-suggest" aria-autocomplete="list">
+        <input type="search" name="home-product-q" id="home-search-input" placeholder="Tìm xe Yadea..." autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Tìm sản phẩm" aria-expanded="false" aria-controls="home-search-suggest" aria-autocomplete="list">
         <button type="submit" class="home-search-submit">Tìm</button>
       </form>
-      <ul class="home-search-suggest hidden" id="home-search-suggest" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
+      <ul class="product-search-suggest hidden" id="home-search-suggest" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
     </div>
   `;
 
@@ -351,132 +485,27 @@ function renderHomeProductSearch(products = []) {
   const form = document.getElementById('home-product-search-form');
   const input = document.getElementById('home-search-input');
   const list = document.getElementById('home-search-suggest');
-  let suggestMatches = [];
-  let activeIndex = -1;
-  let debounceTimer = null;
-
-  function hideSuggest() {
-    list.classList.add('hidden');
-    list.innerHTML = '';
-    suggestMatches = [];
-    activeIndex = -1;
-    input?.setAttribute('aria-expanded', 'false');
-  }
-
-  function goToProduct(slug) {
-    if (!slug) return;
-    window.location.href = `/san-pham.html?slug=${encodeURIComponent(slug)}`;
-  }
-
-  function renderSuggest(matches) {
-    suggestMatches = matches;
-    activeIndex = -1;
-    if (!matches.length) {
-      list.innerHTML = '<li class="home-search-suggest-empty">Không tìm thấy sản phẩm</li>';
-      list.classList.remove('hidden');
-      input?.setAttribute('aria-expanded', 'true');
-      return;
-    }
-
-    list.innerHTML = matches.map((p, i) => {
-      const oldPrice = p.salePrice && p.price
-        ? `<span class="home-search-suggest-old">${formatPrice(p.price)}</span>`
-        : '';
-      return `
-        <li class="home-search-suggest-item" role="option" data-index="${i}" data-slug="${escapeHtml(p.slug)}">
-          <img src="${escapeHtml(p.image)}" alt="" loading="lazy" width="40" height="40">
-          <span class="home-search-suggest-text">
-            <span class="home-search-suggest-name">${escapeHtml(p.name)}</span>
-            <span class="home-search-suggest-price-row">
-              <span class="home-search-suggest-price">${productDisplayPrice(p)}</span>
-              ${oldPrice}
-            </span>
-          </span>
-        </li>
-      `;
-    }).join('');
-    list.classList.remove('hidden');
-    input?.setAttribute('aria-expanded', 'true');
-  }
-
-  function refreshSuggest() {
-    const q = input?.value || '';
-    if (q.trim().length < 1) {
-      hideSuggest();
-      return;
-    }
-    renderSuggest(filterProductsSuggest(products, q));
-  }
-
-  function setActiveIndex(index) {
-    activeIndex = index;
-    list.querySelectorAll('.home-search-suggest-item').forEach((el, i) => {
-      el.classList.toggle('active', i === index);
-    });
-    const active = list.querySelector('.home-search-suggest-item.active');
-    active?.scrollIntoView({ block: 'nearest' });
-  }
-
-  input?.addEventListener('input', () => {
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(refreshSuggest, 150);
-  });
-
-  input?.addEventListener('focus', () => {
-    if ((input.value || '').trim()) refreshSuggest();
-  });
-
-  input?.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      hideSuggest();
-      return;
-    }
-    if (!suggestMatches.length) return;
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setActiveIndex(Math.min(activeIndex + 1, suggestMatches.length - 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setActiveIndex(Math.max(activeIndex - 1, 0));
-    } else if (e.key === 'Enter' && activeIndex >= 0) {
-      e.preventDefault();
-      goToProduct(suggestMatches[activeIndex].slug);
-    }
-  });
-
-  list?.addEventListener('click', (e) => {
-    const item = e.target.closest('.home-search-suggest-item');
-    if (!item) return;
-    goToProduct(item.dataset.slug);
-  });
-
-  list?.addEventListener('mouseover', (e) => {
-    const item = e.target.closest('.home-search-suggest-item');
-    if (item) setActiveIndex(Number(item.dataset.index));
-  });
+  const suggest = attachProductSearchSuggest({ box, input, list, products });
 
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (activeIndex >= 0 && suggestMatches[activeIndex]) {
-      goToProduct(suggestMatches[activeIndex].slug);
-      return;
-    }
-    goToProductSearch(input?.value);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!box?.contains(e.target)) hideSuggest();
+    suggest?.submitQuery();
   });
 }
 
 function initSearch(data) {
-  const input = document.getElementById('search-input');
-  if (!input) return;
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && input.value.trim()) {
-      window.location.href = `/san-pham.html?q=${encodeURIComponent(input.value.trim())}`;
-    }
+  const products = data.products || [];
+  attachProductSearchSuggest({
+    box: document.getElementById('header-search-wrap'),
+    input: document.getElementById('search-input'),
+    list: document.getElementById('search-suggest'),
+    products,
+  });
+  attachProductSearchSuggest({
+    box: document.getElementById('mobile-search-wrap'),
+    input: document.getElementById('search-input-mobile'),
+    list: document.getElementById('search-suggest-mobile'),
+    products,
   });
 }
 
