@@ -298,7 +298,33 @@ function goToProductSearch(query) {
   window.location.href = `/san-pham.html?q=${encodeURIComponent(q)}`;
 }
 
-function renderHomeProductSearch() {
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str || '';
+  return d.innerHTML;
+}
+
+function normalizeSearchText(str) {
+  return String(str || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function filterProductsSuggest(products, query, limit = 8) {
+  const q = normalizeSearchText(query.trim());
+  if (!q || q.length < 1) return [];
+  return products
+    .filter(p => normalizeSearchText(p.name).includes(q))
+    .slice(0, limit);
+}
+
+function productDisplayPrice(p) {
+  const amount = p.salePrice || p.price;
+  return amount ? formatPrice(amount) : 'Liên hệ';
+}
+
+function renderHomeProductSearch(products = []) {
   const container = document.getElementById('products');
   if (!container) return;
 
@@ -311,18 +337,136 @@ function renderHomeProductSearch() {
   }
 
   wrap.innerHTML = `
-    <form class="home-product-search" id="home-product-search-form" role="search">
-      ${ICONS.search}
-      <input type="search" name="q" id="home-search-input" placeholder="Tìm xe Yadea..." autocomplete="off" aria-label="Tìm sản phẩm">
-      <button type="submit" class="home-search-submit">Tìm</button>
-    </form>
+    <div class="home-search-box" id="home-search-box">
+      <form class="home-product-search" id="home-product-search-form" role="search" autocomplete="off">
+        ${ICONS.search}
+        <input type="search" name="q" id="home-search-input" placeholder="Tìm xe Yadea..." autocomplete="off" aria-label="Tìm sản phẩm" aria-expanded="false" aria-controls="home-search-suggest" aria-autocomplete="list">
+        <button type="submit" class="home-search-submit">Tìm</button>
+      </form>
+      <ul class="home-search-suggest hidden" id="home-search-suggest" role="listbox" aria-label="Gợi ý sản phẩm"></ul>
+    </div>
   `;
 
+  const box = document.getElementById('home-search-box');
   const form = document.getElementById('home-product-search-form');
   const input = document.getElementById('home-search-input');
+  const list = document.getElementById('home-search-suggest');
+  let suggestMatches = [];
+  let activeIndex = -1;
+  let debounceTimer = null;
+
+  function hideSuggest() {
+    list.classList.add('hidden');
+    list.innerHTML = '';
+    suggestMatches = [];
+    activeIndex = -1;
+    input?.setAttribute('aria-expanded', 'false');
+  }
+
+  function goToProduct(slug) {
+    if (!slug) return;
+    window.location.href = `/san-pham.html?slug=${encodeURIComponent(slug)}`;
+  }
+
+  function renderSuggest(matches) {
+    suggestMatches = matches;
+    activeIndex = -1;
+    if (!matches.length) {
+      list.innerHTML = '<li class="home-search-suggest-empty">Không tìm thấy sản phẩm</li>';
+      list.classList.remove('hidden');
+      input?.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    list.innerHTML = matches.map((p, i) => {
+      const oldPrice = p.salePrice && p.price
+        ? `<span class="home-search-suggest-old">${formatPrice(p.price)}</span>`
+        : '';
+      return `
+        <li class="home-search-suggest-item" role="option" data-index="${i}" data-slug="${escapeHtml(p.slug)}">
+          <img src="${escapeHtml(p.image)}" alt="" loading="lazy" width="40" height="40">
+          <span class="home-search-suggest-text">
+            <span class="home-search-suggest-name">${escapeHtml(p.name)}</span>
+            <span class="home-search-suggest-price-row">
+              <span class="home-search-suggest-price">${productDisplayPrice(p)}</span>
+              ${oldPrice}
+            </span>
+          </span>
+        </li>
+      `;
+    }).join('');
+    list.classList.remove('hidden');
+    input?.setAttribute('aria-expanded', 'true');
+  }
+
+  function refreshSuggest() {
+    const q = input?.value || '';
+    if (q.trim().length < 1) {
+      hideSuggest();
+      return;
+    }
+    renderSuggest(filterProductsSuggest(products, q));
+  }
+
+  function setActiveIndex(index) {
+    activeIndex = index;
+    list.querySelectorAll('.home-search-suggest-item').forEach((el, i) => {
+      el.classList.toggle('active', i === index);
+    });
+    const active = list.querySelector('.home-search-suggest-item.active');
+    active?.scrollIntoView({ block: 'nearest' });
+  }
+
+  input?.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(refreshSuggest, 150);
+  });
+
+  input?.addEventListener('focus', () => {
+    if ((input.value || '').trim()) refreshSuggest();
+  });
+
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hideSuggest();
+      return;
+    }
+    if (!suggestMatches.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActiveIndex(Math.min(activeIndex + 1, suggestMatches.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveIndex(Math.max(activeIndex - 1, 0));
+    } else if (e.key === 'Enter' && activeIndex >= 0) {
+      e.preventDefault();
+      goToProduct(suggestMatches[activeIndex].slug);
+    }
+  });
+
+  list?.addEventListener('click', (e) => {
+    const item = e.target.closest('.home-search-suggest-item');
+    if (!item) return;
+    goToProduct(item.dataset.slug);
+  });
+
+  list?.addEventListener('mouseover', (e) => {
+    const item = e.target.closest('.home-search-suggest-item');
+    if (item) setActiveIndex(Number(item.dataset.index));
+  });
+
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (activeIndex >= 0 && suggestMatches[activeIndex]) {
+      goToProduct(suggestMatches[activeIndex].slug);
+      return;
+    }
     goToProductSearch(input?.value);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!box?.contains(e.target)) hideSuggest();
   });
 }
 
@@ -715,7 +859,7 @@ async function initHome() {
   if (hp.showProducts === false) {
     productsSection && (productsSection.style.display = 'none');
   } else {
-    renderHomeProductSearch();
+    renderHomeProductSearch(data.products || []);
     renderHomepageCategories(data, hp);
   }
 
